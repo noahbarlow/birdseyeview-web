@@ -420,12 +420,16 @@ button,input,textarea,select{font:inherit;color:inherit}
 @media (max-width:760px){.partners{grid-template-columns:repeat(2,1fr)}.partner:nth-child(2n){border-right:0}.partner:nth-child(2n+1){border-right:1px solid var(--ink)}.partner:nth-last-child(-n+2){border-bottom:0}.section.dark .partner:nth-child(2n+1){border-right-color:var(--rule-bone)}}
 
 /* === FORM === */
-.form{display:grid;gap:24px;border:1px solid var(--ink);padding:clamp(24px,4vw,48px);background:var(--bone-2);position:relative}
-.form-group{display:grid;gap:18px;padding-bottom:24px;border-bottom:1px solid var(--rule)}
-.form-group:last-of-type{border-bottom:0;padding-bottom:0}
-.form-group__head{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.form-group__head h3{font-family:var(--ff-display);font-weight:900;font-size:20px;letter-spacing:.06em;text-transform:uppercase;line-height:1}
-.form-group__head .lbl{color:var(--orange-deep)}
+.form{display:grid;gap:24px;border:1px solid var(--ink);padding:clamp(24px,4vw,48px);background:var(--bone-2);position:relative;color:var(--ink)}
+/* Form is a bone-paper card — explicit ink colors that override any parent .section.dark cascade */
+.form .form-group{display:grid;gap:18px;padding-bottom:24px;border-bottom:1px solid var(--rule)}
+.form .form-group:last-of-type{border-bottom:0;padding-bottom:0}
+.form .form-group__head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.form .form-group__head h3{font-family:var(--ff-display);font-weight:900;font-size:20px;letter-spacing:.06em;text-transform:uppercase;line-height:1;color:var(--ink)}
+.form .form-group__head .lbl{color:var(--orange-deep)}
+.form .field-help{color:var(--ink-soft)}
+.form .checkbox{color:var(--ink)}
+.form .lbl{color:var(--ink-soft)}
 .field{display:grid;gap:6px}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 @media (max-width:680px){.field-row{grid-template-columns:1fr}}
