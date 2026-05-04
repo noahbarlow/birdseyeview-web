@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Apply — Bird's Eye View · War Feather Phase One</title>
+<meta name="description" content="Phase 1 anonymous application. Reviewed on merit, not military achievement. Three-phase selection." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Spectral:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@400;500&family=Public+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Shared SVG defs (placeholder mark — stamp/seal) -->
+<svg width="0" height="0" style="position:absolute;width:0;height:0" aria-hidden="true">
+  <defs>
+    <symbol id="feather" viewBox="0 0 40 40">
+      <!-- Outer ring (thin) -->
+      <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <!-- Inner solid disk -->
+      <circle cx="20" cy="20" r="14" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="bar">
+  <div class="bar-inner">
+    <a class="brand" href="index.html" aria-label="Bird's Eye View, home">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><use href="#feather"/></svg>
+      <span class="brand-name">Bird's Eye View<small>Project · Est. 2024</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="program.html">Program</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="impact.html">Impact</a>
+      <a href="documentary.html">Documentary</a>
+      <a href="get-involved.html">Get Involved</a>
+      <a class="apply is-active" href="apply.html">Apply</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="section bone hero hero--simple">
+  <div class="wrap">
+    <div class="hero-meta">
+      <span class="vol">Field Brief · Vol. 01</span>
+      <span class="div"></span>
+      <span class="lbl-sm">Phase 1 · Anonymous</span>
+    </div>
+    <h1 class="hero-head dpy reveal">
+      <span class="ln">War <em>Feather</em></span>
+      <span class="ln">Application.</span>
+    </h1>
+    <div class="hero-cite"><span class="lbl-sm" style="color:var(--orange)">Class № I · 2026</span><span class="hero-cite__rule"></span><span class="lbl-sm">50 Max · Reviewed By Independent Committee</span></div>
+    <p class="hero-lead">
+      Phase 1 is reviewed anonymously by an independent committee. No names. No service branches. Judged on merit, not military achievement.
+    </p>
+  </div>
+</section>
+
+<!-- 3-PHASE SUMMARY -->
+<section class="section bone">
+  <div class="wrap">
+    <div class="section-head reveal section-head--small">
+      <h2 class="ttl">Three-phase selection.</h2>
+      <div class="meta">// Selection<b>Phases · 01–03</b></div>
+    </div>
+
+    <article class="roster reveal">
+      <header class="roster__head">
+        <h3>War Feather Selection · Class of 2026</h3>
+        <div class="meta">
+          <span>Phase 1 // Anonymous</span>
+          <span>Phase 2 // Psych</span>
+          <span>Phase 3 // Physical</span>
+        </div>
+      </header>
+      <div class="roster__row roster__row--3">
+        <div class="roster__cell">
+          <span class="pos">Phase 01 · You're Here</span>
+          <span class="fig">Anon<span class="unit">submit</span></span>
+          <span class="name">Form Below<small>Reviewed by independent committee</small></span>
+        </div>
+        <div class="roster__cell">
+          <span class="pos">Phase 02 · If Selected</span>
+          <span class="fig">Psych<span class="unit">eval</span></span>
+          <span class="name">Partner-Led<small>Genuine commitment screen</small></span>
+        </div>
+        <div class="roster__cell">
+          <span class="pos">Phase 03 · Final</span>
+          <span class="fig">5K<span class="unit">action</span></span>
+          <span class="name">Physical Challenge<small>Video / proof required</small></span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- THE FORM -->
+<section class="section dark">
+  <div class="wrap-tight">
+    <div class="section-head reveal section-head--small">
+      <h2 class="ttl" style="color:var(--bone)">Phase 1 · The form.</h2>
+      <div class="meta">// Anonymous Submission<b style="color:var(--bone)">Email · Phone · Story</b></div>
+    </div>
+
+    <form class="form reveal" style="background:transparent;border-color:var(--rule-bone)" id="applyForm" onsubmit="event.preventDefault();document.getElementById('submitted').hidden=false;document.getElementById('formFields').hidden=true;document.getElementById('submitted').scrollIntoView({behavior:'smooth'});">
+      <div id="formFields" style="display:grid;gap:36px">
+
+        <div class="form-group" style="border-bottom-color:var(--rule-bone)">
+          <div class="form-group__head">
+            <h3 style="color:var(--bone)">Contact</h3>
+            <span class="lbl">// 01 Identifiers</span>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="email">Email <span class="req">REQUIRED</span></label>
+              <input type="email" id="email" name="email" required placeholder="you@example.com" />
+            </div>
+            <div class="field">
+              <label for="phone">Phone <span class="req">REQUIRED</span></label>
+              <input type="tel" id="phone" name="phone" required placeholder="+1 (___) ___-____" />
+            </div>
+          </div>
+          <span class="field-help" style="color:rgba(236,227,208,.6)">// No names. No service branches. Phase 1 is anonymous to the committee.</span>
+        </div>
+
+        <div class="form-group" style="border-bottom-color:var(--rule-bone)">
+          <div class="form-group__head">
+            <h3 style="color:var(--bone)">Anonymous Background</h3>
+            <span class="lbl">// 02 Service</span>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="bg">Background <span class="req">REQUIRED</span></label>
+              <select id="bg" name="background" required>
+                <option value="" disabled selected>Select one</option>
+                <option>Military Veteran</option>
+                <option>Police</option>
+                <option>Firefighter</option>
+                <option>EMS</option>
+                <option>Other First Responder</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="years">Years of Service <span class="req">REQUIRED</span></label>
+              <input type="number" id="years" name="years" min="0" max="60" required placeholder="0" />
+            </div>
+          </div>
+          <div class="field">
+            <label>SSRI Status</label>
+            <div class="radios">
+              <label class="radio"><input type="radio" name="ssri" value="current" /> Currently</label>
+              <label class="radio"><input type="radio" name="ssri" value="prev" /> Previously</label>
+              <label class="radio"><input type="radio" name="ssri" value="never" /> Never</label>
+              <label class="radio"><input type="radio" name="ssri" value="dna" /> Prefer not</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group" style="border-bottom-color:var(--rule-bone)">
+          <div class="form-group__head">
+            <h3 style="color:var(--bone)">Your Story</h3>
+            <span class="lbl">// 03 Merit</span>
+          </div>
+          <div class="field">
+            <label for="story">Personal Story <span class="req">REQUIRED · 200+ words</span></label>
+            <textarea id="story" name="story" rows="8" required placeholder="In your own words: what's the situation, what's the work that's in front of you, what's been done and what hasn't."></textarea>
+            <span class="field-help" style="color:rgba(236,227,208,.6)">Reviewed anonymously. Don't include names, units, or identifying ranks. Speak to merit and the work.</span>
+          </div>
+          <div class="field">
+            <label for="why">Why War Feather? <span class="req">REQUIRED</span></label>
+            <textarea id="why" name="why" rows="4" required placeholder="Why this program. Why now. What you're committed to."></textarea>
+          </div>
+          <div class="field">
+            <label>Commitment Level</label>
+            <div class="radios">
+              <label class="radio"><input type="radio" name="commit" value="100" required /> 100%</label>
+              <label class="radio"><input type="radio" name="commit" value="80" /> 80%</label>
+              <label class="radio"><input type="radio" name="commit" value="60" /> 60%</label>
+              <label class="radio"><input type="radio" name="commit" value="40" /> 40%</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group" style="border-bottom:0">
+          <div class="form-group__head">
+            <h3 style="color:var(--bone)">Acknowledge</h3>
+            <span class="lbl">// 04 Required</span>
+          </div>
+          <label class="checkbox" style="color:rgba(236,227,208,.85)">
+            <input type="checkbox" required />
+            <span>I understand the three-phase selection process and that completing Phase 1 does not guarantee acceptance into the program.</span>
+          </label>
+          <label class="checkbox" style="color:rgba(236,227,208,.85)">
+            <input type="checkbox" required />
+            <span>I understand this is not charity. I'm ready to do the work — including the psychological evaluation and physical challenge if selected.</span>
+          </label>
+
+          <button type="submit" class="btn btn--orange" style="margin-top:14px;width:fit-content">Submit Phase 1 Application <span class="arrow">→</span></button>
+
+          <span class="field-help" style="color:rgba(236,227,208,.55);margin-top:6px">Questions: <a href="mailto:applications@birdseyeviewproject.org" style="color:var(--orange);text-decoration:underline">applications@birdseyeviewproject.org</a></span>
+        </div>
+      </div>
+
+      <!-- SUBMITTED STATE -->
+      <div id="submitted" hidden>
+        <div style="text-align:center;padding:24px 0">
+          <span class="tag-pill">// Phase 1 Application Received</span>
+          <h3 style="font-family:var(--ff-display);font-weight:900;font-size:clamp(40px,6vw,72px);letter-spacing:.005em;text-transform:uppercase;color:var(--bone);margin-top:18px;line-height:.92">You're in motion.</h3>
+          <p style="font-family:var(--ff-edit);font-style:italic;font-size:18px;color:rgba(236,227,208,.85);margin-top:14px;max-width:50ch;margin-inline:auto;line-height:1.4">An independent committee will review your story on merit. We'll be in touch.</p>
+        </div>
+
+        <div class="steps" style="margin-top:36px">
+          <div class="step">
+            <div class="ph"><sup>P°</sup>01</div>
+            <div class="stamp">Now</div>
+            <div><h4>Anonymous Committee Review</h4><p>2–3 weeks. We don't see your name. The committee scores on story, commitment, and readiness.</p></div>
+            <span class="arr">→</span>
+          </div>
+          <div class="step">
+            <div class="ph"><sup>P°</sup>02</div>
+            <div class="stamp">If Selected</div>
+            <div><h4>Phase 2 · Psych Evaluation</h4><p>Partner-led psychological evaluation. Tests genuine commitment to change.</p></div>
+            <span class="arr">→</span>
+          </div>
+          <div class="step">
+            <div class="ph"><sup>P°</sup>03</div>
+            <div class="stamp">Final</div>
+            <div><h4>Phase 3 · Physical Challenge</h4><p>5K or equivalent with proof of completion. Action over intent.</p></div>
+            <span class="arr">→</span>
+          </div>
+          <div class="step">
+            <div class="ph"><sup>P°</sup>04</div>
+            <div class="stamp">Mailed</div>
+            <div><h4>Acceptance Letter</h4><p>Mailed acceptance letter. Cohort starts 4–8 weeks from receipt.</p></div>
+            <span class="arr">→</span>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- AFTER YOU APPLY -->
+<section class="section bone">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="no"><sup>N°</sup>03</div>
+      <h2 class="ttl">After you apply.</h2>
+      <div class="meta">// Timeline<b>Estimated · Cadence</b></div>
+    </div>
+    <div class="timeline reveal">
+      <div class="tline">
+        <span class="when">Weeks 1–3 · Review</span>
+        <div>
+          <h4>Independent Committee Review</h4>
+          <p>Your application is reviewed anonymously on merit. No names. No branches. Just the work and the story.</p>
+        </div>
+      </div>
+      <div class="tline">
+        <span class="when">Weeks 3–4 · Interview</span>
+        <div>
+          <h4>30–45 Minute Interview</h4>
+          <p>If selected, a partner-led conversation. We test commitment, not credentials.</p>
+        </div>
+      </div>
+      <div class="tline">
+        <span class="when">Within 1 Week · Decision</span>
+        <div>
+          <h4>Selection Decision</h4>
+          <p>Acceptance letter is mailed. Cohort begins 4–8 weeks from receipt.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div>
+      <div class="brand" style="margin-bottom:14px">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><use href="#feather"/></svg>
+        <span class="brand-name">Bird's Eye View<small>Project · 501(c)(3)</small></span>
+      </div>
+      <p class="foot-tag">Honoring the cost.<br>Building the system.<br>Returning the operator to himself.</p>
+    </div>
+    <div><h6>Program</h6><ul><li><a href="program.html">War Feather</a></li><li><a href="how-it-works.html">How it works</a></li><li><a href="7x-project.html">7X Project</a></li><li><a href="documentary.html">Documentary</a></li></ul></div>
+    <div><h6>Support</h6><ul><li><a href="get-involved.html">Donate</a></li><li><a href="get-involved.html">Monthly</a></li><li><a href="apply.html">Apply</a></li><li><a href="mailto:support@birdseyeviewproject.org">Contact</a></li></ul></div>
+    <div><h6>Legal</h6><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li><li><a href="#">Cookies</a></li><li><a href="#">Press</a></li></ul></div>
+  </div>
+  <div class="foot-base">
+    <span>© 2026 · Bird's Eye View Project · All Rights Reserved</span>
+    <span class="stamp">Authorized · Field Manual · Vol. 01</span>
+    <span>Honoring · The · Cost</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  if(!("IntersectionObserver" in window)){document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in")});return}
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12,rootMargin:"0px 0px -8% 0px"});
+  document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
