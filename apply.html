@@ -12,14 +12,12 @@
 </head>
 <body>
 
-<!-- Shared SVG defs (placeholder mark — stamp/seal) -->
+<!-- Shared SVG defs (BEVP wordmark badge) -->
 <svg width="0" height="0" style="position:absolute;width:0;height:0" aria-hidden="true">
   <defs>
-    <symbol id="feather" viewBox="0 0 40 40">
-      <!-- Outer ring (thin) -->
-      <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5"/>
-      <!-- Inner solid disk -->
-      <circle cx="20" cy="20" r="14" fill="currentColor"/>
+    <symbol id="feather" viewBox="0 0 64 32">
+      <text x="32" y="20" text-anchor="middle" font-family="'Big Shoulders Display','Bebas Neue',sans-serif" font-weight="900" font-size="20" letter-spacing=".4" fill="currentColor">BEVP</text>
+      <rect x="4" y="26" width="56" height="2.5" fill="#C8210C"/>
     </symbol>
   </defs>
 </svg>
@@ -27,13 +25,13 @@
 <header class="bar">
   <div class="bar-inner">
     <a class="brand" href="index.html" aria-label="Bird's Eye View, home">
-      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><use href="#feather"/></svg>
+      <svg class="brand-mark" viewBox="0 0 64 32" aria-hidden="true"><use href="#feather"/></svg>
       <span class="brand-name">Bird's Eye View<small>Project · Est. 2024</small></span>
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="program.html">Program</a>
       <a href="how-it-works.html">How It Works</a>
-      <a href="impact.html">Impact</a>
+      <a href="events.html">Events</a>
       <a href="documentary.html">Documentary</a>
       <a href="get-involved.html">Get Involved</a>
       <a class="apply is-active" href="apply.html">Apply</a>
@@ -147,25 +145,94 @@
               </select>
             </div>
             <div class="field">
+              <label for="branch">Branch / Agency <span class="req">REQUIRED</span></label>
+              <select id="branch" name="branch" required>
+                <option value="" disabled selected>Select one</option>
+                <optgroup label="Military">
+                  <option>Army</option>
+                  <option>Navy</option>
+                  <option>Marine Corps</option>
+                  <option>Air Force</option>
+                  <option>Coast Guard</option>
+                  <option>Space Force</option>
+                  <option>National Guard / Reserves</option>
+                </optgroup>
+                <optgroup label="First Responder">
+                  <option>Local Police</option>
+                  <option>State Police</option>
+                  <option>Federal Agency</option>
+                  <option>Fire / Rescue</option>
+                  <option>EMS / Paramedic</option>
+                  <option>Other</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
               <label for="years">Years of Service <span class="req">REQUIRED</span></label>
               <input type="number" id="years" name="years" min="0" max="60" required placeholder="0" />
             </div>
+            <div class="field">
+              <label for="deployments">Deployments / Active Years</label>
+              <input type="text" id="deployments" name="deployments" placeholder="e.g. 3 deployments · 12 years on duty" />
+              <span class="field-help" style="color:rgba(236,227,208,.6)">Deployment count for military, years on the line for first responders.</span>
+            </div>
           </div>
           <div class="field">
-            <label>SSRI Status</label>
+            <label>Combat / High-Stress Exposure</label>
             <div class="radios">
-              <label class="radio"><input type="radio" name="ssri" value="current" /> Currently</label>
-              <label class="radio"><input type="radio" name="ssri" value="prev" /> Previously</label>
-              <label class="radio"><input type="radio" name="ssri" value="never" /> Never</label>
-              <label class="radio"><input type="radio" name="ssri" value="dna" /> Prefer not</label>
+              <label class="radio"><input type="radio" name="combat" value="yes" /> Yes</label>
+              <label class="radio"><input type="radio" name="combat" value="some" /> Some</label>
+              <label class="radio"><input type="radio" name="combat" value="no" /> No</label>
+              <label class="radio"><input type="radio" name="combat" value="dna" /> Prefer not</label>
             </div>
           </div>
         </div>
 
         <div class="form-group" style="border-bottom-color:var(--rule-bone)">
           <div class="form-group__head">
+            <h3 style="color:var(--bone)">Health &amp; Medical</h3>
+            <span class="lbl">// 03 Honest Assessment</span>
+          </div>
+          <span class="field-help" style="color:rgba(236,227,208,.6);margin-bottom:6px;display:block">// All answers reviewed anonymously and kept confidential. Honest is more useful than impressive.</span>
+
+          <div class="field">
+            <label>SSRI / Antidepressant Status <span class="req">REQUIRED</span></label>
+            <div class="radios">
+              <label class="radio"><input type="radio" name="ssri" value="current" required /> Currently</label>
+              <label class="radio"><input type="radio" name="ssri" value="prev" /> Previously</label>
+              <label class="radio"><input type="radio" name="ssri" value="never" /> Never</label>
+              <label class="radio"><input type="radio" name="ssri" value="dna" /> Prefer not</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="meds">Current Medications</label>
+            <textarea id="meds" name="meds" rows="3" placeholder="List anything you take regularly — psychiatric, hormonal, pain, sleep, supplements. Categories are fine if you'd rather not specify."></textarea>
+          </div>
+
+          <div class="field">
+            <label for="mental">Mental Health History</label>
+            <textarea id="mental" name="mental" rows="4" placeholder="Diagnoses, prior treatment, hospitalizations, suicidality history, sleep, substance use, TBI — anything relevant. Categories OK; specifics OK; 'none' OK."></textarea>
+            <span class="field-help" style="color:rgba(236,227,208,.6)">Phase 2 is a partner-led psych evaluation. This helps the committee understand readiness before that step.</span>
+          </div>
+
+          <div class="field">
+            <label for="physical">Physical Health Concerns</label>
+            <textarea id="physical" name="physical" rows="3" placeholder="Chronic pain, injuries, mobility limitations, hormonal issues, anything that affects training. 'None' is a valid answer."></textarea>
+          </div>
+
+          <div class="field">
+            <label for="prior">Prior Programs or Treatment</label>
+            <textarea id="prior" name="prior" rows="3" placeholder="Any program, retreat, therapy, or treatment you've already tried. What worked. What didn't."></textarea>
+          </div>
+        </div>
+
+        <div class="form-group" style="border-bottom-color:var(--rule-bone)">
+          <div class="form-group__head">
             <h3 style="color:var(--bone)">Your Story</h3>
-            <span class="lbl">// 03 Merit</span>
+            <span class="lbl">// 04 Merit</span>
           </div>
           <div class="field">
             <label for="story">Personal Story <span class="req">REQUIRED · 200+ words</span></label>
@@ -190,7 +257,7 @@
         <div class="form-group" style="border-bottom:0">
           <div class="form-group__head">
             <h3 style="color:var(--bone)">Acknowledge</h3>
-            <span class="lbl">// 04 Required</span>
+            <span class="lbl">// 05 Required</span>
           </div>
           <label class="checkbox" style="color:rgba(236,227,208,.85)">
             <input type="checkbox" required />
@@ -284,7 +351,7 @@
   <div class="foot-inner">
     <div>
       <div class="brand" style="margin-bottom:14px">
-        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><use href="#feather"/></svg>
+        <svg class="brand-mark" viewBox="0 0 64 32" aria-hidden="true"><use href="#feather"/></svg>
         <span class="brand-name">Bird's Eye View<small>Project · 501(c)(3)</small></span>
       </div>
       <p class="foot-tag">Honoring the cost.<br>Building the system.<br>Returning the operator to himself.</p>

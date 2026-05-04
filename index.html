@@ -14,14 +14,12 @@
 </head>
 <body>
 
-<!-- Shared SVG defs (placeholder mark — stamp/seal) -->
+<!-- Shared SVG defs (BEVP wordmark badge) -->
 <svg width="0" height="0" style="position:absolute;width:0;height:0" aria-hidden="true">
   <defs>
-    <symbol id="feather" viewBox="0 0 40 40">
-      <!-- Outer ring (thin) -->
-      <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5"/>
-      <!-- Inner solid disk -->
-      <circle cx="20" cy="20" r="14" fill="currentColor"/>
+    <symbol id="feather" viewBox="0 0 64 32">
+      <text x="32" y="20" text-anchor="middle" font-family="'Big Shoulders Display','Bebas Neue',sans-serif" font-weight="900" font-size="20" letter-spacing=".4" fill="currentColor">BEVP</text>
+      <rect x="4" y="26" width="56" height="2.5" fill="#C8210C"/>
     </symbol>
   </defs>
 </svg>
@@ -30,13 +28,13 @@
 <header class="bar">
   <div class="bar-inner">
     <a class="brand" href="#top" aria-label="Bird's Eye View, home">
-      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><use href="#feather"/></svg>
+      <svg class="brand-mark" viewBox="0 0 64 32" aria-hidden="true"><use href="#feather"/></svg>
       <span class="brand-name">Bird's Eye View<small>Project · Est. 2024</small></span>
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="program.html">Program</a>
       <a href="how-it-works.html">How It Works</a>
-      <a href="impact.html">Impact</a>
+      <a href="events.html">Events</a>
       <a href="documentary.html">Documentary</a>
       <a href="get-involved.html">Get Involved</a>
       <a class="apply" href="apply.html">Apply</a>
@@ -86,7 +84,7 @@
         <span class="poster__crop tr"></span>
         <span class="poster__crop bl"></span>
         <span class="poster__crop br"></span>
-        <svg class="poster__feather" viewBox="0 0 40 40" aria-hidden="true"><use href="#feather"/></svg>
+        <svg class="poster__feather" viewBox="0 0 64 32" aria-hidden="true"><use href="#feather"/></svg>
         <span class="poster__counter"><b>01</b> / 12 · DOSSIER</span>
 
         <img class="poster__img" id="heroImg" src="img/DSC07364-1.jpg" alt="Veteran in field">
@@ -105,7 +103,7 @@
 <section class="band">
   <div class="wrap-wide">
     <div class="band-inner">
-      <svg class="feather" viewBox="0 0 40 40" aria-hidden="true"><use href="#feather"/></svg>
+      <svg class="feather" viewBox="0 0 64 32" aria-hidden="true"><use href="#feather"/></svg>
       <p class="band-quote">
         The toughest battles happen <em>after</em> the uniform comes off.
       </p>
@@ -250,28 +248,28 @@
   <div class="wrap">
     <div class="section-head reveal">
       <div class="no"><sup>N°</sup>05</div>
-      <h2 class="ttl">Four-part<br>operating system.</h2>
-      <div class="meta">// Doctrine<b>Pillars · 05</b></div>
+      <h2 class="ttl">Four-phase<br>program.</h2>
+      <div class="meta">// Doctrine<b>Phases · 05</b></div>
     </div>
 
     <div class="pillars reveal">
       <article class="pillar">
         <span class="num"><sup>N°</sup>01</span>
-        <span class="tag">// Treatment</span>
-        <h4>Psychedelic Therapy</h4>
-        <p>Coming Home Project — partner-led 501(c)(3). Supervised, structured, and integrated into the year-long arc.</p>
+        <span class="tag">// Selection</span>
+        <h4>Selection</h4>
+        <p>Three-phase application — anonymous review, psych evaluation, physical challenge. Cohort hand-picked on merit, not branch.</p>
       </article>
       <article class="pillar">
         <span class="num"><sup>N°</sup>02</span>
-        <span class="tag">// Biology</span>
-        <h4>Biomarkers &amp; Hormones</h4>
-        <p>Blood panels, peptides, hormone therapy via Transcend. Data-driven recovery for the body that carried the work.</p>
+        <span class="tag">// Coming Home</span>
+        <h4>Therapy</h4>
+        <p>Psychedelic therapy via the Coming Home Project — supervised, structured, integrated into the year-long arc.</p>
       </article>
       <article class="pillar">
         <span class="num"><sup>N°</sup>03</span>
-        <span class="tag">// Training</span>
-        <h4>Human Performance</h4>
-        <p>Programmed training, sleep, nutrition, and recovery protocols. Built around the manual. Reviewed quarterly.</p>
+        <span class="tag">// Transcend &middot; UVA</span>
+        <h4>Biomarkers</h4>
+        <p>Blood panels, peptides, and hormone optimization via Transcend (transitioning to UVA). Data-driven recovery for the body that carried the work.</p>
       </article>
       <article class="pillar">
         <span class="num"><sup>N°</sup>04</span>
@@ -280,6 +278,7 @@
         <p>Once a year, the class regroups. Continuation, accountability, and the next handoff to the cohort behind you.</p>
       </article>
     </div>
+    <p class="reveal" style="margin-top:24px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)">// The Human Performance Manual runs through all four phases &mdash; weekly cadence, training, sleep, nutrition, recovery protocols.</p>
   </div>
 </section>
 
@@ -356,13 +355,13 @@
     </p>
 
     <div class="board reveal">
-      <a class="brd-row" href="impact.html">
+      <a class="brd-row" href="events.html">
         <span class="row-no">№ 01</span>
         <h4>Black Ops · DFW Texas</h4>
         <span class="row-status live">Active</span>
         <span class="row-arr">→</span>
       </a>
-      <a class="brd-row" href="impact.html">
+      <a class="brd-row" href="events.html">
         <span class="row-no">№ 02</span>
         <h4>Armed Forces Shootout</h4>
         <span class="row-status">Upcoming</span>
@@ -459,7 +458,7 @@
   <div class="foot-inner">
     <div>
       <div class="brand" style="margin-bottom:14px">
-        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><use href="#feather"/></svg>
+        <svg class="brand-mark" viewBox="0 0 64 32" aria-hidden="true"><use href="#feather"/></svg>
         <span class="brand-name">Bird's Eye View<small>Project · 501(c)(3)</small></span>
       </div>
       <p class="foot-tag">Honoring the cost. <br/>Building the system. <br/>Returning the operator to himself.</p>

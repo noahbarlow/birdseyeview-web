@@ -3,23 +3,93 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>After the Uniform — Bird's Eye View · Documentary</title>
-<meta name="description" content="A year in the life of Cohort 3. Watch the full journey. Documentary release March 2026." />
+<title>Documentaries — Bird's Eye View</title>
+<meta name="description" content="Two feature documentaries embedded with the cohorts. After the Uniform (March 2026) and Documentary II (in production)." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Spectral:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@400;500&family=Public+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<style>
+  /* Two-up film poster grid */
+  .films{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,32px);margin-top:clamp(24px,4vw,40px)}
+  @media (max-width:760px){.films{grid-template-columns:1fr}}
+  .film{
+    border:1px solid var(--ink);background:var(--bone-2);
+    display:flex;flex-direction:column;
+  }
+  .film__poster{
+    aspect-ratio:2/3;background:var(--orange);position:relative;overflow:hidden;
+    border-bottom:1px solid var(--ink);
+  }
+  .film__poster img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    filter:grayscale(1) contrast(1.45) brightness(1.05);
+    mix-blend-mode:multiply;
+  }
+  .film__poster .stamp-corner{
+    position:absolute;top:14px;right:14px;z-index:3;
+    border:1.5px solid var(--bone);color:var(--bone);
+    padding:6px 10px;font-family:var(--ff-mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;
+  }
+  .film__poster .vol-corner{
+    position:absolute;top:14px;left:14px;z-index:3;
+    color:var(--bone);font-family:var(--ff-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  }
+  .film__poster .title-block{
+    position:absolute;left:18px;right:18px;bottom:18px;z-index:3;color:var(--bone);
+  }
+  .film__poster .title-block h3{
+    font-family:var(--ff-display);font-weight:900;font-size:clamp(36px,4.4vw,56px);
+    line-height:.86;letter-spacing:-.005em;text-transform:uppercase;
+  }
+  .film__poster .title-block .by{
+    margin-top:12px;font-family:var(--ff-edit);font-style:italic;font-size:14px;color:rgba(236,227,208,.85);
+  }
+  .film__poster.tbd{
+    background:var(--ink);
+    display:grid;place-items:center;
+  }
+  .film__poster.tbd::after{
+    content:"";position:absolute;inset:14px;border:1.5px dashed rgba(200,33,12,.55);
+  }
+  .film__poster.tbd .placeholder-content{
+    position:relative;z-index:3;text-align:center;color:var(--bone);padding:30px 24px;
+  }
+  .film__poster.tbd .placeholder-content .lbl{color:var(--orange);margin-bottom:10px;display:block}
+  .film__poster.tbd .placeholder-content h3{
+    font-family:var(--ff-display);font-weight:900;font-size:clamp(34px,4.2vw,52px);
+    line-height:.88;letter-spacing:-.005em;text-transform:uppercase;color:var(--bone);
+  }
+  .film__poster.tbd .placeholder-content p{
+    margin-top:12px;font-family:var(--ff-edit);font-style:italic;font-size:15px;color:rgba(236,227,208,.7);max-width:24ch;margin-inline:auto;
+  }
+  .film__meta{
+    padding:22px 24px;display:grid;gap:6px;
+  }
+  .film__meta .row{
+    display:flex;justify-content:space-between;font-family:var(--ff-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);
+    padding:6px 0;border-bottom:1px dashed var(--rule);
+  }
+  .film__meta .row:last-child{border-bottom:0}
+  .film__meta .row b{font-family:var(--ff-display);font-weight:800;color:var(--ink);letter-spacing:.04em}
+  .film__cta{padding:16px 24px;border-top:1px solid var(--ink);background:var(--ink);color:var(--bone);display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .film__cta a{
+    font-family:var(--ff-display);font-weight:800;font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--bone);
+  }
+  .film__cta a:hover{color:var(--orange)}
+  .film__cta .status{font-family:var(--ff-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(236,227,208,.6)}
+  .film__cta .status.live{color:var(--orange)}
+</style>
 </head>
 <body>
 
-<!-- Shared SVG defs (placeholder mark — stamp/seal) -->
+<!-- Shared SVG defs (BEVP wordmark badge) -->
 <svg width="0" height="0" style="position:absolute;width:0;height:0" aria-hidden="true">
   <defs>
-    <symbol id="feather" viewBox="0 0 40 40">
-      <!-- Outer ring (thin) -->
-      <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5"/>
-      <!-- Inner solid disk -->
-      <circle cx="20" cy="20" r="14" fill="currentColor"/>
+    <symbol id="feather" viewBox="0 0 64 32">
+      <text x="32" y="20" text-anchor="middle" font-family="'Big Shoulders Display','Bebas Neue',sans-serif" font-weight="900" font-size="20" letter-spacing=".4" fill="currentColor">BEVP</text>
+      <rect x="4" y="26" width="56" height="2.5" fill="#C8210C"/>
     </symbol>
   </defs>
 </svg>
@@ -27,13 +97,13 @@
 <header class="bar">
   <div class="bar-inner">
     <a class="brand" href="index.html" aria-label="Bird's Eye View, home">
-      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><use href="#feather"/></svg>
+      <svg class="brand-mark" viewBox="0 0 64 32" aria-hidden="true"><use href="#feather"/></svg>
       <span class="brand-name">Bird's Eye View<small>Project · Est. 2024</small></span>
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="program.html">Program</a>
       <a href="how-it-works.html">How It Works</a>
-      <a href="impact.html">Impact</a>
+      <a href="events.html">Events</a>
       <a href="documentary.html" class="is-active">Documentary</a>
       <a href="get-involved.html">Get Involved</a>
       <a class="apply" href="apply.html">Apply</a>
@@ -43,42 +113,68 @@
 
 <main id="top">
 
-<!-- HERO -->
-<section class="section bone hero">
+<!-- HERO + TWO FILMS -->
+<section class="section bone hero hero--simple">
   <div class="wrap">
     <div class="hero-meta">
       <span class="vol">Field Brief · Vol. 01</span>
       <span class="div"></span>
-      <span class="lbl-sm">Documentary · 2026</span>
+      <span class="lbl-sm">Documentary Slate · 2026</span>
     </div>
+    <h1 class="hero-head dpy reveal">
+      <span class="ln">The</span>
+      <span class="ln"><em>Documentaries</em>.</span>
+    </h1>
+    <p class="hero-lead">Two feature films embedded with the cohorts. Honest, not promotional. The work week by week, the doubt, the rebuilding.</p>
 
-    <div class="hero-grid">
-      <div class="hero-copy reveal">
-        <p class="eyebrow" style="color:var(--ink-soft);margin-bottom:18px">Bird's Eye View Presents</p>
-        <h1 class="hero-head dpy">
-          <span class="ln">After</span>
-          <span class="ln"><em>the</em></span>
-          <span class="ln">Uniform.</span>
-        </h1>
-        <div class="hero-cite"><span class="lbl-sm">Cohort 3 · 2024</span><span class="hero-cite__rule"></span><span class="lbl-sm">Runtime · 78 Minutes</span></div>
-        <p class="hero-lead">A year in the life of Cohort 3. Embedded for fifty-two weeks. Five participants. Selection through completion. Honest, not promotional.</p>
-        <div class="hero-cta">
-          <a class="btn btn--orange" href="#access">Get Access <span class="arrow">→</span></a>
-          <a class="btn btn--ghost" href="program.html">About the Program</a>
-        </div>
-      </div>
+    <div class="films reveal">
 
-      <div class="reveal">
-        <div class="video-block">
-          <div class="scanlines"></div>
-          <div class="crops"></div>
-          <div class="placeholder">
-            <span class="lbl">// Trailer</span>
-            <h3>Coming<br>March 2026</h3>
-            <span class="lbl-sm" style="color:rgba(236,227,208,.6);margin-top:14px;display:inline-block">Documentary · 78 min · Feature</span>
+      <!-- DOCUMENTARY I -->
+      <article class="film">
+        <div class="film__poster">
+          <img src="img/MRC03890.jpg" alt="">
+          <span class="vol-corner">Film № I · Cohort 3</span>
+          <span class="stamp-corner">Mar 2026</span>
+          <div class="title-block">
+            <h3>After<br>the<br>Uniform</h3>
+            <p class="by">Embedded with Cohort 3 · 52 weeks · 5 participants</p>
           </div>
         </div>
-      </div>
+        <div class="film__meta">
+          <div class="row"><span>Runtime</span><b>78 Minutes</b></div>
+          <div class="row"><span>Subject</span><b>Cohort 3 · 2024</b></div>
+          <div class="row"><span>Format</span><b>Feature Documentary</b></div>
+          <div class="row"><span>Release</span><b>March 2026</b></div>
+        </div>
+        <div class="film__cta">
+          <span class="status live">// Pre-Release Access</span>
+          <a href="#access">Get Access →</a>
+        </div>
+      </article>
+
+      <!-- DOCUMENTARY II -->
+      <article class="film">
+        <div class="film__poster tbd">
+          <span class="vol-corner">Film № II</span>
+          <span class="stamp-corner">In Production</span>
+          <div class="placeholder-content">
+            <span class="lbl">// Title TBD</span>
+            <h3>Documentary II</h3>
+            <p>Currently in production. Title and release date to follow.</p>
+          </div>
+        </div>
+        <div class="film__meta">
+          <div class="row"><span>Runtime</span><b>TBD</b></div>
+          <div class="row"><span>Subject</span><b>TBD</b></div>
+          <div class="row"><span>Format</span><b>Feature Documentary</b></div>
+          <div class="row"><span>Release</span><b>TBD · 2026/27</b></div>
+        </div>
+        <div class="film__cta">
+          <span class="status">// Updates Coming</span>
+          <a href="#access">Get Updates →</a>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
@@ -87,19 +183,19 @@
 <section class="band">
   <div class="wrap-wide">
     <div class="band-inner">
-      <svg class="feather" viewBox="0 0 40 40" aria-hidden="true"><use href="#feather"/></svg>
+      <svg class="feather" viewBox="0 0 64 32" aria-hidden="true"><use href="#feather"/></svg>
       <p class="band-quote">Not about <em>heroism</em> — about the hard work of rebuilding.</p>
       <span class="band-tag">Cohort · 3 · Embed</span>
     </div>
   </div>
 </section>
 
-<!-- THE STORY -->
+<!-- AFTER THE UNIFORM — THE STORY -->
 <section class="section bone">
   <div class="wrap">
     <div class="section-head reveal">
       <div class="no"><sup>N°</sup>01</div>
-      <h2 class="ttl">The story<br>behind the program.</h2>
+      <h2 class="ttl">After the Uniform.<br>The story.</h2>
       <div class="meta">// Subject Matter<b>Cohort · 03</b></div>
     </div>
 
@@ -109,44 +205,9 @@
       </p>
       <div class="reveal">
         <p>This is not a recruitment film. There are no triumphant montages, no orchestral swells, no platitudes about service. The work is hard. The doubt is real. The friendships are earned.</p>
-        <p>What you see is the system applied, week by week — the treatment, the biomarkers, the manual, the gatherings — and what it does to people who fully commit to it.</p>
+        <p>What you see is the system applied, week by week — the selection, the therapy, the biomarkers, the gatherings — and what it does to people who fully commit to it.</p>
       </div>
     </div>
-
-    <div class="rule"></div>
-
-    <article class="roster reveal">
-      <header class="roster__head">
-        <h3>Documentary · Specifications</h3>
-        <div class="meta">
-          <span>Format // Feature</span>
-          <span>Subject // Cohort 3</span>
-          <span>Year // 2024</span>
-        </div>
-      </header>
-      <div class="roster__row roster__row--4">
-        <div class="roster__cell">
-          <span class="pos">Runtime</span>
-          <span class="fig">78<span class="unit">min</span></span>
-          <span class="name">Feature Length<small>Single sitting</small></span>
-        </div>
-        <div class="roster__cell">
-          <span class="pos">Release</span>
-          <span class="fig">Mar<span class="unit">2026</span></span>
-          <span class="name">Premiere<small>Limited theatrical + access</small></span>
-        </div>
-        <div class="roster__cell">
-          <span class="pos">Embed</span>
-          <span class="fig">52<span class="unit">wks</span></span>
-          <span class="name">Cohort 3 · 2024<small>Full year embedded</small></span>
-        </div>
-        <div class="roster__cell">
-          <span class="pos">Subjects</span>
-          <span class="fig">5<span class="unit">leads</span></span>
-          <span class="name">Participants Followed<small>Selection → completion</small></span>
-        </div>
-      </div>
-    </article>
   </div>
 </section>
 
@@ -168,11 +229,11 @@
           <div class="field">
             <label for="email">Email Address <span class="req">REQUIRED</span></label>
             <input type="email" id="email" name="email" required placeholder="you@example.com" />
-            <span class="field-help" style="color:rgba(236,227,208,.6)">We'll email you the screening link on release. No spam, unsubscribe any time.</span>
+            <span class="field-help" style="color:rgba(236,227,208,.6)">We'll email screening links and updates on both films. No spam, unsubscribe any time.</span>
           </div>
           <button type="submit" class="btn btn--orange">Get Instant Access <span class="arrow">→</span></button>
         </div>
-        <div class="success" hidden style="border:1px solid var(--orange);padding:24px;background:rgba(220,61,26,.08)">
+        <div class="success" hidden style="border:1px solid var(--orange);padding:24px;background:rgba(200,33,12,.08)">
           <span class="lbl" style="color:var(--orange)">// Confirmed</span>
           <h4 style="font-family:var(--ff-display);font-weight:900;font-size:24px;letter-spacing:.04em;text-transform:uppercase;color:var(--bone);margin-top:8px">Check your email.</h4>
           <p style="color:rgba(236,227,208,.85);margin-top:8px;font-size:15px">We've sent a confirmation. Questions? <a href="mailto:support@birdseyeviewproject.org" style="color:var(--orange);text-decoration:underline">support@birdseyeviewproject.org</a></p>
@@ -235,7 +296,7 @@
   <div class="foot-inner">
     <div>
       <div class="brand" style="margin-bottom:14px">
-        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><use href="#feather"/></svg>
+        <svg class="brand-mark" viewBox="0 0 64 32" aria-hidden="true"><use href="#feather"/></svg>
         <span class="brand-name">Bird's Eye View<small>Project · 501(c)(3)</small></span>
       </div>
       <p class="foot-tag">Honoring the cost.<br>Building the system.<br>Returning the operator to himself.</p>
