@@ -325,6 +325,15 @@ button,input,textarea,select{font:inherit;color:inherit}
 .step .ph{font-family:var(--ff-display);font-weight:900;font-size:48px;line-height:.85;color:var(--orange)}
 .step .ph sup{font-family:var(--ff-edit);font-style:italic;font-weight:500;font-size:.36em;color:var(--ink);vertical-align:1.6em;margin-right:.1em}
 .section.dark .step .ph sup{color:var(--bone)}
+
+/* Steps inside a form (bone card) — always use ink-on-bone styling regardless of section */
+.form .steps{border-color:var(--ink)}
+.form .step{border-bottom-color:var(--ink)}
+.form .step h4{color:var(--ink)}
+.form .step p{color:var(--ink-soft)}
+.form .step .ph sup{color:var(--ink)}
+.form .step .arr{color:var(--ink-soft)}
+.form .step:hover{background:rgba(200,33,12,.06)}
 .step .stamp{
   border:1.5px solid var(--orange);color:var(--orange);
   font-family:var(--ff-mono);font-weight:500;font-size:9px;letter-spacing:.22em;text-transform:uppercase;
@@ -420,28 +429,28 @@ button,input,textarea,select{font:inherit;color:inherit}
 .field{display:grid;gap:6px}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 @media (max-width:680px){.field-row{grid-template-columns:1fr}}
-.field label{font-family:var(--ff-mono);font-weight:500;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:6px}
-.field label .req{color:var(--orange);font-size:9px;font-weight:600}
+.field label{font-family:var(--ff-mono);font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.field label .req{color:var(--orange);font-size:9px;font-weight:600;letter-spacing:.18em}
 .field input[type=text],
 .field input[type=email],
 .field input[type=tel],
 .field input[type=number],
 .field select,
 .field textarea{
-  border:1px solid var(--ink);background:var(--bone);color:var(--ink);
-  padding:14px 16px;font-family:var(--ff-body);font-size:15px;line-height:1.4;
+  border:1.5px solid var(--ink);background:var(--bone);color:var(--ink);
+  padding:14px 16px;font-family:var(--ff-body);font-size:16px;line-height:1.45;
   border-radius:0;-webkit-appearance:none;appearance:none;
   transition:border-color .2s ease, background .2s ease;
 }
 .field input:focus,
 .field select:focus,
-.field textarea:focus{outline:none;border-color:var(--orange);background:var(--bone-2);box-shadow:inset 0 0 0 1px var(--orange)}
+.field textarea:focus{outline:none;border-color:var(--orange);background:#fff;box-shadow:inset 0 0 0 1px var(--orange),0 0 0 3px rgba(200,33,12,.18)}
 .field textarea{resize:vertical;min-height:140px}
 .field select{
   background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230E0D0B' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:right 16px center;padding-right:40px;
 }
-.field-help{font-family:var(--ff-mono);font-size:10px;letter-spacing:.04em;color:var(--ink-soft)}
+.field-help{font-family:var(--ff-mono);font-size:12px;letter-spacing:.04em;color:var(--ink-soft);line-height:1.5}
 .checkbox{display:flex;gap:12px;align-items:flex-start;font-size:13px;line-height:1.5;cursor:pointer}
 .checkbox input{appearance:none;-webkit-appearance:none;width:20px;height:20px;border:1.5px solid var(--ink);background:var(--bone);flex:none;display:grid;place-items:center;cursor:pointer;position:relative;margin-top:1px}
 .checkbox input:checked{background:var(--orange);border-color:var(--orange)}

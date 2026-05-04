@@ -102,16 +102,16 @@
 <section class="section dark">
   <div class="wrap-tight">
     <div class="section-head reveal section-head--small">
-      <h2 class="ttl" style="color:var(--bone)">Phase 1 · The form.</h2>
-      <div class="meta">// Anonymous Submission<b style="color:var(--bone)">Email · Phone · Story</b></div>
+      <h2 class="ttl">Phase 1 · The form.</h2>
+      <div class="meta">// Anonymous Submission<b>Email · Phone · Story</b></div>
     </div>
 
-    <form class="form reveal" style="background:transparent;border-color:var(--rule-bone)" id="applyForm" onsubmit="event.preventDefault();document.getElementById('submitted').hidden=false;document.getElementById('formFields').hidden=true;document.getElementById('submitted').scrollIntoView({behavior:'smooth'});">
+    <form class="form reveal" id="applyForm" onsubmit="event.preventDefault();document.getElementById('submitted').hidden=false;document.getElementById('formFields').hidden=true;document.getElementById('submitted').scrollIntoView({behavior:'smooth'});">
       <div id="formFields" style="display:grid;gap:36px">
 
-        <div class="form-group" style="border-bottom-color:var(--rule-bone)">
+        <div class="form-group">
           <div class="form-group__head">
-            <h3 style="color:var(--bone)">Contact</h3>
+            <h3>Contact</h3>
             <span class="lbl">// 01 Identifiers</span>
           </div>
           <div class="field-row">
@@ -124,12 +124,12 @@
               <input type="tel" id="phone" name="phone" required placeholder="+1 (___) ___-____" />
             </div>
           </div>
-          <span class="field-help" style="color:rgba(236,227,208,.6)">// No names. No service branches. Phase 1 is anonymous to the committee.</span>
+          <span class="field-help">// No names. No service branches. Phase 1 is anonymous to the committee.</span>
         </div>
 
-        <div class="form-group" style="border-bottom-color:var(--rule-bone)">
+        <div class="form-group">
           <div class="form-group__head">
-            <h3 style="color:var(--bone)">Anonymous Background</h3>
+            <h3>Anonymous Background</h3>
             <span class="lbl">// 02 Service</span>
           </div>
           <div class="field-row">
@@ -176,7 +176,7 @@
             <div class="field">
               <label for="deployments">Deployments / Active Years</label>
               <input type="text" id="deployments" name="deployments" placeholder="e.g. 3 deployments · 12 years on duty" />
-              <span class="field-help" style="color:rgba(236,227,208,.6)">Deployment count for military, years on the line for first responders.</span>
+              <span class="field-help">Deployment count for military, years on the line for first responders.</span>
             </div>
           </div>
           <div class="field">
@@ -190,12 +190,12 @@
           </div>
         </div>
 
-        <div class="form-group" style="border-bottom-color:var(--rule-bone)">
+        <div class="form-group">
           <div class="form-group__head">
-            <h3 style="color:var(--bone)">Health &amp; Medical</h3>
+            <h3>Health &amp; Medical</h3>
             <span class="lbl">// 03 Honest Assessment</span>
           </div>
-          <span class="field-help" style="color:rgba(236,227,208,.6);margin-bottom:6px;display:block">// All answers reviewed anonymously and kept confidential. Honest is more useful than impressive.</span>
+          <span class="field-help" style="margin-bottom:6px;display:block">// All answers reviewed anonymously and kept confidential. Honest is more useful than impressive.</span>
 
           <div class="field">
             <label>SSRI / Antidepressant Status <span class="req">REQUIRED</span></label>
@@ -215,7 +215,7 @@
           <div class="field">
             <label for="mental">Mental Health History</label>
             <textarea id="mental" name="mental" rows="4" placeholder="Diagnoses, prior treatment, hospitalizations, suicidality history, sleep, substance use, TBI — anything relevant. Categories OK; specifics OK; 'none' OK."></textarea>
-            <span class="field-help" style="color:rgba(236,227,208,.6)">Phase 2 is a partner-led psych evaluation. This helps the committee understand readiness before that step.</span>
+            <span class="field-help">Phase 2 is a partner-led psych evaluation. This helps the committee understand readiness before that step.</span>
           </div>
 
           <div class="field">
@@ -229,15 +229,15 @@
           </div>
         </div>
 
-        <div class="form-group" style="border-bottom-color:var(--rule-bone)">
+        <div class="form-group">
           <div class="form-group__head">
-            <h3 style="color:var(--bone)">Your Story</h3>
+            <h3>Your Story</h3>
             <span class="lbl">// 04 Merit</span>
           </div>
           <div class="field">
             <label for="story">Personal Story <span class="req">REQUIRED · 200+ words</span></label>
             <textarea id="story" name="story" rows="8" required placeholder="In your own words: what's the situation, what's the work that's in front of you, what's been done and what hasn't."></textarea>
-            <span class="field-help" style="color:rgba(236,227,208,.6)">Reviewed anonymously. Don't include names, units, or identifying ranks. Speak to merit and the work.</span>
+            <span class="field-help">Reviewed anonymously. Don't include names, units, or identifying ranks. Speak to merit and the work.</span>
           </div>
           <div class="field">
             <label for="why">Why War Feather? <span class="req">REQUIRED</span></label>
@@ -256,21 +256,21 @@
 
         <div class="form-group" style="border-bottom:0">
           <div class="form-group__head">
-            <h3 style="color:var(--bone)">Acknowledge</h3>
+            <h3>Acknowledge</h3>
             <span class="lbl">// 05 Required</span>
           </div>
-          <label class="checkbox" style="color:rgba(236,227,208,.85)">
+          <label class="checkbox">
             <input type="checkbox" required />
             <span>I understand the three-phase selection process and that completing Phase 1 does not guarantee acceptance into the program.</span>
           </label>
-          <label class="checkbox" style="color:rgba(236,227,208,.85)">
+          <label class="checkbox">
             <input type="checkbox" required />
             <span>I understand this is not charity. I'm ready to do the work — including the psychological evaluation and physical challenge if selected.</span>
           </label>
 
           <button type="submit" class="btn btn--orange" style="margin-top:14px;width:fit-content">Submit Phase 1 Application <span class="arrow">→</span></button>
 
-          <span class="field-help" style="color:rgba(236,227,208,.55);margin-top:6px">Questions: <a href="mailto:applications@birdseyeviewproject.org" style="color:var(--orange);text-decoration:underline">applications@birdseyeviewproject.org</a></span>
+          <span class="field-help" style="margin-top:6px">Questions: <a href="mailto:applications@birdseyeviewproject.org" style="color:var(--orange);text-decoration:underline">applications@birdseyeviewproject.org</a></span>
         </div>
       </div>
 
@@ -278,8 +278,8 @@
       <div id="submitted" hidden>
         <div style="text-align:center;padding:24px 0">
           <span class="tag-pill">// Phase 1 Application Received</span>
-          <h3 style="font-family:var(--ff-display);font-weight:900;font-size:clamp(40px,6vw,72px);letter-spacing:.005em;text-transform:uppercase;color:var(--bone);margin-top:18px;line-height:.92">You're in motion.</h3>
-          <p style="font-family:var(--ff-edit);font-style:italic;font-size:18px;color:rgba(236,227,208,.85);margin-top:14px;max-width:50ch;margin-inline:auto;line-height:1.4">An independent committee will review your story on merit. We'll be in touch.</p>
+          <h3 style="font-family:var(--ff-display);font-weight:900;font-size:clamp(40px,6vw,72px);letter-spacing:.005em;text-transform:uppercase;color:var(--ink);margin-top:18px;line-height:.92">You're in motion.</h3>
+          <p style="font-family:var(--ff-edit);font-style:italic;font-size:18px;color:var(--ink-soft);margin-top:14px;max-width:50ch;margin-inline:auto;line-height:1.4">An independent committee will review your story on merit. We'll be in touch.</p>
         </div>
 
         <div class="steps" style="margin-top:36px">
