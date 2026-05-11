@@ -89,6 +89,11 @@ button,input,textarea,select{font:inherit;color:inherit}
 .hero-head .ln em{font-style:normal;color:var(--orange)}
 .hero-cite{display:flex;align-items:center;gap:14px;margin-top:14px;color:var(--ink-soft)}
 .hero-cite__rule{flex:1;height:1px;background:var(--rule)}
+.hero-sub{
+  margin-top:14px;font-family:var(--ff-edit);font-style:italic;font-weight:400;
+  font-size:clamp(20px,2.2vw,32px);line-height:1.2;color:var(--ink-soft);max-width:24ch;
+}
+.hero-sub em{font-style:normal;color:var(--orange);font-family:inherit}
 .hero-meta{display:flex;align-items:baseline;gap:18px;margin-bottom:20px}
 .hero-meta .vol{font-family:var(--ff-display);font-weight:800;font-size:14px;letter-spacing:.24em;text-transform:uppercase;color:var(--orange)}
 .hero-meta .div{flex:1;height:1px;background:var(--rule);transform:translateY(-3px)}
@@ -748,6 +753,97 @@ button,input,textarea,select{font:inherit;color:inherit}
   display:inline-flex;align-items:center;gap:6px;border-bottom:2px solid var(--orange);padding-bottom:3px;width:fit-content;
 }
 .prog-card__body .more:hover{color:var(--orange)}
+
+/* === DONATE · ALLOCATION BREAKDOWN === */
+.alloc{
+  border:1px solid var(--ink);background:var(--bone-2);
+}
+.alloc-row{
+  display:grid;grid-template-columns:220px 1fr 90px;gap:18px;align-items:center;
+  padding:18px 24px;border-bottom:1px solid var(--rule);
+}
+.alloc-row:last-child{border-bottom:0}
+.alloc-row .lab{
+  font-family:var(--ff-display);font-weight:900;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);line-height:1.1;
+}
+.alloc-row .lab small{
+  display:block;font-family:var(--ff-mono);font-size:10px;letter-spacing:.18em;color:var(--ink-soft);margin-top:4px;font-weight:400;
+}
+.alloc-row .bar{
+  height:16px;background:rgba(14,13,11,.06);border:1px solid var(--ink);position:relative;overflow:hidden;
+}
+.alloc-row .bar::after{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:var(--w,0%);background:var(--orange);
+  transition:width 1s cubic-bezier(.2,.7,.2,1);
+}
+.alloc-row.in .bar::after{width:var(--w,0%)}
+.alloc-row .pct{
+  font-family:var(--ff-display);font-weight:900;font-size:24px;color:var(--orange);text-align:right;line-height:1;
+  font-feature-settings:"tnum";
+}
+@media (max-width:680px){
+  .alloc-row{grid-template-columns:1fr 60px;gap:10px}
+  .alloc-row .bar{grid-column:1 / -1;order:3}
+}
+
+/* === DONATE · IMPACT TIER CARDS === */
+.impact-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--ink);
+}
+@media (max-width:880px){.impact-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.impact-grid{grid-template-columns:1fr}}
+.impact-card{
+  padding:28px 24px;border-right:1px solid var(--ink);background:var(--bone-2);
+  display:flex;flex-direction:column;gap:10px;position:relative;min-height:200px;
+}
+.impact-card:last-child{border-right:0}
+@media (max-width:880px){
+  .impact-card:nth-child(2n){border-right:0}
+  .impact-card:nth-child(-n+2){border-bottom:1px solid var(--ink)}
+}
+@media (max-width:480px){
+  .impact-card{border-right:0;border-bottom:1px solid var(--ink)}
+  .impact-card:last-child{border-bottom:0}
+}
+.impact-card .amt{font-family:var(--ff-display);font-weight:900;font-size:clamp(40px,3.6vw,52px);line-height:1;color:var(--ink);letter-spacing:-.005em;}
+.impact-card .amt .unit{font-size:.4em;color:var(--orange);letter-spacing:.06em;text-transform:uppercase;display:inline-block;margin-left:.1em;vertical-align:.45em}
+.impact-card .what{
+  font-family:var(--ff-display);font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);line-height:1.2;
+}
+.impact-card p{font-size:13px;line-height:1.5;color:var(--ink-soft);margin-top:auto}
+.impact-card.featured{background:var(--ink);color:var(--bone)}
+.impact-card.featured .amt{color:var(--bone)}
+.impact-card.featured .amt .unit{color:var(--orange)}
+.impact-card.featured .what{color:var(--bone)}
+.impact-card.featured p{color:rgba(236,227,208,.75)}
+.impact-card.featured::before{
+  content:"// Most Sponsored";position:absolute;top:14px;right:14px;
+  font-family:var(--ff-mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);
+}
+
+/* === DONATE · OTHER WAYS GRID === */
+.ways-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:880px){.ways-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.ways-grid{grid-template-columns:1fr}}
+.way{
+  border:1px solid var(--ink);padding:24px 22px;background:var(--bone-2);
+  display:flex;flex-direction:column;gap:8px;transition:background .15s ease;
+}
+.way:hover{background:rgba(200,33,12,.06)}
+.way .ico{font-family:var(--ff-display);font-weight:900;font-size:32px;color:var(--orange);line-height:1}
+.way h4{font-family:var(--ff-display);font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);line-height:1}
+.way p{font-size:14px;line-height:1.5;color:var(--ink-soft)}
+.way a{color:var(--orange-deep);font-family:var(--ff-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-top:auto;display:inline-flex;gap:6px;align-items:center}
+.way a:hover{color:var(--orange)}
+
+/* === SKIP TO CONTENT (a11y) === */
+.skip-link{
+  position:absolute;left:-9999px;top:0;z-index:100;
+  background:var(--ink);color:var(--bone);padding:12px 18px;
+  font-family:var(--ff-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  border:2px solid var(--orange);
+}
+.skip-link:focus{left:12px;top:12px}
 
 /* === PRIVACY / LONG-FORM PAGE === */
 .longform{padding:clamp(56px,8vw,128px) 0}
