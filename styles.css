@@ -65,10 +65,20 @@ button,input,textarea,select{font:inherit;color:inherit}
   padding:18px var(--pad-x);
 }
 .brand{display:flex;align-items:center;gap:12px}
-.brand-mark{width:34px;height:42px;flex:none;display:block}
-/* Per-context two-tone coloring for the feather+eye icon.
-   Path classes: .bevp-feather (orange top portion) and .bevp-eye (dark eye/wing portion).
+/* Official BEVP horizontal lockup. Aspect ratio ~1.65:1.
+   Sizing keyed off height so it scales cleanly between contexts. */
+.brand-logo{height:38px;width:auto;display:block;flex:none}
+@media (max-width:520px){.brand-logo{height:32px}}
+/* Footer uses the white/orange variant on the dark surface. Slightly larger
+   so the wordmark stays legible at footer scale. */
+.foot .brand--foot{margin-bottom:18px}
+.foot .brand--foot .brand-logo{height:52px}
+@media (max-width:520px){.foot .brand--foot .brand-logo{height:40px}}
+
+/* Icon-only feather+eye mark (still used in hero poster + orange band as a corner mark).
+   Path classes: .bevp-feather (orange top) and .bevp-eye (dark wing/eye).
    Default (light bg): feather = orange, eye = ink. */
+.brand-mark{width:34px;height:42px;flex:none;display:block}
 .bevp-feather{fill:var(--orange)}
 .bevp-eye{fill:var(--ink)}
 /* On any dark surface, swap eye to bone so it stays visible */
@@ -78,8 +88,6 @@ button,input,textarea,select{font:inherit;color:inherit}
 .poster .bevp-eye,
 .imghero .bevp-eye,
 .final .bevp-eye{fill:var(--bone)}
-.brand-name{font-family:var(--ff-display);font-weight:900;letter-spacing:.04em;text-transform:uppercase;font-size:18px;line-height:1}
-.brand-name small{display:block;font-family:var(--ff-mono);font-weight:400;font-size:9px;letter-spacing:.34em;color:var(--ink-soft);margin-top:3px}
 .nav{display:flex;align-items:center;gap:clamp(14px,2vw,28px)}
 .nav a{font-family:var(--ff-mono);font-weight:500;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);position:relative;padding:6px 0}
 .nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:var(--orange);transition:right .24s ease}
