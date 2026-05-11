@@ -8,9 +8,9 @@
   --bone-2:#F4ECD9;
   --ink:#0E0D0B;
   --ink-soft:#262220;
-  --orange:#C8210C;
-  --orange-deep:#921306;
-  --red-tint:rgba(200,33,12,.09);
+  --orange:#FF2A00;
+  --orange-deep:#C81C00;
+  --red-tint:rgba(255,42,0,.09);
   --rule:rgba(14,13,11,.18);
   --rule-soft:rgba(14,13,11,.10);
   --rule-bone:rgba(236,227,208,.22);
@@ -64,8 +64,20 @@ button,input,textarea,select{font:inherit;color:inherit}
   display:flex;align-items:center;justify-content:space-between;
   padding:18px var(--pad-x);
 }
-.brand{display:flex;align-items:center;gap:14px}
-.brand-mark{width:64px;height:32px;flex:none;display:block;overflow:visible}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{width:34px;height:42px;flex:none;display:block}
+/* Per-context two-tone coloring for the feather+eye icon.
+   Path classes: .bevp-feather (orange top portion) and .bevp-eye (dark eye/wing portion).
+   Default (light bg): feather = orange, eye = ink. */
+.bevp-feather{fill:var(--orange)}
+.bevp-eye{fill:var(--ink)}
+/* On any dark surface, swap eye to bone so it stays visible */
+.section.dark .bevp-eye,
+.foot .bevp-eye,
+.band .bevp-eye,
+.poster .bevp-eye,
+.imghero .bevp-eye,
+.final .bevp-eye{fill:var(--bone)}
 .brand-name{font-family:var(--ff-display);font-weight:900;letter-spacing:.04em;text-transform:uppercase;font-size:18px;line-height:1}
 .brand-name small{display:block;font-family:var(--ff-mono);font-weight:400;font-size:9px;letter-spacing:.34em;color:var(--ink-soft);margin-top:3px}
 .nav{display:flex;align-items:center;gap:clamp(14px,2vw,28px)}
@@ -98,7 +110,7 @@ button,input,textarea,select{font:inherit;color:inherit}
 .hero-meta .vol{font-family:var(--ff-display);font-weight:800;font-size:14px;letter-spacing:.24em;text-transform:uppercase;color:var(--orange)}
 .hero-meta .div{flex:1;height:1px;background:var(--rule);transform:translateY(-3px)}
 .hero-lead{margin-top:clamp(18px,2.5vw,28px);max-width:46ch;font-size:clamp(15px,1.1vw,17px);line-height:1.6;color:var(--ink-soft)}
-.hero-quote{margin-top:22px;padding:14px 16px 14px 18px;border-left:3px solid var(--orange);background:rgba(200,33,12,.06)}
+.hero-quote{margin-top:22px;padding:14px 16px 14px 18px;border-left:3px solid var(--orange);background:rgba(255,42,0,.06)}
 .hero-quote .lbl{color:var(--orange-deep)}
 .hero-quote p{margin-top:6px;font-family:var(--ff-display);font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;line-height:1.35}
 .hero-cta{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
@@ -130,7 +142,7 @@ button,input,textarea,select{font:inherit;color:inherit}
 .poster{position:relative;aspect-ratio:3/4;background:var(--orange);overflow:hidden;isolation:isolate}
 .poster__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.45) brightness(1.05);mix-blend-mode:multiply;transition:opacity .8s ease}
 .poster__img.is-out{opacity:0}
-.poster__feather{position:absolute;top:22px;left:22px;width:96px;height:48px;color:var(--bone);z-index:2;overflow:visible}
+.poster__feather{position:absolute;top:20px;left:20px;width:52px;height:64px;z-index:2}
 .poster__title{
   position:absolute;left:22px;right:22px;bottom:84px;z-index:2;
   font-family:var(--ff-display);font-weight:900;letter-spacing:-.005em;line-height:.86;text-transform:uppercase;
@@ -159,7 +171,7 @@ button,input,textarea,select{font:inherit;color:inherit}
   border-block:1px solid var(--ink);
 }
 .band-inner{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(24px,4vw,56px);align-items:center}
-.band-inner .feather{width:120px;height:60px;flex:none;color:var(--bone);opacity:.95;overflow:visible}
+.band-inner .feather{width:72px;height:88px;flex:none;opacity:.95}
 .band-quote{font-family:var(--ff-display);font-weight:900;font-size:clamp(34px,5.6vw,82px);line-height:.9;letter-spacing:-.005em;text-transform:uppercase}
 .band-quote em{font-family:var(--ff-edit);font-style:italic;font-weight:500;text-transform:none;letter-spacing:0;color:var(--bone)}
 .band-tag{font-family:var(--ff-mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;writing-mode:vertical-rl;transform:rotate(180deg);color:rgba(236,227,208,.85);align-self:stretch;display:flex;align-items:center}
@@ -334,7 +346,7 @@ button,input,textarea,select{font:inherit;color:inherit}
 }
 .section.dark .step{border-bottom-color:var(--rule-bone)}
 .step:last-child{border-bottom:0}
-.step:hover{background:rgba(200,33,12,.08)}
+.step:hover{background:rgba(255,42,0,.08)}
 .step .ph{font-family:var(--ff-display);font-weight:900;font-size:48px;line-height:.85;color:var(--orange)}
 .step .ph sup{font-family:var(--ff-edit);font-style:italic;font-weight:500;font-size:.36em;color:var(--ink);vertical-align:1.6em;margin-right:.1em}
 .section.dark .step .ph sup{color:var(--bone)}
@@ -346,7 +358,7 @@ button,input,textarea,select{font:inherit;color:inherit}
 .form .step p{color:var(--ink-soft)}
 .form .step .ph sup{color:var(--ink)}
 .form .step .arr{color:var(--ink-soft)}
-.form .step:hover{background:rgba(200,33,12,.06)}
+.form .step:hover{background:rgba(255,42,0,.06)}
 .step .stamp{
   border:1.5px solid var(--orange);color:var(--orange);
   font-family:var(--ff-mono);font-weight:500;font-size:9px;letter-spacing:.22em;text-transform:uppercase;
@@ -461,7 +473,7 @@ button,input,textarea,select{font:inherit;color:inherit}
 }
 .field input:focus,
 .field select:focus,
-.field textarea:focus{outline:none;border-color:var(--orange);background:#fff;box-shadow:inset 0 0 0 1px var(--orange),0 0 0 3px rgba(200,33,12,.18)}
+.field textarea:focus{outline:none;border-color:var(--orange);background:#fff;box-shadow:inset 0 0 0 1px var(--orange),0 0 0 3px rgba(255,42,0,.18)}
 .field textarea{resize:vertical;min-height:140px}
 .field select{
   background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230E0D0B' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
@@ -558,7 +570,7 @@ button,input,textarea,select{font:inherit;color:inherit}
 .video-block .placeholder .lbl{color:var(--orange);margin-bottom:12px}
 .video-block .placeholder h3{font-family:var(--ff-display);font-weight:900;font-size:clamp(40px,6vw,80px);letter-spacing:.01em;text-transform:uppercase;line-height:1;color:var(--bone)}
 .video-block .scanlines{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0,transparent 3px,rgba(236,227,208,.04) 3px,rgba(236,227,208,.04) 4px);pointer-events:none;z-index:1}
-.video-block .crops{position:absolute;inset:14px;border:1px dashed rgba(200,33,12,.45);pointer-events:none;z-index:1}
+.video-block .crops{position:absolute;inset:14px;border:1px dashed rgba(255,42,0,.45);pointer-events:none;z-index:1}
 .video-block::before,
 .video-block::after{content:"";position:absolute;width:18px;height:18px;border-color:var(--orange);z-index:3}
 .video-block::before{top:14px;left:14px;border-top:2px solid;border-left:2px solid}
@@ -621,7 +633,7 @@ button,input,textarea,select{font:inherit;color:inherit}
   transition:border-color .2s ease;
 }
 .foot-news__form input::placeholder{color:rgba(236,227,208,.5)}
-.foot-news__form input:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(200,33,12,.18)}
+.foot-news__form input:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,42,0,.18)}
 .foot-news__form button{
   font-family:var(--ff-display);font-weight:800;font-size:13px;letter-spacing:.16em;text-transform:uppercase;
   padding:14px 22px;border:1.5px solid var(--orange);background:var(--orange);color:var(--bone);
@@ -639,7 +651,7 @@ button,input,textarea,select{font:inherit;color:inherit}
   transition:all .2s ease;
 }
 .foot-social a:hover{
-  border-color:var(--orange);color:var(--orange);background:rgba(200,33,12,.06);
+  border-color:var(--orange);color:var(--orange);background:rgba(255,42,0,.06);
 }
 .foot-social svg{width:16px;height:16px;display:block;fill:currentColor}
 
@@ -837,7 +849,7 @@ button,input,textarea,select{font:inherit;color:inherit}
   border:1px solid var(--ink);padding:24px 22px;background:var(--bone-2);
   display:flex;flex-direction:column;gap:8px;transition:background .15s ease;
 }
-.way:hover{background:rgba(200,33,12,.06)}
+.way:hover{background:rgba(255,42,0,.06)}
 .way .ico{font-family:var(--ff-display);font-weight:900;font-size:32px;color:var(--orange);line-height:1}
 .way h4{font-family:var(--ff-display);font-weight:800;font-size:18px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);line-height:1}
 .way p{font-size:14px;line-height:1.5;color:var(--ink-soft)}

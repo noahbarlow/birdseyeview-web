@@ -1,0 +1,15 @@
+{
+  "name": "Bird's Eye View Project",
+  "short_name": "BEVP",
+  "description": "A decade of action-based programs for veterans and first responders. War Feather Program, 7X Project, and the documentary slate.",
+  "start_url": "/birdseyeview-web/",
+  "scope": "/birdseyeview-web/",
+  "display": "standalone",
+  "background_color": "#ECE3D0",
+  "theme_color": "#0E0D0B",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "favicon.svg",  "sizes": "any",     "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
