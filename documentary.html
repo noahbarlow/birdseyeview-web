@@ -101,12 +101,12 @@
       <span class="brand-name">Bird's Eye View<small>Project · Est. 2024</small></span>
     </a>
     <nav class="nav" aria-label="Primary">
-      <a href="program.html">Program</a>
-      <a href="how-it-works.html">How It Works</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
       <a href="events.html">Events</a>
       <a href="documentary.html" class="is-active">Documentary</a>
-      <a href="get-involved.html">Get Involved</a>
-      <a class="apply" href="apply.html">Apply</a>
+      <a href="apply.html">Apply</a>
+      <a class="apply" href="https://birdseyeviewproject.givingfuel.com/donation" target="_blank" rel="noopener">Donate</a>
     </nav>
   </div>
 </header>
@@ -293,6 +293,19 @@
 </section>
 
 <footer class="foot">
+  <!-- Newsletter signup -->
+  <div class="foot-news">
+    <div class="foot-news__head">
+      <h6>Field Brief · Vol. 02</h6>
+      <p>Quarterly updates from the field. Cohort releases, event dates, documentary news. No spam.</p>
+    </div>
+    <form class="foot-news__form" onsubmit="event.preventDefault();this.querySelector('input').value='';this.querySelector('button').textContent='Subscribed →';this.querySelector('button').disabled=true;">
+      <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address" />
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+  <!-- Main footer columns -->
   <div class="foot-inner">
     <div>
       <div class="brand" style="margin-bottom:14px">
@@ -301,14 +314,63 @@
       </div>
       <p class="foot-tag">Honoring the cost.<br>Building the system.<br>Returning the operator to himself.</p>
     </div>
-    <div><h6>Program</h6><ul><li><a href="program.html">War Feather</a></li><li><a href="how-it-works.html">How it works</a></li><li><a href="7x-project.html">7X Project</a></li><li><a href="documentary.html">Documentary</a></li></ul></div>
-    <div><h6>Support</h6><ul><li><a href="get-involved.html">Donate</a></li><li><a href="get-involved.html">Monthly</a></li><li><a href="apply.html">Apply</a></li><li><a href="mailto:support@birdseyeviewproject.org">Contact</a></li></ul></div>
-    <div><h6>Legal</h6><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li><li><a href="#">Cookies</a></li><li><a href="#">Press</a></li></ul></div>
+    <div>
+      <h6>Mission</h6>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="about.html#timeline">Timeline</a></li>
+        <li><a href="about.html#board">Board</a></li>
+        <li><a href="mailto:info@birdseyeviewproject.org">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h6>Programs</h6>
+      <ul>
+        <li><a href="programs.html">All Programs</a></li>
+        <li><a href="program.html">War Feather</a></li>
+        <li><a href="7x-project.html">7X Project</a></li>
+        <li><a href="documentary.html">Documentary</a></li>
+      </ul>
+    </div>
+    <div>
+      <h6>Get Involved</h6>
+      <ul>
+        <li><a href="https://birdseyeviewproject.givingfuel.com/donation" target="_blank" rel="noopener">Donate</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="get-involved.html">Sponsor a Vet</a></li>
+      </ul>
+    </div>
   </div>
-  <div class="foot-base">
-    <span>© 2026 · Bird's Eye View Project · All Rights Reserved</span>
-    <span class="stamp">Authorized · Field Manual · Vol. 01</span>
+
+  <!-- Social + tax row -->
+  <div class="foot-base" style="margin-top:36px;border-top:0;padding-top:0">
+    <div class="foot-social">
+      <a href="https://www.instagram.com/birdseyeviewproject/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c-2.7 0-3 .01-4.1.06-1.1.05-1.8.22-2.5.48a5 5 0 0 0-1.8 1.18 5 5 0 0 0-1.18 1.8c-.26.7-.43 1.4-.48 2.5C2 9.01 2 9.3 2 12s.01 3 .06 4.1c.05 1.1.22 1.8.48 2.5a5 5 0 0 0 1.18 1.8 5 5 0 0 0 1.8 1.18c.7.26 1.4.43 2.5.48C9.01 22 9.3 22 12 22s3-.01 4.1-.06c1.1-.05 1.8-.22 2.5-.48a5 5 0 0 0 1.8-1.18 5 5 0 0 0 1.18-1.8c.26-.7.43-1.4.48-2.5.05-1.1.06-1.4.06-4.1s-.01-3-.06-4.1c-.05-1.1-.22-1.8-.48-2.5a5 5 0 0 0-1.18-1.8 5 5 0 0 0-1.8-1.18c-.7-.26-1.4-.43-2.5-.48C15 2 14.7 2 12 2zm0 1.8c2.65 0 2.96.01 4 .06 1 .05 1.5.2 1.85.34.46.18.8.4 1.15.75.35.35.57.69.75 1.15.14.36.3.86.34 1.86.05 1.05.06 1.36.06 4s-.01 2.96-.06 4c-.05 1-.2 1.5-.34 1.86a3 3 0 0 1-.75 1.15 3 3 0 0 1-1.15.75c-.36.14-.86.3-1.86.34-1.04.05-1.35.06-4 .06s-2.96-.01-4-.06c-1-.05-1.5-.2-1.86-.34a3 3 0 0 1-1.15-.75 3 3 0 0 1-.75-1.15c-.14-.36-.3-.86-.34-1.86-.05-1.04-.06-1.35-.06-4s.01-2.96.06-4c.05-1 .2-1.5.34-1.86.18-.46.4-.8.75-1.15.35-.35.69-.57 1.15-.75.36-.14.86-.3 1.86-.34 1.04-.05 1.35-.06 4-.06zm0 3.06a5.14 5.14 0 1 0 0 10.28 5.14 5.14 0 0 0 0-10.28zm0 8.47a3.33 3.33 0 1 1 0-6.67 3.33 3.33 0 0 1 0 6.67zm6.55-8.67a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/channel/UCv9hTEMjRXF3NIPE7tGruKQ" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8c.3 1 1.1 1.8 2.1 2.1 1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+      </a>
+      <a href="https://twitter.com/BEVProject" target="_blank" rel="noopener" aria-label="Twitter / X">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/BirdsEyeViewProject" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.5h3.05V9.41c0-3.02 1.8-4.7 4.54-4.7 1.32 0 2.7.24 2.7.24v2.97h-1.52c-1.5 0-1.96.93-1.96 1.88v2.26h3.34l-.53 3.5h-2.8V24C19.6 23.1 24 18.1 24 12.07z"/></svg>
+      </a>
+    </div>
+    <span class="stamp">501(c)(3) · Tax ID 47-4019107</span>
     <span>Honoring · The · Cost</span>
+  </div>
+
+  <!-- Copyright row -->
+  <div class="foot-base">
+    <span>© 2026 · Bird's Eye View Project · Texas Non-Profit Corporation</span>
+    <ul style="display:flex;gap:18px;list-style:none;padding:0;margin:0">
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="privacy.html#cookies">Cookies</a></li>
+      <li><a href="mailto:info@birdseyeviewproject.org">Contact</a></li>
+    </ul>
   </div>
 </footer>
 
