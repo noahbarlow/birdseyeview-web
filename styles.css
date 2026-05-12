@@ -65,15 +65,15 @@ button,input,textarea,select{font:inherit;color:inherit}
   padding:18px var(--pad-x);
 }
 .brand{display:flex;align-items:center;gap:12px}
-/* Official BEVP horizontal lockup. Aspect ratio ~1.65:1.
-   Sizing keyed off height so it scales cleanly between contexts. */
-.brand-logo{height:38px;width:auto;display:block;flex:none}
-@media (max-width:520px){.brand-logo{height:32px}}
-/* Footer uses the white/orange variant on the dark surface. Slightly larger
-   so the wordmark stays legible at footer scale. */
+/* Header uses wordmark-only (BEVP + tagline, no icon). Aspect ~2.45:1.
+   Sizing keyed off height for consistent scaling across breakpoints. */
+.brand-logo{height:34px;width:auto;display:block;flex:none}
+@media (max-width:520px){.brand-logo{height:28px}}
+/* Footer keeps the full Horizontal lockup (icon + wordmark) at larger scale
+   for brand presence at the bottom of the page. Aspect ~1.65:1. */
 .foot .brand--foot{margin-bottom:18px}
-.foot .brand--foot .brand-logo{height:52px}
-@media (max-width:520px){.foot .brand--foot .brand-logo{height:40px}}
+.foot .brand--foot .brand-logo{height:62px}
+@media (max-width:520px){.foot .brand--foot .brand-logo{height:48px}}
 
 /* Icon-only feather+eye mark (still used in hero poster + orange band as a corner mark).
    Path classes: .bevp-feather (orange top) and .bevp-eye (dark wing/eye).
