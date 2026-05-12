@@ -149,39 +149,56 @@
     </div>
 
     <p class="reveal" style="font-family:var(--ff-edit);font-style:italic;font-size:clamp(20px,2vw,26px);max-width:50ch;color:rgba(236,227,208,.85);margin-bottom:36px;line-height:1.35">
-      90% of every donor dollar goes directly to programs &mdash; treatment, training, biomarkers, gathering. The remaining 10% funds the operations that keep this running and honest.
+      Your donor dollar splits two ways. 90% goes directly to programs. 10% keeps the operations running and honest.
     </p>
 
-    <div class="alloc reveal" style="background:transparent;border-color:var(--rule-bone)">
-      <div class="alloc-row" style="--w:90%;border-bottom-color:var(--rule-bone)">
-        <div class="lab" style="color:var(--bone)">Direct to programs<small style="color:rgba(236,227,208,.6)">Partner-led treatment + cohort delivery</small></div>
-        <div class="bar" style="background:rgba(236,227,208,.06);border-color:var(--rule-bone)"></div>
-        <div class="pct">90%</div>
+    <!-- Tier 1: where your dollar splits (totals 100%) -->
+    <div class="split reveal" role="group" aria-label="Allocation of donor dollars">
+      <div class="split__cell is-programs">
+        <span class="lab">// Direct to programs</span>
+        <span class="figure">90<span class="unit">%</span></span>
+        <h4>To partner-led programs<small>Therapy · Biomarkers · Manual · Gathering</small></h4>
       </div>
-      <div class="alloc-row" style="--w:25%;border-bottom-color:var(--rule-bone)">
-        <div class="lab" style="color:var(--bone)">&mdash; Therapy<small style="color:rgba(236,227,208,.6)">Coming Home Project · psych integration</small></div>
-        <div class="bar" style="background:rgba(236,227,208,.06);border-color:var(--rule-bone)"></div>
-        <div class="pct">25%</div>
+      <div class="split__cell">
+        <span class="lab">// Operations &amp; admin</span>
+        <span class="figure">10<span class="unit">%</span></span>
+        <h4>Compliance &amp; infrastructure<small>Accounting · audit · platform</small></h4>
       </div>
-      <div class="alloc-row" style="--w:20%;border-bottom-color:var(--rule-bone)">
-        <div class="lab" style="color:var(--bone)">&mdash; Biomarkers<small style="color:rgba(236,227,208,.6)">Transcend / UVA · blood panels + hormones</small></div>
-        <div class="bar" style="background:rgba(236,227,208,.06);border-color:var(--rule-bone)"></div>
-        <div class="pct">20%</div>
+    </div>
+
+    <p class="reveal" style="margin-top:48px;margin-bottom:18px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(236,227,208,.7)">
+      // Inside the 90% &mdash; the program budget for one $15K full sponsorship
+    </p>
+
+    <!-- Tier 2: program $ breakdown -->
+    <div class="budget reveal">
+      <div class="budget__head">
+        <span>Program budget · 1 participant · 1 year</span>
+        <span class="total">$13,500</span>
       </div>
-      <div class="alloc-row" style="--w:30%;border-bottom-color:var(--rule-bone)">
-        <div class="lab" style="color:var(--bone)">&mdash; Manual + Coaching<small style="color:rgba(236,227,208,.6)">52-week curriculum + weekly cadence</small></div>
-        <div class="bar" style="background:rgba(236,227,208,.06);border-color:var(--rule-bone)"></div>
-        <div class="pct">30%</div>
+      <div class="budget__row">
+        <span class="name">Therapy<small>Coming Home Project · psych integration</small></span>
+        <span class="amt">$3,750</span>
+        <span class="pct">25%</span>
       </div>
-      <div class="alloc-row" style="--w:15%;border-bottom-color:var(--rule-bone)">
-        <div class="lab" style="color:var(--bone)">&mdash; Annual Gathering<small style="color:rgba(236,227,208,.6)">Continuation event + travel + lodging</small></div>
-        <div class="bar" style="background:rgba(236,227,208,.06);border-color:var(--rule-bone)"></div>
-        <div class="pct">15%</div>
+      <div class="budget__row">
+        <span class="name">Biomarkers<small>Transcend / UVA · blood panels + hormones</small></span>
+        <span class="amt">$3,000</span>
+        <span class="pct">20%</span>
       </div>
-      <div class="alloc-row" style="--w:10%;border-bottom-color:transparent">
-        <div class="lab" style="color:var(--bone)">Operations &amp; admin<small style="color:rgba(236,227,208,.6)">Compliance, accounting, infrastructure</small></div>
-        <div class="bar" style="background:rgba(236,227,208,.06);border-color:var(--rule-bone)"></div>
-        <div class="pct">10%</div>
+      <div class="budget__row">
+        <span class="name">Manual + Coaching<small>52-week curriculum + weekly cadence</small></span>
+        <span class="amt">$4,500</span>
+        <span class="pct">30%</span>
+      </div>
+      <div class="budget__row">
+        <span class="name">Annual Gathering<small>Continuation event · travel · lodging</small></span>
+        <span class="amt">$2,250</span>
+        <span class="pct">15%</span>
+      </div>
+      <div class="budget__foot">
+        <span>Program total (90% of $15K sponsorship)</span>
+        <b>$13,500 · 90%</b>
       </div>
     </div>
 
