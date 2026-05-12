@@ -152,54 +152,55 @@
       Your donor dollar splits two ways. 90% goes directly to programs. 10% keeps the operations running and honest.
     </p>
 
-    <!-- Tier 1: where your dollar splits (totals 100%) -->
-    <div class="split reveal" role="group" aria-label="Allocation of donor dollars">
-      <div class="split__cell is-programs">
-        <span class="lab">// Direct to programs</span>
-        <span class="figure">90<span class="unit">%</span></span>
-        <h4>To partner-led programs<small>Therapy · Biomarkers · Manual · Gathering</small></h4>
-      </div>
-      <div class="split__cell">
-        <span class="lab">// Operations &amp; admin</span>
-        <span class="figure">10<span class="unit">%</span></span>
-        <h4>Compliance &amp; infrastructure<small>Accounting · audit · platform</small></h4>
-      </div>
-    </div>
+    <!-- Tiered allocation: TOTAL → Programs/Ops → program breakdown -->
+    <div class="alloc-v2 reveal" role="group" aria-label="Allocation of donor dollars">
 
-    <p class="reveal" style="margin-top:48px;margin-bottom:18px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(236,227,208,.7)">
-      // Inside the 90% &mdash; the program budget for one $15K full sponsorship
-    </p>
+      <!-- Tier 1 · Total reference -->
+      <div class="alloc-v2__row alloc-v2__row--total" style="--w:100%">
+        <div class="lab">// Every donor dollar</div>
+        <div class="bar"></div>
+        <div class="pct"><span class="num">100%</span></div>
+      </div>
 
-    <!-- Tier 2: program $ breakdown -->
-    <div class="budget reveal">
-      <div class="budget__head">
-        <span>Program budget · 1 participant · 1 year</span>
-        <span class="total">$13,500</span>
+      <!-- Tier 2 · 90 / 10 split -->
+      <div class="alloc-v2__row alloc-v2__row--major" style="--w:90%">
+        <div class="lab">Direct to programs<small>Partner-led treatment + cohort delivery</small></div>
+        <div class="bar"></div>
+        <div class="pct"><span class="num">90%</span></div>
       </div>
-      <div class="budget__row">
-        <span class="name">Therapy<small>Coming Home Project · psych integration</small></span>
-        <span class="amt">$3,750</span>
-        <span class="pct">25%</span>
+      <div class="alloc-v2__row alloc-v2__row--major" style="--w:10%">
+        <div class="lab">Operations &amp; admin<small>Compliance · accounting · infrastructure</small></div>
+        <div class="bar"></div>
+        <div class="pct"><span class="num">10%</span></div>
       </div>
-      <div class="budget__row">
-        <span class="name">Biomarkers<small>Transcend / UVA · blood panels + hormones</small></span>
-        <span class="amt">$3,000</span>
-        <span class="pct">20%</span>
+
+      <!-- Section header before sub-breakdown -->
+      <div class="alloc-v2__section">
+        // Inside the 90% &mdash; <b>program budget for one $15K full sponsorship</b>
       </div>
-      <div class="budget__row">
-        <span class="name">Manual + Coaching<small>52-week curriculum + weekly cadence</small></span>
-        <span class="amt">$4,500</span>
-        <span class="pct">30%</span>
+
+      <!-- Tier 3 · Program breakdown (sum = 90%) -->
+      <div class="alloc-v2__row alloc-v2__row--sub" style="--w:25%">
+        <div class="lab">Therapy<small>Coming Home · psych integration</small></div>
+        <div class="bar"></div>
+        <div class="pct"><span class="num">25%</span><span class="amt">$3,750</span></div>
       </div>
-      <div class="budget__row">
-        <span class="name">Annual Gathering<small>Continuation event · travel · lodging</small></span>
-        <span class="amt">$2,250</span>
-        <span class="pct">15%</span>
+      <div class="alloc-v2__row alloc-v2__row--sub" style="--w:20%">
+        <div class="lab">Biomarkers<small>Transcend / UVA · panels + hormones</small></div>
+        <div class="bar"></div>
+        <div class="pct"><span class="num">20%</span><span class="amt">$3,000</span></div>
       </div>
-      <div class="budget__foot">
-        <span>Program total (90% of $15K sponsorship)</span>
-        <b>$13,500 · 90%</b>
+      <div class="alloc-v2__row alloc-v2__row--sub" style="--w:30%">
+        <div class="lab">Manual + Coaching<small>52-week curriculum + weekly cadence</small></div>
+        <div class="bar"></div>
+        <div class="pct"><span class="num">30%</span><span class="amt">$4,500</span></div>
       </div>
+      <div class="alloc-v2__row alloc-v2__row--sub" style="--w:15%">
+        <div class="lab">Annual Gathering<small>Continuation · travel · lodging</small></div>
+        <div class="bar"></div>
+        <div class="pct"><span class="num">15%</span><span class="amt">$2,250</span></div>
+      </div>
+
     </div>
 
     <p class="reveal" style="margin-top:32px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(236,227,208,.6)">
@@ -485,7 +486,7 @@
   // Animate allocation bars when scrolled into view
   if("IntersectionObserver" in window){
     var io2=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io2.unobserve(e.target)}})},{threshold:.2});
-    document.querySelectorAll(".alloc-row").forEach(function(el){io2.observe(el)});
+    document.querySelectorAll(".alloc-v2__row").forEach(function(el){io2.observe(el)});
   }
 })();
 </script>

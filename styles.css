@@ -782,6 +782,79 @@ button,input,textarea,select{font:inherit;color:inherit}
 }
 .prog-card__body .more:hover{color:var(--orange)}
 
+/* === DONATE · ALLOCATION BARS (tiered: total → programs/ops → breakdown) === */
+.alloc-v2{
+  border:1px solid var(--rule-bone);background:transparent;
+}
+.alloc-v2__row{
+  display:grid;grid-template-columns:220px 1fr 90px;gap:18px;align-items:center;
+  padding:18px 24px;border-bottom:1px solid var(--rule-bone);
+}
+.alloc-v2__row:last-child{border-bottom:0}
+.alloc-v2__row .lab{
+  font-family:var(--ff-display);font-weight:900;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:var(--bone);line-height:1.15;
+}
+.alloc-v2__row .lab small{
+  display:block;font-family:var(--ff-mono);font-size:10px;letter-spacing:.18em;color:rgba(236,227,208,.55);margin-top:4px;font-weight:400;text-transform:uppercase;
+}
+.alloc-v2__row .bar{
+  height:18px;background:rgba(236,227,208,.06);border:1px solid var(--rule-bone);position:relative;overflow:hidden;
+}
+.alloc-v2__row .bar::after{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:0;background:var(--orange);
+  transition:width 1.1s cubic-bezier(.2,.7,.2,1);
+}
+.alloc-v2__row.in .bar::after{width:var(--w,0%)}
+.alloc-v2__row .pct{
+  display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:3px;
+}
+.alloc-v2__row .pct .num{
+  font-family:var(--ff-display);font-weight:900;font-size:24px;color:var(--orange);line-height:1;font-feature-settings:"tnum";
+}
+.alloc-v2__row .pct .amt{
+  font-family:var(--ff-mono);font-weight:500;font-size:11px;color:rgba(236,227,208,.6);letter-spacing:.06em;line-height:1;
+}
+
+/* Tier 1 — Total reference row */
+.alloc-v2__row--total{
+  background:rgba(255,42,0,.08);border-bottom:2px solid var(--orange);
+}
+.alloc-v2__row--total .lab{font-size:11px;letter-spacing:.22em;font-family:var(--ff-mono);font-weight:500;color:var(--orange)}
+.alloc-v2__row--total .bar{height:8px;background:rgba(255,42,0,.15);border-color:var(--orange)}
+.alloc-v2__row--total .bar::after{background:var(--orange)}
+.alloc-v2__row--total .pct .num{font-size:18px;color:var(--orange)}
+
+/* Tier 2 — Major split (programs vs ops) */
+.alloc-v2__row--major{
+  background:rgba(236,227,208,.02);
+}
+.alloc-v2__row--major .lab{font-size:17px}
+.alloc-v2__row--major .pct .num{font-size:32px}
+
+/* Section header between major and sub */
+.alloc-v2__section{
+  padding:14px 24px;border-bottom:1px solid var(--rule-bone);background:rgba(236,227,208,.03);
+  font-family:var(--ff-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(236,227,208,.65);
+}
+.alloc-v2__section b{font-family:var(--ff-display);font-weight:800;letter-spacing:.14em;color:var(--bone)}
+
+/* Tier 3 — Sub-rows (program breakdown inside 90%) */
+.alloc-v2__row--sub{
+  padding-left:48px;position:relative;
+}
+.alloc-v2__row--sub::before{
+  content:"";position:absolute;left:24px;top:50%;width:14px;height:1px;background:var(--rule-bone);
+}
+.alloc-v2__row--sub .lab{font-size:14px;color:rgba(236,227,208,.92)}
+.alloc-v2__row--sub .bar{height:12px}
+
+@media (max-width:760px){
+  .alloc-v2__row{grid-template-columns:1fr auto;gap:10px}
+  .alloc-v2__row .bar{grid-column:1 / -1;order:3}
+  .alloc-v2__row--sub{padding-left:38px}
+  .alloc-v2__row--sub::before{left:18px;width:10px}
+}
+
 /* === DONATE · BUDGET TABLE (program $ breakdown, line-item style) === */
 .budget{
   border:1px solid var(--rule-bone);background:transparent;
