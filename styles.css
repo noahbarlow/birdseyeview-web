@@ -603,7 +603,7 @@ button,input,textarea,select{font:inherit;color:inherit}
 
 /* === FOOTER === */
 .foot{background:var(--ink);color:var(--bone);border-top:1px solid var(--rule-bone);padding:64px var(--pad-x) 36px}
-.foot-inner{max-width:var(--max);margin-inline:auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px;align-items:start}
+.foot-inner{max-width:var(--max);margin-inline:auto;margin-top:64px;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px;align-items:start}
 .foot .brand-name{color:var(--bone);font-size:22px}
 .foot .brand-name small{color:rgba(236,227,208,.6)}
 .foot h6{font-family:var(--ff-display);font-weight:900;font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px;color:var(--bone)}
