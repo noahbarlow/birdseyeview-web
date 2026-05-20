@@ -693,7 +693,8 @@ button,input,textarea,select{font:inherit;color:inherit}
   border:1px solid var(--ink);background:var(--bone-2);
   display:flex;flex-direction:column;
 }
-.member__photo{aspect-ratio:3/4;background:var(--ink);position:relative;border-bottom:1px solid var(--ink)}
+.member__photo{aspect-ratio:3/4;background:var(--ink);position:relative;border-bottom:1px solid var(--ink);overflow:hidden}
+.member__photo img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.12) contrast(1.02)}
 .member__photo.placeholder{
   display:grid;place-items:center;color:rgba(236,227,208,.45);
   font-family:var(--ff-display);font-weight:900;font-size:84px;letter-spacing:.02em;
