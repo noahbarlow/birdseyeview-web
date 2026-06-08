@@ -19,6 +19,21 @@
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#0E0D0B">
 <meta name="apple-mobile-web-app-title" content="BEVP">
+<!-- Open Graph / Twitter Card -->
+<link rel="canonical" href="https://birdseyeviewproject.org/get-involved.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Get Involved — Bird's Eye View · Be Part of What Comes Next" />
+<meta property="og:description" content="Multiple ways to engage with and contribute to the mission. Events, donations, partnerships." />
+<meta property="og:url" content="https://birdseyeviewproject.org/get-involved.html" />
+<meta property="og:site_name" content="Bird's Eye View Project" />
+<meta property="og:image" content="https://birdseyeviewproject.org/img/MRC03890.jpg" />
+<meta property="og:image:width" content="2048" />
+<meta property="og:image:height" content="1365" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Get Involved — Bird's Eye View · Be Part of What Comes Next" />
+<meta name="twitter:description" content="Multiple ways to engage with and contribute to the mission. Events, donations, partnerships." />
+<meta name="twitter:image" content="https://birdseyeviewproject.org/img/MRC03890.jpg" />
+<script src="analytics.js" defer></script>
 </head>
 <body>
 
@@ -39,13 +54,76 @@
     <a class="brand" href="index.html" aria-label="Bird's Eye View Project, home">
       <img class="brand-logo" src="img/brand/logo-horizontal-black.svg" alt="Bird's Eye View Project" width="258" height="100">
     </a>
-    <nav class="nav" aria-label="Primary">
-      <a href="about.html">About</a>
-      <a href="programs.html">Programs</a>
-      <a href="events.html">Events</a>
-      <a href="documentary.html">Documentary</a>
-      <a href="apply.html">Apply</a>
-      <a class="apply" href="donate.html">Donate</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Toggle menu">
+    <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </label>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li class="nav-item has-dropdown">
+          <a href="about.html">About <span class="caret" aria-hidden="true">&#9662;</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="about.html#mission">Our Story</a></li>
+            <li><a href="about.html#timeline">Timeline</a></li>
+            <li><a href="about.html#board">Leadership &amp; Board</a></li>
+            <li><a href="about.html#ambassadors">Ambassadors</a></li>
+            <li><a href="about.html#financials">Financials &amp; Annual Reports</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="programs.html">Programs <span class="caret" aria-hidden="true">&#9662;</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="programs.html">All Programs</a></li>
+            <li><a href="program.html">War Feather</a></li>
+            <li><a href="7x-project.html">7X Human Performance</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="donate.html">Give <span class="caret" aria-hidden="true">&#9662;</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="donate.html">Donate Now</a></li>
+            <li><a href="donate.html">Monthly Giving</a></li>
+            <li><a href="donate.html#tiers">Sponsor a Program</a></li>
+            <li><a href="donate.html#planned">Planned Giving &middot; DAF &middot; Stock</a></li>
+            <li><a href="documentary.html#honor">Give in Honor</a></li>
+            <li><a href="donate.html#faq">Donor FAQ</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown is-active">
+          <a href="partner.html">Partner <span class="caret" aria-hidden="true">&#9662;</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="partner.html">Become a Partner</a></li>
+            <li><a href="partner.html#corporate">Corporate Partners</a></li>
+            <li><a href="partner.html#events">Event Sponsors</a></li>
+            <li><a href="partner.html#foundation">Foundation Partners</a></li>
+            <li><a href="partner.html#community">Community Partners</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="events.html">Events <span class="caret" aria-hidden="true">&#9662;</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="events.html">Calendar</a></li>
+            <li><a href="events.html#black-ops">Black Ops &middot; DFW</a></li>
+            <li><a href="events.html#shootout">Armed Forces Shootout</a></li>
+            <li><a href="events.html#gathering">Annual Gathering</a></li>
+            <li><a href="documentary.html">Documentary</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="resources.html">Resources <span class="caret" aria-hidden="true">&#9662;</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="resources.html">Resource Library</a></li>
+            <li><a href="resources.html#videos">Videos</a></li>
+            <li><a href="resources.html#media">Media Kit</a></li>
+            <li><a href="resources.html#toolkit">Fundraising Toolkit</a></li>
+            <li><a href="resources.html#safety">Safety Policies</a></li>
+          </ul>
+        </li>
+        <li class="nav-item nav-item--crisis"><a href="get-support.html">Get Support</a></li>
+        <li class="nav-item nav-item--cta"><a class="apply" href="apply.html">Apply for Support</a></li>
+        <li class="nav-item nav-item--cta"><a class="apply" href="donate.html">Donate</a></li>
+      </ul>
     </nav>
   </div>
 </header>
@@ -253,9 +331,11 @@
       <h6>Field Brief</h6>
       <p>Quarterly updates from the field. Cohort releases, event dates, documentary news. No spam.</p>
     </div>
-    <form class="foot-news__form" onsubmit="event.preventDefault();this.querySelector('input').value='';this.querySelector('button').textContent='Subscribed →';this.querySelector('button').disabled=true;">
+    <form class="foot-news__form" action="#newsletter" method="post" novalidate onsubmit="event.preventDefault();const f=this;const i=f.querySelector('input[type=email]');const b=f.querySelector('button');const m=f.querySelector('.news-msg');if(!i.checkValidity()){i.focus();return}i.value='';b.textContent='Subscribed';b.disabled=true;if(m){m.hidden=false}">
+      <!-- TODO: wire action to real provider (Buttondown / ConvertKit / Mailchimp). Double opt-in required. -->
       <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address" />
       <button type="submit">Subscribe</button>
+      <p class="news-msg" hidden role="status">// Almost there &mdash; check your email to confirm. Search inbox for &ldquo;Bird&rsquo;s Eye View&rdquo; if you don&rsquo;t see it.</p>
     </form>
   </div>
 
@@ -265,7 +345,7 @@
       <div class="brand brand--foot">
         <img class="brand-logo" src="img/brand/logo-horizontal-white.svg" alt="Bird's Eye View Project · 501(c)(3)" width="258" height="100">
       </div>
-      <p class="foot-tag">Honoring the cost.<br>Building the system.<br>Returning the operator to himself.</p>
+      <p class="foot-tag">Honoring the cost.<br>Building the system.<br>Returning the operator home.</p>
     </div>
     <div>
       <h6>Mission</h6>
@@ -273,7 +353,7 @@
         <li><a href="about.html">About</a></li>
         <li><a href="about.html#timeline">Timeline</a></li>
         <li><a href="about.html#board">Board</a></li>
-        <li><a href="mailto:info@birdseyeviewproject.org">Contact</a></li>
+        <li><a href="contact.html">Talk to Us</a></li>
       </ul>
     </div>
     <div>
@@ -322,7 +402,7 @@
     <ul style="display:flex;gap:18px;list-style:none;padding:0;margin:0">
       <li><a href="privacy.html">Privacy</a></li>
       <li><a href="privacy.html#cookies">Cookies</a></li>
-      <li><a href="mailto:info@birdseyeviewproject.org">Contact</a></li>
+      <li><a href="contact.html">Talk to Us</a></li>
     </ul>
   </div>
 </footer>
@@ -334,5 +414,13 @@
   document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)});
 })();
 </script>
+
+<!-- Sticky mobile CTA bar -->
+<div class="mobile-cta-bar" aria-label="Quick actions">
+  <a class="m-cta m-cta--apply" href="apply.html">Apply</a>
+  <a class="m-cta m-cta--donate" href="donate.html">Donate</a>
+  <a class="m-cta m-cta--crisis" href="get-support.html" aria-label="Get crisis support">988</a>
+</div>
+
 </body>
 </html>

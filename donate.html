@@ -19,6 +19,21 @@
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#0E0D0B">
 <meta name="apple-mobile-web-app-title" content="BEVP">
+<!-- Open Graph / Twitter Card -->
+<link rel="canonical" href="https://birdseyeviewproject.org/donate.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Donate — Bird's Eye View Project" />
+<meta property="og:description" content="Fund a year of treatment, biomarkers, and community for a veteran or first responder. 90% of every dollar goes to programs. 501(c)(3) Tax ID 47-4019107." />
+<meta property="og:url" content="https://birdseyeviewproject.org/donate.html" />
+<meta property="og:site_name" content="Bird's Eye View Project" />
+<meta property="og:image" content="https://birdseyeviewproject.org/img/MRC03890.jpg" />
+<meta property="og:image:width" content="2048" />
+<meta property="og:image:height" content="1365" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Donate — Bird's Eye View Project" />
+<meta name="twitter:description" content="Fund a year of treatment, biomarkers, and community for a veteran or first responder. 90% of every dollar goes to programs. 501(c)(3) Tax ID 47-4019107." />
+<meta name="twitter:image" content="https://birdseyeviewproject.org/img/MRC03890.jpg" />
+<script src="analytics.js" defer></script>
 </head>
 <body>
 
@@ -39,13 +54,76 @@
     <a class="brand" href="index.html" aria-label="Bird's Eye View Project, home">
       <img class="brand-logo" src="img/brand/logo-horizontal-black.svg" alt="Bird's Eye View Project" width="258" height="100">
     </a>
-    <nav class="nav" aria-label="Primary">
-      <a href="about.html">About</a>
-      <a href="programs.html">Programs</a>
-      <a href="events.html">Events</a>
-      <a href="documentary.html">Documentary</a>
-      <a href="apply.html">Apply</a>
-      <a class="apply is-active" href="donate.html">Donate</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Toggle menu">
+    <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </label>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li class="nav-item has-dropdown">
+          <a href="about.html">About <span class="caret" aria-hidden="true">&#9662;</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="about.html#mission">Our Story</a></li>
+            <li><a href="about.html#timeline">Timeline</a></li>
+            <li><a href="about.html#board">Leadership &amp; Board</a></li>
+            <li><a href="about.html#ambassadors">Ambassadors</a></li>
+            <li><a href="about.html#financials">Financials &amp; Annual Reports</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="programs.html">Programs <span class="caret" aria-hidden="true">&#9662;</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="programs.html">All Programs</a></li>
+            <li><a href="program.html">War Feather</a></li>
+            <li><a href="7x-project.html">7X Human Performance</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown is-active">
+          <a href="donate.html">Give <span class="caret" aria-hidden="true">&#9662;</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="donate.html">Donate Now</a></li>
+            <li><a href="donate.html">Monthly Giving</a></li>
+            <li><a href="donate.html#tiers">Sponsor a Program</a></li>
+            <li><a href="donate.html#planned">Planned Giving &middot; DAF &middot; Stock</a></li>
+            <li><a href="documentary.html#honor">Give in Honor</a></li>
+            <li><a href="donate.html#faq">Donor FAQ</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="partner.html">Partner <span class="caret" aria-hidden="true">&#9662;</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="partner.html">Become a Partner</a></li>
+            <li><a href="partner.html#corporate">Corporate Partners</a></li>
+            <li><a href="partner.html#events">Event Sponsors</a></li>
+            <li><a href="partner.html#foundation">Foundation Partners</a></li>
+            <li><a href="partner.html#community">Community Partners</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="events.html">Events <span class="caret" aria-hidden="true">&#9662;</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="events.html">Calendar</a></li>
+            <li><a href="events.html#black-ops">Black Ops &middot; DFW</a></li>
+            <li><a href="events.html#shootout">Armed Forces Shootout</a></li>
+            <li><a href="events.html#gathering">Annual Gathering</a></li>
+            <li><a href="documentary.html">Documentary</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="resources.html">Resources <span class="caret" aria-hidden="true">&#9662;</span></a>
+          <ul class="nav-dropdown">
+            <li><a href="resources.html">Resource Library</a></li>
+            <li><a href="resources.html#videos">Videos</a></li>
+            <li><a href="resources.html#media">Media Kit</a></li>
+            <li><a href="resources.html#toolkit">Fundraising Toolkit</a></li>
+            <li><a href="resources.html#safety">Safety Policies</a></li>
+          </ul>
+        </li>
+        <li class="nav-item nav-item--crisis"><a href="get-support.html">Get Support</a></li>
+        <li class="nav-item nav-item--cta"><a class="apply" href="apply.html">Apply for Support</a></li>
+        <li class="nav-item nav-item--cta is-active"><a class="apply" href="donate.html">Donate</a></li>
+      </ul>
     </nav>
   </div>
 </header>
@@ -67,7 +145,11 @@
     <div class="hero-cta reveal" style="margin-top:24px">
       <a class="btn btn--orange" href="https://birdseyeviewproject.givingfuel.com/donation" target="_blank" rel="noopener">Give Now <span class="arrow">→</span></a>
       <a class="btn btn--inverse" href="#allocation">See where it goes</a>
+      <a class="btn btn--inverse" href="contact.html#major-gift">Talk to Us First</a>
     </div>
+    <p class="reveal" style="margin-top:14px;font-family:var(--ff-edit);font-style:italic;font-size:15px;color:rgba(236,227,208,.7);max-width:54ch">
+      Considering a major gift, multi-year pledge, DAF grant, or planned giving? <a href="contact.html#major-gift" style="color:var(--orange);text-decoration:underline">Talk to us first &rarr;</a> &mdash; the conversation usually saves you and us a lot of time.
+    </p>
   </div>
 </section>
 
@@ -78,6 +160,34 @@
       <svg class="feather" viewBox="0 0 815.36 1000" aria-hidden="true"><use href="#feather"/></svg>
       <p class="band-quote">Programs you fund into <em>existence</em>. Not charity.</p>
       <span class="band-tag">Honoring · The · Cost</span>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="trust-strip" aria-label="Trust and transparency at a glance">
+  <div class="wrap-wide">
+    <div class="trust-row">
+      <div class="trust-cell">
+        <span class="lbl">// Legal Form</span>
+        <span class="val">501<small>(c)(3)</small></span>
+        <span class="desc">Texas Non-Profit · Public Charity</span>
+      </div>
+      <div class="trust-cell">
+        <span class="lbl">// Tax ID</span>
+        <span class="val">47<small>-4019107</small></span>
+        <span class="desc">IRS Registered · Receipts via Email</span>
+      </div>
+      <div class="trust-cell">
+        <span class="lbl">// Allocation</span>
+        <span class="val">90<small>%</small></span>
+        <span class="desc">Direct to Programs · 10% Ops</span>
+      </div>
+      <div class="trust-cell">
+        <span class="lbl">// Processing</span>
+        <span class="val">PCI<small>-DSS</small></span>
+        <span class="desc">GivingFuel · SSL · Apple/Google Pay</span>
+      </div>
     </div>
   </div>
 </section>
@@ -291,7 +401,7 @@
 </section>
 
 <!-- OTHER WAYS TO GIVE -->
-<section class="section bone">
+<section class="section bone" id="planned">
   <div class="wrap">
     <div class="section-head reveal">
       <div class="no"><sup>N°</sup>05</div>
@@ -341,10 +451,57 @@
 </section>
 
 <!-- TRUST -->
-<section class="section dark">
+<!-- N°06 DONOR FAQ -->
+<section class="section bone" id="faq">
   <div class="wrap">
     <div class="section-head reveal">
       <div class="no"><sup>N°</sup>06</div>
+      <h2 class="ttl">Donor<br>questions.</h2>
+      <div class="meta">// FAQ</div>
+    </div>
+
+    <div class="faq reveal">
+      <details>
+        <summary>Is my donation tax-deductible?</summary>
+        <p>Yes. Bird&rsquo;s Eye View Project is a Texas 501(c)(3) public charity (EIN 47-4019107). All gifts are tax-deductible to the full extent allowed by U.S. law. GivingFuel sends an automatic email receipt at the time of your gift; year-end summaries are emailed each January. If you need a physical receipt, write to <a href="mailto:finance@birdseyeviewproject.org" style="color:var(--orange-deep);text-decoration:underline">finance@birdseyeviewproject.org</a>.</p>
+      </details>
+      <details>
+        <summary>Where does my money actually go?</summary>
+        <p>Ninety cents of every dollar goes directly to partner-led programs &mdash; therapy delivered by The Coming Home Project, biomarker work via Transcend (transitioning to UVA), the 52-week War Feather curriculum, and the annual gathering. The remaining ten percent covers compliance, accounting, and infrastructure. The full allocation is laid out section by section above in <a href="#allocation" style="color:var(--orange-deep);text-decoration:underline">Where every dollar goes</a>.</p>
+      </details>
+      <details>
+        <summary>Can I sponsor a specific participant?</summary>
+        <p>Yes &mdash; at the $15,000 full-sponsorship tier. Your gift is matched to an accepted operator (anonymously on their side, so they aren&rsquo;t recruited to perform gratitude). You receive a year-end impact report on the operator you funded, with their consent. Reach out to <a href="mailto:major@birdseyeviewproject.org?subject=Sponsor%20a%20Participant" style="color:var(--orange-deep);text-decoration:underline">major@birdseyeviewproject.org</a> to start.</p>
+      </details>
+      <details>
+        <summary>Can I cancel or change a recurring gift?</summary>
+        <p>Anytime. Your GivingFuel receipt includes a self-service link to pause, adjust the amount, change card, or cancel outright. No phone call required. If you&rsquo;d rather have a human walk you through it, write to <a href="mailto:finance@birdseyeviewproject.org" style="color:var(--orange-deep);text-decoration:underline">finance@birdseyeviewproject.org</a>.</p>
+      </details>
+      <details>
+        <summary>How is my donor information protected?</summary>
+        <p>Payment processing is handled by GivingFuel under PCI-DSS standards over SSL. BEVP never stores card numbers. Your name and email are kept private and never sold, swapped, or rented &mdash; we hold to the <a href="https://afpglobal.org/donor-bill-rights" target="_blank" rel="noopener" style="color:var(--orange-deep);text-decoration:underline">Donor Bill of Rights</a> in full. See our <a href="privacy.html" style="color:var(--orange-deep);text-decoration:underline">Privacy Policy</a> for the full detail.</p>
+      </details>
+      <details>
+        <summary>Do you give in someone&rsquo;s honor or memory?</summary>
+        <p>Yes. When you give, add a dedication note in the GivingFuel form &mdash; we&rsquo;ll send a tasteful acknowledgement card (or email, if preferred) to the person or family you designate, without disclosing the gift amount. Memorial gifts can also be routed to a named participant&rsquo;s sponsorship.</p>
+      </details>
+      <details>
+        <summary>Can I see your 990 or audit?</summary>
+        <p>Annual 990 filings are published once finalized and the year&rsquo;s books close. To request the most recent 990, an independent audit summary, or our W-9, email <a href="mailto:finance@birdseyeviewproject.org?subject=990%20%26%20Audit%20Request" style="color:var(--orange-deep);text-decoration:underline">finance@birdseyeviewproject.org</a>. We respond within five business days.</p>
+      </details>
+      <details>
+        <summary>What about DAFs, stock, or planned giving?</summary>
+        <p>Donor-advised funds, appreciated securities, IRA qualified charitable distributions, and bequest language are all supported. See <a href="#planned" style="color:var(--orange-deep);text-decoration:underline">Other ways to give</a> above, or write to <a href="mailto:major@birdseyeviewproject.org" style="color:var(--orange-deep);text-decoration:underline">major@birdseyeviewproject.org</a> for transfer details, brokerage info, or sample bequest language.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- N°07 THE ORG -->
+<section class="section dark">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="no"><sup>N°</sup>07</div>
       <h2 class="ttl" style="color:var(--bone)">The org<br>you're funding.</h2>
       <div class="meta">// Accountability<b style="color:var(--bone)">501(c)(3)</b></div>
     </div>
@@ -441,9 +598,11 @@
       <h6>Field Brief</h6>
       <p>Quarterly updates from the field. Cohort releases, event dates, documentary news. No spam.</p>
     </div>
-    <form class="foot-news__form" onsubmit="event.preventDefault();this.querySelector('input').value='';this.querySelector('button').textContent='Subscribed →';this.querySelector('button').disabled=true;">
+    <form class="foot-news__form" action="#newsletter" method="post" novalidate onsubmit="event.preventDefault();const f=this;const i=f.querySelector('input[type=email]');const b=f.querySelector('button');const m=f.querySelector('.news-msg');if(!i.checkValidity()){i.focus();return}i.value='';b.textContent='Subscribed';b.disabled=true;if(m){m.hidden=false}">
+      <!-- TODO: wire action to real provider (Buttondown / ConvertKit / Mailchimp). Double opt-in required. -->
       <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address" />
       <button type="submit">Subscribe</button>
+      <p class="news-msg" hidden role="status">// Almost there &mdash; check your email to confirm. Search inbox for &ldquo;Bird&rsquo;s Eye View&rdquo; if you don&rsquo;t see it.</p>
     </form>
   </div>
   <div class="foot-inner">
@@ -451,9 +610,9 @@
       <div class="brand brand--foot">
         <img class="brand-logo" src="img/brand/logo-horizontal-white.svg" alt="Bird's Eye View Project · 501(c)(3)" width="258" height="100">
       </div>
-      <p class="foot-tag">Honoring the cost.<br>Building the system.<br>Returning the operator to himself.</p>
+      <p class="foot-tag">Honoring the cost.<br>Building the system.<br>Returning the operator home.</p>
     </div>
-    <div><h6>Mission</h6><ul><li><a href="about.html">About</a></li><li><a href="about.html#timeline">Timeline</a></li><li><a href="about.html#board">Board</a></li><li><a href="mailto:info@birdseyeviewproject.org">Contact</a></li></ul></div>
+    <div><h6>Mission</h6><ul><li><a href="about.html">About</a></li><li><a href="about.html#timeline">Timeline</a></li><li><a href="about.html#board">Board</a></li><li><a href="contact.html">Talk to Us</a></li></ul></div>
     <div><h6>Programs</h6><ul><li><a href="programs.html">All Programs</a></li><li><a href="program.html">War Feather</a></li><li><a href="7x-project.html">7X Project</a></li><li><a href="documentary.html">Documentary</a></li></ul></div>
     <div><h6>Get Involved</h6><ul><li><a href="donate.html">Donate</a></li><li><a href="events.html">Events</a></li><li><a href="apply.html">Apply</a></li><li><a href="mailto:major@birdseyeviewproject.org">Major Gifts</a></li></ul></div>
   </div>
@@ -472,7 +631,7 @@
     <ul style="display:flex;gap:18px;list-style:none;padding:0;margin:0">
       <li><a href="privacy.html">Privacy</a></li>
       <li><a href="privacy.html#cookies">Cookies</a></li>
-      <li><a href="mailto:info@birdseyeviewproject.org">Contact</a></li>
+      <li><a href="contact.html">Talk to Us</a></li>
     </ul>
   </div>
 </footer>
@@ -490,5 +649,13 @@
   }
 })();
 </script>
+
+<!-- Sticky mobile CTA bar -->
+<div class="mobile-cta-bar" aria-label="Quick actions">
+  <a class="m-cta m-cta--apply" href="apply.html">Apply</a>
+  <a class="m-cta m-cta--donate" href="donate.html">Donate</a>
+  <a class="m-cta m-cta--crisis" href="get-support.html" aria-label="Get crisis support">988</a>
+</div>
+
 </body>
 </html>
