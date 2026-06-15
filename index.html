@@ -190,26 +190,14 @@
   <div class="pulse-inner">
     <span class="pulse-eyebrow">// The pulse</span>
     <div class="pulse-stage" aria-hidden="true">
-      <span class="pulse-word" style="--pw:0">Lost.</span>
-      <span class="pulse-word" style="--pw:1">Numb.</span>
-      <span class="pulse-word" style="--pw:2">Exhausted.</span>
-      <span class="pulse-word" style="--pw:3">Isolated.</span>
-      <span class="pulse-word" style="--pw:4">Guilt.</span>
-      <span class="pulse-word" style="--pw:5">Hypervigilant.</span>
-      <span class="pulse-word" style="--pw:6">No sleep.</span>
-      <span class="pulse-word" style="--pw:7">Hopeless.</span>
-      <span class="pulse-word pulse-word--ask" style="--pw:8">Where&rsquo;s my tribe?</span>
-      <span class="pulse-word pulse-word--ask" style="--pw:9">Do you love yourself?</span>
-      <span class="pulse-word pulse-word--answer" style="--pw:10">We were once you.</span>
-      <span class="pulse-word pulse-word--answer" style="--pw:11">Here&rsquo;s how to change.</span>
-      <span class="pulse-word pulse-word--answer" style="--pw:12">Join our family.</span>
+      <span class="pulse-word pulse-word--symptom">Lost.</span>
     </div>
-    <p class="pulse-readable sr-only">
+    <p class="sr-only">
       Lost. Numb. Exhausted. Isolated. Guilt. Hypervigilant. No sleep. Hopeless.
       Where&rsquo;s my tribe? Do you love yourself? We were once you. Here&rsquo;s how to change. Join our family.
     </p>
 
-    <div class="two-door reveal">
+    <div class="two-door">
       <a class="door door--join" href="apply.html">
         <span class="door__pre">// I am ready to</span>
         <span class="door__verb">Join</span>
@@ -223,6 +211,59 @@
     </div>
   </div>
 </section>
+<script>
+/* Pulse hook — JS-driven word rotation (more reliable than CSS var animation delays).
+   Hold each word ~1.6s, cross-fade 0.35s, then advance. Respects prefers-reduced-motion. */
+(function pulseHook(){
+  var stage = document.querySelector('.pulse-stage');
+  var word = stage && stage.querySelector('.pulse-word');
+  if (!word) return;
+  var SEQ = [
+    ['Lost.','symptom'], ['Numb.','symptom'], ['Exhausted.','symptom'], ['Isolated.','symptom'],
+    ['Guilt.','symptom'], ['Hypervigilant.','symptom'], ['No sleep.','symptom'], ['Hopeless.','symptom'],
+    ["Where’s my tribe?",'ask'], ['Do you love yourself?','ask'],
+    ['We were once you.','answer'], ["Here’s how to change.",'answer'], ['Join our family.','answer-final']
+  ];
+  var i = 0;
+  var FADE = 350;
+  var HOLD_SYMPTOM = 1500;
+  var HOLD_ASK     = 2200;
+  var HOLD_ANSWER  = 2200;
+  function holdFor(type){
+    if (type === 'ask') return HOLD_ASK;
+    if (type === 'answer' || type === 'answer-final') return HOLD_ANSWER;
+    return HOLD_SYMPTOM;
+  }
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced) {
+    /* Static — stack all words in reading order. */
+    stage.innerHTML = '';
+    SEQ.forEach(function(s){
+      var el = document.createElement('span');
+      el.className = 'pulse-word pulse-word--' + s[1];
+      el.textContent = s[0];
+      stage.appendChild(el);
+    });
+    return;
+  }
+  function step(){
+    word.classList.add('pulse-word--out');
+    setTimeout(function(){
+      var entry = SEQ[i];
+      word.textContent = entry[0];
+      word.className = 'pulse-word pulse-word--' + entry[1];
+      /* force reflow so the next class change re-triggers transitions */
+      void word.offsetWidth;
+      word.classList.remove('pulse-word--out');
+      var nextHold = holdFor(entry[1]);
+      i = (i + 1) % SEQ.length;
+      setTimeout(step, nextHold);
+    }, FADE);
+  }
+  /* Show first word immediately, then start the loop after its hold. */
+  setTimeout(step, holdFor(SEQ[0][1]));
+})();
+</script>
 
 <!-- ============== N°01 REAL SCIENCE ============== -->
 <section class="section bone" id="science">
@@ -503,7 +544,15 @@
   var dlg = document.getElementById('heartbeat');
   if (!dlg) return;
   var KEY = 'bevp.heartbeat.seen';
-  try { if (localStorage.getItem(KEY)) return; } catch (e) { /* private mode — show once */ }
+  /* ?heartbeat=1 forces the pop-up open regardless of localStorage — for testing.
+     ?heartbeat=0 clears the flag without opening. */
+  var qs = (location.search || '').replace('?','').split('&');
+  var force = qs.indexOf('heartbeat=1') !== -1;
+  var clear = qs.indexOf('heartbeat=0') !== -1;
+  if (clear) { try { localStorage.removeItem(KEY); } catch (e) {} }
+  if (!force) {
+    try { if (localStorage.getItem(KEY)) return; } catch (e) {}
+  }
   function close() {
     dlg.hidden = true;
     document.body.classList.remove('heartbeat-open');

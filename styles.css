@@ -1267,32 +1267,34 @@ button,input,textarea,select{font:inherit;color:inherit}
   letter-spacing:.24em;text-transform:uppercase;color:var(--orange);
   margin-bottom:clamp(28px,3vw,40px);
 }
-.pulse-stage{position:relative;height:clamp(92px,12vw,168px);margin-bottom:clamp(48px,6vw,80px)}
+.pulse-stage{
+  position:relative;display:flex;align-items:center;justify-content:center;
+  min-height:clamp(92px,12vw,168px);margin-bottom:clamp(48px,6vw,80px);
+  text-align:center;flex-wrap:wrap;gap:14px;
+}
 .pulse-word{
-  position:absolute;left:50%;top:50%;
-  transform:translate(-50%,-50%) scale(.94);
+  display:inline-block;
   font-family:var(--ff-display);font-weight:900;
   font-size:clamp(40px,7.5vw,128px);
   line-height:1;text-transform:uppercase;letter-spacing:-.01em;
   white-space:nowrap;color:var(--bone);
-  opacity:0;
-  animation:pulseWord 26s infinite both;
-  animation-delay:calc(var(--pw, 0) * 2s);
+  opacity:1;transform:scale(1);
+  transition:opacity .35s ease, transform .35s ease;
+  will-change:opacity, transform;
 }
-.pulse-word--ask{color:var(--orange);font-family:var(--ff-edit);font-weight:500;font-style:italic;text-transform:none;letter-spacing:0}
-.pulse-word--answer{color:var(--bone);font-style:normal}
-.pulse-word--answer:last-child{color:var(--orange)}
-@keyframes pulseWord{
-  0% {opacity:0; transform:translate(-50%,-50%) scale(.94)}
-  2.5% {opacity:1; transform:translate(-50%,-50%) scale(1)}
-  6.5% {opacity:1; transform:translate(-50%,-50%) scale(1)}
-  8.5% {opacity:0; transform:translate(-50%,-50%) scale(1.02)}
-  100% {opacity:0}
+.pulse-word--out{opacity:0;transform:scale(.96)}
+.pulse-word--symptom{color:var(--bone)}
+.pulse-word--ask{
+  color:var(--orange);
+  font-family:var(--ff-edit);font-weight:500;font-style:italic;
+  text-transform:none;letter-spacing:0;
 }
+.pulse-word--answer{color:var(--bone)}
+.pulse-word--answer-final{color:var(--orange)}
 @media (prefers-reduced-motion: reduce){
   .pulse::before{animation:none;opacity:.7}
-  .pulse-word{animation-duration:0s;animation-iteration-count:1;opacity:1;position:static;display:block;transform:none;font-size:clamp(28px,3.6vw,52px);margin:0 0 14px;text-align:center}
-  .pulse-stage{height:auto}
+  .pulse-word{font-size:clamp(28px,3.6vw,52px);transition:none}
+  .pulse-stage{min-height:auto;flex-direction:column;gap:14px}
 }
 
 /* Two-Door CTA */
