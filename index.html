@@ -152,7 +152,7 @@
     </p>
 
     <p class="hero-lead" style="margin-top:32px;max-width:60ch">
-      A twelve-month structured program for U.S. veterans and first responders. Partner-led therapy. Biomarker recovery. Weekly training. A cohort that stays together. <b>$15K of value per seat. $0 cost to the accepted.</b>
+      A six-month structured program for U.S. veterans and first responders. <b>Treatment. Biomarkers. Training. Community.</b> $15K of program value per warrior. $0 cost to the accepted.
     </p>
 
     <p style="margin-top:18px;font-family:var(--ff-display);font-weight:800;font-size:clamp(16px,1.8vw,20px);letter-spacing:.06em;text-transform:uppercase;color:var(--orange-deep);max-width:60ch">
@@ -181,6 +181,45 @@
         The toughest battles happen <em>after</em> the uniform comes off.
       </p>
       <span class="band-tag">Honoring &middot; The &middot; Cost</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PULSE HOOK ============== -->
+<section class="pulse" aria-label="The pulse">
+  <div class="pulse-inner">
+    <span class="pulse-eyebrow">// The pulse</span>
+    <div class="pulse-stage" aria-hidden="true">
+      <span class="pulse-word" style="--pw:0">Lost.</span>
+      <span class="pulse-word" style="--pw:1">Numb.</span>
+      <span class="pulse-word" style="--pw:2">Exhausted.</span>
+      <span class="pulse-word" style="--pw:3">Isolated.</span>
+      <span class="pulse-word" style="--pw:4">Guilt.</span>
+      <span class="pulse-word" style="--pw:5">Hypervigilant.</span>
+      <span class="pulse-word" style="--pw:6">No sleep.</span>
+      <span class="pulse-word" style="--pw:7">Hopeless.</span>
+      <span class="pulse-word pulse-word--ask" style="--pw:8">Where&rsquo;s my tribe?</span>
+      <span class="pulse-word pulse-word--ask" style="--pw:9">Do you love yourself?</span>
+      <span class="pulse-word pulse-word--answer" style="--pw:10">We were once you.</span>
+      <span class="pulse-word pulse-word--answer" style="--pw:11">Here&rsquo;s how to change.</span>
+      <span class="pulse-word pulse-word--answer" style="--pw:12">Join our family.</span>
+    </div>
+    <p class="pulse-readable sr-only">
+      Lost. Numb. Exhausted. Isolated. Guilt. Hypervigilant. No sleep. Hopeless.
+      Where&rsquo;s my tribe? Do you love yourself? We were once you. Here&rsquo;s how to change. Join our family.
+    </p>
+
+    <div class="two-door reveal">
+      <a class="door door--join" href="apply.html">
+        <span class="door__pre">// I am ready to</span>
+        <span class="door__verb">Join</span>
+        <span class="door__arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="door door--support" href="donate.html">
+        <span class="door__pre">// I am ready to</span>
+        <span class="door__verb">Support</span>
+        <span class="door__arrow" aria-hidden="true">&rarr;</span>
+      </a>
     </div>
   </div>
 </section>
@@ -438,6 +477,51 @@
   <a class="m-cta m-cta--donate" href="donate.html">Donate</a>
   <a class="m-cta m-cta--crisis" href="get-support.html" aria-label="Get crisis support">988</a>
 </div>
+
+<!-- ============== HEARTBEAT POP-UP (first visit only) ============== -->
+<div class="heartbeat" id="heartbeat" hidden role="dialog" aria-modal="true" aria-labelledby="heartbeat-title">
+  <div class="heartbeat__backdrop" data-heartbeat-close></div>
+  <article class="heartbeat__card" role="document">
+    <p class="heartbeat__ask" id="heartbeat-title">Do you feel lost?</p>
+    <p class="heartbeat__words">
+      Hopeless. Exhausted. Numb. Like you lost your tribe. Like a burden. Isolated.
+    </p>
+    <p class="heartbeat__ask heartbeat__ask--second">Do you love yourself?</p>
+    <p class="heartbeat__answer">
+      We were once you.<br>
+      <em>Here&rsquo;s how to change.</em>
+    </p>
+    <div class="heartbeat__actions">
+      <a class="btn btn--orange" href="apply.html" data-heartbeat-action="join">I am ready to join <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      <a class="btn btn--inverse" href="donate.html" data-heartbeat-action="support">I am ready to support <span class="arrow" aria-hidden="true">&rarr;</span></a>
+    </div>
+    <button class="heartbeat__close" type="button" data-heartbeat-close aria-label="Close">Not now</button>
+  </article>
+</div>
+<script>
+(function heartbeat() {
+  var dlg = document.getElementById('heartbeat');
+  if (!dlg) return;
+  var KEY = 'bevp.heartbeat.seen';
+  try { if (localStorage.getItem(KEY)) return; } catch (e) { /* private mode — show once */ }
+  function close() {
+    dlg.hidden = true;
+    document.body.classList.remove('heartbeat-open');
+    try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {}
+  }
+  setTimeout(function () {
+    dlg.hidden = false;
+    document.body.classList.add('heartbeat-open');
+  }, 900);
+  dlg.addEventListener('click', function (e) {
+    if (e.target.closest('[data-heartbeat-close]')) { e.preventDefault(); close(); }
+    if (e.target.closest('[data-heartbeat-action]')) { close(); /* let nav proceed */ }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !dlg.hidden) close();
+  });
+})();
+</script>
 
 </body>
 </html>
