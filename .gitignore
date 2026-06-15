@@ -11,3 +11,8 @@ img/team/*/
 
 # DNN model cache for portrait face-detection processing
 .cache/
+
+# Source image library (multi-hundred-MB raw drops) — only the processed
+# web-optimized copies in img/hero/ are committed.
+New images/
+BEVP-design-direction.pdf
