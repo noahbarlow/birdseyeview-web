@@ -165,7 +165,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <main id="main">
 
 <!-- ============== HERO ============== -->
-<section class="section bone hero">
+<section class="section hero hero--pulse">
   <div class="wrap">
     <div class="hero-meta">
       <span class="vol">War Feather</span>
@@ -175,53 +175,58 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="hero-grid" style="margin-top:18px">
       <div class="hero-copy reveal">
-        <p class="hero-pre" style="font-family:var(--ff-edit);font-style:italic;font-size:clamp(18px,1.8vw,22px);color:var(--ink-soft);max-width:38ch;line-height:1.3">
-          A Bird&rsquo;s Eye View.
+        <p class="hero-pre">A Bird&rsquo;s Eye View.</p>
+
+        <!-- Pulse stage — replaces the static headline. Cycling word IS the hero copy. -->
+        <div class="pulse-stage pulse-stage--hero" aria-hidden="true">
+          <span class="pulse-word pulse-word--symptom">Lost.</span>
+        </div>
+        <p class="sr-only">
+          Lost. Numb. Exhausted. Isolated. Guilt. Hypervigilant. No sleep. Hopeless.
+          Where&rsquo;s my tribe? Do you love yourself? We were once you. Here&rsquo;s how to change. Join our family.
         </p>
 
-        <h1 class="hero-head dpy" style="font-size:clamp(64px,9.8vw,148px);line-height:.86;letter-spacing:-.01em;margin-top:8px">
-          <span class="ln">Built for</span>
-          <span class="ln">the <em>fight</em>.</span>
-        </h1>
+        <p class="hero-tag">Built for the <em>fight</em>.</p>
 
-        <p style="font-family:var(--ff-display);font-weight:900;font-size:clamp(22px,3vw,40px);line-height:1.02;letter-spacing:-.005em;text-transform:uppercase;color:var(--ink);margin-top:18px">
-          Real <em style="font-family:var(--ff-edit);font-weight:500;font-style:italic;text-transform:none;color:var(--orange-deep);letter-spacing:0">Science</em>.
-          Real <em style="font-family:var(--ff-edit);font-weight:500;font-style:italic;text-transform:none;color:var(--orange-deep);letter-spacing:0">Help</em>.
-          Real <em style="font-family:var(--ff-edit);font-weight:500;font-style:italic;text-transform:none;color:var(--orange-deep);letter-spacing:0">Outcomes</em>.
-        </p>
+        <p class="hero-antipitch">Not talk therapy. Not a retreat. Not for everyone.</p>
 
-        <p class="hero-lead" style="margin-top:28px;max-width:48ch">
-          A six-month structured program for veterans and first responders &mdash; mental, physical, emotional, social, and spiritual. <b>Treatment. Biomarkers. Training. Community.</b>
-        </p>
-
-        <p style="margin-top:14px;font-family:var(--ff-display);font-weight:800;font-size:clamp(14px,1.5vw,18px);letter-spacing:.06em;text-transform:uppercase;color:var(--orange-deep);max-width:48ch">
-          Not talk therapy. Not a retreat. Not for everyone.
-        </p>
-
-        <div class="hero-cta" style="margin-top:28px">
-          <a class="btn btn--orange" href="apply.html">I am ready to join <span class="arrow">&rarr;</span></a>
-          <a class="btn btn--ghost" href="donate.html">Fund a warrior</a>
+        <div class="two-door two-door--hero">
+          <a class="door door--join" href="apply.html">
+            <span class="door__pre">// I am ready to</span>
+            <span class="door__verb">Join</span>
+            <span class="door__arrow" aria-hidden="true">&rarr;</span>
+          </a>
+          <a class="door door--support" href="donate.html">
+            <span class="door__pre">// I am ready to</span>
+            <span class="door__verb">Support</span>
+            <span class="door__arrow" aria-hidden="true">&rarr;</span>
+          </a>
         </div>
 
-        <div class="hero-cite" style="margin-top:32px">
+        <div class="hero-cite">
           <span class="lbl-sm" style="color:var(--orange)">Three-Phase Selection</span>
           <span class="hero-cite__rule"></span>
           <span class="lbl-sm">90% to Programs &middot; 501(c)(3)</span>
         </div>
       </div>
 
-      <figure class="poster reveal">
+      <figure class="poster poster--pulse reveal" data-beat="symptom">
         <span class="poster__crop tl"></span>
         <span class="poster__crop tr"></span>
         <span class="poster__crop bl"></span>
         <span class="poster__crop br"></span>
         <svg class="poster__feather" viewBox="0 0 815.36 1000" aria-hidden="true"><use href="#feather"/></svg>
         <span class="poster__counter"><b>01</b> / 06 · DOSSIER</span>
-        <img class="poster__img" src="img/hero/hero-poster.jpg" alt="Operator at the edge before a BASE jump — the moment before the commit">
-        <h2 class="poster__title">The <em>edge</em>.<br>The commit.</h2>
+
+        <!-- Three layered images, one per beat group. CSS shows the one matching [data-beat]. -->
+        <img class="poster__img poster__img--symptom" src="img/hero/alt-sunset-silhouette.jpg" alt="A single figure at sunset — the weight before the call">
+        <img class="poster__img poster__img--ask" src="img/hero/hero-poster.jpg" alt="An operator at the edge — the question moment">
+        <img class="poster__img poster__img--answer" src="img/hero/alt-cohort-laugh.jpg" alt="The cohort together — the answer">
+
+        <h2 class="poster__title">The <em>fight</em>.<br>The tribe.</h2>
         <div class="poster__cap">
           <span>I am ready to join</span>
-          <span class="edit">six months · one tribe</span>
+          <span class="edit">six months &middot; one tribe</span>
         </div>
       </figure>
     </div>
@@ -241,38 +246,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ============== PULSE HOOK ============== -->
-<section class="pulse" aria-label="The pulse">
-  <div class="pulse-inner">
-    <div class="pulse-stage" aria-hidden="true">
-      <span class="pulse-word pulse-word--symptom">Lost.</span>
-    </div>
-    <p class="sr-only">
-      Lost. Numb. Exhausted. Isolated. Guilt. Hypervigilant. No sleep. Hopeless.
-      Where&rsquo;s my tribe? Do you love yourself? We were once you. Here&rsquo;s how to change. Join our family.
-    </p>
-
-    <div class="two-door">
-      <a class="door door--join" href="apply.html">
-        <span class="door__pre">// I am ready to</span>
-        <span class="door__verb">Join</span>
-        <span class="door__arrow" aria-hidden="true">&rarr;</span>
-      </a>
-      <a class="door door--support" href="donate.html">
-        <span class="door__pre">// I am ready to</span>
-        <span class="door__verb">Support</span>
-        <span class="door__arrow" aria-hidden="true">&rarr;</span>
-      </a>
-    </div>
-  </div>
-</section>
 <script>
-/* Pulse hook — JS-driven word rotation. Runs the sequence once (no loop), holds
-   on the final word "Join our family." Sequence starts when the section scrolls
-   into view so the warrior is on the stage when it begins. */
-(function pulseHook(){
-  var section = document.querySelector('.pulse');
-  var stage = section && section.querySelector('.pulse-stage');
+/* Hero Pulse hook — word rotation + poster image crossfade.
+   The cycling word advances through the symptom → ask → answer arc; the poster
+   figure's [data-beat] attribute is updated in lockstep so the supporting image
+   matches the emotional beat. Runs once (no loop), holds on "Join our family."
+   prefers-reduced-motion: full sequence stacks statically with no crossfade. */
+(function heroPulse(){
+  var stage = document.querySelector('.pulse-stage--hero');
+  var poster = document.querySelector('.poster--pulse');
   var word = stage && stage.querySelector('.pulse-word');
   if (!word) return;
   var SEQ = [
@@ -281,6 +263,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ["Where’s my tribe?",'ask'], ['Do you love yourself?','ask'],
     ['We were once you.','answer'], ["Here’s how to change.",'answer'], ['Join our family.','answer-final']
   ];
+  /* Group "answer-final" with "answer" for image crossfade — they share the tribe image. */
+  function beatGroup(type){ return type === 'answer-final' ? 'answer' : type; }
   var FADE = 350;
   var HOLD_SYMPTOM = 1500;
   var HOLD_ASK     = 2200;
@@ -292,7 +276,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduced) {
-    /* Static — stack all words in reading order. */
     stage.innerHTML = '';
     SEQ.forEach(function(s){
       var el = document.createElement('span');
@@ -300,10 +283,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       el.textContent = s[0];
       stage.appendChild(el);
     });
+    if (poster) poster.dataset.beat = 'answer';
     return;
   }
-  /* Index 0 ("Lost.") is already rendered in HTML. Advance from index 1, stop
-     after the final entry. No wrap-around — final word holds in place. */
+  /* Index 0 ("Lost.") is already in HTML; poster starts on "symptom" (silhouette). */
   var i = 1;
   function step(){
     if (i >= SEQ.length) return;
@@ -312,26 +295,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       var entry = SEQ[i];
       word.textContent = entry[0];
       word.className = 'pulse-word pulse-word--' + entry[1];
+      if (poster) poster.dataset.beat = beatGroup(entry[1]);
       void word.offsetWidth;
       word.classList.remove('pulse-word--out');
       i++;
       if (i < SEQ.length) setTimeout(step, holdFor(entry[1]));
     }, FADE);
   }
-  function start(){
-    setTimeout(step, holdFor(SEQ[0][1]));
-  }
-  /* Kick off when the section enters the viewport. */
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if (e.isIntersecting) { start(); io.disconnect(); }
-      });
-    }, {threshold: 0.25});
-    io.observe(section);
-  } else {
-    start();
-  }
+  function start(){ setTimeout(step, holdFor(SEQ[0][1])); }
+  /* Hero is above the fold — kick off as soon as the script runs.
+     (IntersectionObserver isn't useful here since the hero is already in view.) */
+  start();
 })();
 </script>
 
@@ -574,24 +548,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <script>
-/* slideshow on hero poster */
-(function(){
-  var imgs=["img/DSC07364-1.jpg","img/AlastairBASE.jpg","img/AntarcticaPlaneDeBoard.jpg","img/CMAbseil2.jpg","img/EgyptJump.jpg","img/MRC03890.jpg","img/absailing3.jpg","img/7xStartKatieZach.jpg"];
-  var el=document.getElementById("heroImg");
-  if(!el) return;
-  var i=0;
-  // preload
-  imgs.forEach(function(s){var im=new Image();im.src=s});
-  setInterval(function(){
-    i=(i+1)%imgs.length;
-    el.classList.add("is-out");
-    setTimeout(function(){
-      el.src=imgs[i];
-      el.classList.remove("is-out");
-    },480);
-  },5200);
-})();
-
 /* reveal on scroll */
 (function(){
   if(!("IntersectionObserver" in window)) {

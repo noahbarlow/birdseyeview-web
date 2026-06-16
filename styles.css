@@ -273,6 +273,74 @@ button,input,textarea,select{font:inherit;color:inherit}
 .hero--simple .hero-head{font-size:clamp(56px,9.4vw,148px)}
 .hero--simple .hero-grid{grid-template-columns:1fr;gap:30px}
 
+/* === HERO — PULSE variant (cycling words + supporting imagery) === */
+.hero--pulse{
+  background:var(--ink);color:var(--bone);
+  position:relative;overflow:hidden;
+  border-bottom:1px solid rgba(236,227,208,.08);
+}
+.hero--pulse::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at 30% 28%, rgba(255,42,0,.10), transparent 55%);
+  animation:pulseGlow 4s ease-in-out infinite;
+}
+.hero--pulse .wrap{position:relative;z-index:1}
+.hero--pulse .hero-meta .vol{color:var(--orange)}
+.hero--pulse .hero-meta .div{background:rgba(236,227,208,.18)}
+.hero--pulse .hero-meta .lbl-sm{color:rgba(236,227,208,.7)}
+.hero--pulse .hero-pre{
+  font-family:var(--ff-edit);font-style:italic;
+  font-size:clamp(18px,1.8vw,22px);color:rgba(236,227,208,.78);
+  max-width:38ch;line-height:1.3;
+}
+.hero--pulse .hero-tag{
+  font-family:var(--ff-display);font-weight:900;
+  font-size:clamp(20px,2.6vw,34px);line-height:1.02;letter-spacing:-.005em;
+  text-transform:uppercase;color:var(--bone);margin-top:12px;
+}
+.hero--pulse .hero-tag em{
+  font-family:var(--ff-edit);font-weight:500;font-style:italic;
+  text-transform:none;color:var(--orange);letter-spacing:0;
+}
+.hero--pulse .hero-antipitch{
+  margin-top:14px;font-family:var(--ff-display);font-weight:800;
+  font-size:clamp(13px,1.3vw,16px);letter-spacing:.06em;
+  text-transform:uppercase;color:var(--orange);max-width:48ch;
+}
+.hero--pulse .hero-cite{margin-top:28px;color:rgba(236,227,208,.7)}
+.hero--pulse .hero-cite__rule{background:rgba(236,227,208,.18)}
+
+/* Pulse stage in the hero — sit where the headline used to live, slightly larger word */
+.pulse-stage--hero{
+  position:relative;display:flex;align-items:center;justify-content:flex-start;
+  min-height:clamp(96px,11vw,152px);margin-top:10px;
+  text-align:left;flex-wrap:wrap;gap:14px;
+}
+.pulse-stage--hero .pulse-word{
+  text-align:left;font-size:clamp(56px,9vw,140px);
+}
+@media (prefers-reduced-motion: reduce){
+  .pulse-stage--hero{min-height:auto;flex-direction:column;align-items:flex-start;gap:10px}
+  .pulse-stage--hero .pulse-word{font-size:clamp(28px,3.6vw,52px)}
+}
+
+/* Two-door CTA inside the hero column — more compact than the standalone */
+.two-door--hero{margin-top:28px;max-width:580px}
+.two-door--hero .door{padding:clamp(18px,2vw,24px) clamp(20px,2.4vw,30px)}
+.two-door--hero .door__verb{font-size:clamp(28px,3.4vw,44px)}
+.two-door--hero .door__arrow{font-size:clamp(22px,2.6vw,32px)}
+
+/* Poster — Pulse variant: 3 layered images crossfade based on [data-beat] */
+.poster--pulse{background:var(--ink)}
+.poster--pulse .poster__img{opacity:0;transition:opacity .8s ease}
+.poster--pulse[data-beat="symptom"] .poster__img--symptom{opacity:1}
+.poster--pulse[data-beat="ask"]     .poster__img--ask{opacity:1}
+.poster--pulse[data-beat="answer"]  .poster__img--answer{opacity:1}
+@media (prefers-reduced-motion: reduce){
+  .hero--pulse::before{animation:none;opacity:.7}
+  .poster--pulse .poster__img{transition:none}
+}
+
 .btn{
   font-family:var(--ff-display);font-weight:800;font-size:14px;letter-spacing:.16em;text-transform:uppercase;
   padding:18px 26px;display:inline-flex;align-items:center;gap:10px;
