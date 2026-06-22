@@ -16,3 +16,7 @@ img/team/*/
 # web-optimized copies in img/hero/ are committed.
 New images/
 BEVP-design-direction.pdf
+
+# Source trailer masters (multi-hundred-MB raw .mp4) — only the compressed
+# 540p H.264 copies in img/video/ are committed.
+Previews/

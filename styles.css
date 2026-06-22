@@ -838,6 +838,63 @@ button,input,textarea,select{font:inherit;color:inherit}
 .imghero h1 em{font-style:normal;color:var(--orange)}
 .imghero p{margin-top:18px;font-family:var(--ff-edit);font-style:italic;font-size:clamp(18px,1.6vw,22px);max-width:60ch;color:rgba(236,227,208,.85);line-height:1.4}
 
+/* === TRAILER CARDS (documentary.html · self-hosted <video> with paywall CTA) === */
+.trailer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
+  gap:clamp(24px,3vw,40px);
+  margin-top:clamp(28px,4vw,48px);
+}
+.trailer-card{
+  display:flex;flex-direction:column;
+  background:rgba(236,227,208,.04);
+  border:1px solid rgba(236,227,208,.18);
+}
+.trailer-card__video{
+  position:relative;width:100%;aspect-ratio:16/9;background:var(--ink);overflow:hidden;
+}
+.trailer-card__video video{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;background:var(--ink);display:block;
+}
+.trailer-card__body{
+  padding:24px 24px 28px;
+  display:flex;flex-direction:column;gap:6px;
+  flex:1;
+}
+.trailer-card__num{
+  font-family:var(--ff-mono);font-size:11px;font-weight:500;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--orange);
+}
+.trailer-card__title{
+  font-family:var(--ff-display);font-weight:900;
+  font-size:clamp(24px,2.4vw,32px);line-height:1.1;
+  letter-spacing:-.005em;text-transform:uppercase;color:var(--bone);
+  margin:4px 0 6px;
+}
+.trailer-card__desc{
+  color:rgba(236,227,208,.78);font-size:15px;line-height:1.5;
+  margin:0 0 16px;
+}
+.trailer-card__cta{
+  display:inline-flex;align-items:center;gap:8px;
+  align-self:flex-start;margin-top:auto;
+  padding:14px 22px;
+  background:var(--orange);color:var(--bone);
+  font-family:var(--ff-display);font-weight:800;font-size:14px;
+  letter-spacing:.14em;text-transform:uppercase;
+  text-decoration:none;
+  transition:background .18s ease,transform .18s ease;
+}
+.trailer-card__cta:hover,.trailer-card__cta:focus-visible{
+  background:var(--orange-deep);outline:none;
+}
+.trailer-card__paywall{
+  font-family:var(--ff-mono);font-size:11px;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(236,227,208,.55);margin-top:10px;
+}
+
 /* === VIDEO LIBRARY GRID (about-7x/strength-training-videos, about-7x/prehab-rehab-videos) === */
 .video-grid{
   display:grid;
