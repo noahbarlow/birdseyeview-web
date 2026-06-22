@@ -319,12 +319,20 @@ button,input,textarea,select{font:inherit;color:inherit}
      4. white-space:normal on pulse-word: lets long phrases wrap onto two lines */
 .hero--pulse .hero-grid{
   grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  align-items:start;             /* anchor poster top, don't reflow on left-col changes */
 }
 .hero--pulse .hero-copy{min-width:0;overflow:hidden}
 .hero--pulse .poster{min-width:0}
 .pulse-stage--hero{
   position:relative;display:flex;align-items:center;justify-content:flex-start;
-  min-height:clamp(140px,15vw,220px);margin-top:10px;
+  /* FIXED height (not min-height) so the stage box stays the same size as the
+     cycling word changes — prevents the hero from breathing vertically when a
+     1-line word like "Lost." is replaced by a 2-line phrase like "Where's my
+     tribe?" Stage is tall enough for two lines at max font; overflow hidden
+     handles edge cases without pushing layout below. */
+  height:clamp(150px,16vw,200px);
+  overflow:hidden;
+  margin-top:10px;
   text-align:left;flex-wrap:wrap;gap:14px;
   width:100%;
 }
