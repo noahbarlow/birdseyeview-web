@@ -324,16 +324,20 @@ button,input,textarea,select{font:inherit;color:inherit}
 .hero--pulse .poster{min-width:0}
 .pulse-stage--hero{
   position:relative;display:flex;align-items:center;justify-content:flex-start;
-  min-height:clamp(160px,18vw,260px);margin-top:10px;
+  min-height:clamp(140px,15vw,220px);margin-top:10px;
   text-align:left;flex-wrap:wrap;gap:14px;
   width:100%;
 }
 .pulse-stage--hero .pulse-word{
-  text-align:left;font-size:clamp(56px,9vw,140px);
-  white-space:normal;            /* override the base nowrap so long phrases can wrap */
-  max-width:100%;                /* anchor the wrap to the column, not the viewport */
-  word-break:normal;             /* break on word boundaries, not inside words */
-  overflow-wrap:break-word;      /* last-ditch: break a long word if it'd overflow */
+  text-align:left;
+  /* Max capped at ~96px so the longest single word in the sequence ("Hypervigilant.",
+     ~13 chars × ~0.5em average in Big Shoulders heavy) fits one line in the ~608px
+     left column on desktop. Short words still feel hero-sized at 96px. */
+  font-size:clamp(48px,7vw,96px);
+  line-height:0.95;
+  white-space:normal;            /* override the base nowrap so phrases can wrap */
+  max-width:100%;
+  overflow-wrap:anywhere;        /* belt-and-suspenders for narrower viewports */
 }
 @media (prefers-reduced-motion: reduce){
   .pulse-stage--hero{min-height:auto;flex-direction:column;align-items:flex-start;gap:10px}
@@ -1390,14 +1394,13 @@ button,input,textarea,select{font:inherit;color:inherit}
   will-change:opacity, transform;
 }
 .pulse-word--out{opacity:0;transform:scale(.96)}
-.pulse-word--symptom{color:var(--bone)}
-.pulse-word--ask{
-  color:var(--orange);
-  font-family:var(--ff-edit);font-weight:500;font-style:italic;
-  text-transform:none;letter-spacing:0;
-}
-.pulse-word--answer{color:var(--bone)}
-.pulse-word--answer-final{color:var(--orange)}
+/* One consistent treatment for every beat: white blocky Big Shoulders display,
+   uppercase, heavy weight. The cycling sequence carries the meaning — no font
+   swap or color flip per beat. */
+.pulse-word--symptom,
+.pulse-word--ask,
+.pulse-word--answer,
+.pulse-word--answer-final{color:var(--bone)}
 @media (prefers-reduced-motion: reduce){
   .pulse::before{animation:none;opacity:.7}
   .pulse-word{font-size:clamp(28px,3.6vw,52px);transition:none}
