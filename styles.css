@@ -310,14 +310,21 @@ button,input,textarea,select{font:inherit;color:inherit}
 .hero--pulse .hero-cite{margin-top:28px;color:rgba(236,227,208,.7)}
 .hero--pulse .hero-cite__rule{background:rgba(236,227,208,.18)}
 
-/* Pulse stage in the hero — sit where the headline used to live, slightly larger word */
+/* Pulse stage in the hero — sit where the headline used to live, slightly larger word.
+   Grid items get min-width:0 so the cycling word's intrinsic width can't blow out the
+   column and squash the poster. Long phrases ("Do you love yourself?") wrap onto two
+   lines instead of overflowing horizontally. */
+.hero--pulse .hero-copy,
+.hero--pulse .poster{min-width:0}
 .pulse-stage--hero{
   position:relative;display:flex;align-items:center;justify-content:flex-start;
-  min-height:clamp(96px,11vw,152px);margin-top:10px;
+  min-height:clamp(160px,18vw,260px);margin-top:10px;
   text-align:left;flex-wrap:wrap;gap:14px;
 }
 .pulse-stage--hero .pulse-word{
   text-align:left;font-size:clamp(56px,9vw,140px);
+  white-space:normal;            /* override the base nowrap so long phrases can wrap */
+  max-width:100%;                /* anchor the wrap to the column, not the viewport */
 }
 @media (prefers-reduced-motion: reduce){
   .pulse-stage--hero{min-height:auto;flex-direction:column;align-items:flex-start;gap:10px}
