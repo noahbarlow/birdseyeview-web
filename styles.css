@@ -838,7 +838,41 @@ button,input,textarea,select{font:inherit;color:inherit}
 .imghero h1 em{font-style:normal;color:var(--orange)}
 .imghero p{margin-top:18px;font-family:var(--ff-edit);font-style:italic;font-size:clamp(18px,1.6vw,22px);max-width:60ch;color:rgba(236,227,208,.85);line-height:1.4}
 
-/* === VIDEO BLOCK === */
+/* === VIDEO LIBRARY GRID (about-7x/strength-training-videos, about-7x/prehab-rehab-videos) === */
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:clamp(20px,2.5vw,36px);
+  margin-top:clamp(20px,3vw,40px);
+}
+.video-card{
+  display:flex;flex-direction:column;
+  background:var(--bone);
+  border:1px solid var(--rule);
+}
+.video-card__frame{
+  position:relative;width:100%;aspect-ratio:16/9;background:var(--ink);overflow:hidden;
+}
+.video-card__frame iframe{
+  position:absolute;inset:0;width:100%;height:100%;border:0;
+}
+.video-card__body{
+  padding:18px 20px 22px;
+  display:flex;flex-direction:column;gap:6px;
+  flex:1;
+}
+.video-card__num{
+  font-family:var(--ff-mono);font-size:11px;font-weight:500;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--orange);
+}
+.video-card__title{
+  font-family:var(--ff-display);font-weight:800;
+  font-size:clamp(18px,1.6vw,22px);line-height:1.18;
+  letter-spacing:-.005em;text-transform:none;color:var(--ink);
+  margin:0;
+}
+
+/* === VIDEO BLOCK (legacy single-feature treatment used on resources.html) === */
 .video-block{
   position:relative;aspect-ratio:16/9;background:var(--ink);border:1px solid var(--ink);
   display:grid;place-items:center;overflow:hidden;
