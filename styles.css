@@ -390,6 +390,21 @@ button,input,textarea,select{font:inherit;color:inherit}
 .crisis-banner{background:var(--ink);color:var(--bone);padding:14px 0;border-bottom:1px solid var(--orange-deep)}
 .crisis-banner a{color:var(--orange);text-decoration:underline;text-underline-offset:3px}
 .crisis-banner a:hover,.crisis-banner a:focus-visible{color:var(--bone)}
+
+/* Event flyer cards — events.html.
+   Each event is a card with a "flyer" header (colored block + title) and
+   a body with date/time/location dl + teaser + CTA. */
+.event-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(20px,2.5vw,32px);margin-top:clamp(20px,3vw,40px)}
+.event-card{display:flex;flex-direction:column;border:1px solid var(--rule);background:var(--bone-2)}
+.event-card__flyer{padding:clamp(28px,4vw,44px) clamp(24px,3vw,36px);aspect-ratio:4/3;display:flex;flex-direction:column;justify-content:flex-end;color:var(--bone);position:relative}
+.event-card__flyer h3{font-family:var(--ff-display);font-weight:900;font-size:clamp(32px,3.6vw,52px);letter-spacing:-.005em;text-transform:uppercase;line-height:.94;margin-top:10px}
+.event-card__tag{font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(236,227,208,.75)}
+.event-card__body{padding:24px 26px 28px;display:flex;flex-direction:column;gap:14px;flex:1}
+.event-card__body dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:0;font-size:13px;line-height:1.4}
+.event-card__body dt{font-family:var(--ff-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);align-self:center}
+.event-card__body dd{margin:0;font-family:var(--ff-display);font-weight:700;color:var(--ink);text-transform:uppercase;font-size:13px;letter-spacing:.02em;align-self:center}
+.event-card__body p{color:var(--ink-soft);font-size:14px;line-height:1.5;margin:0}
+.event-card__body .btn{margin-top:auto;align-self:flex-start}
 /* Big buttons for the simplified homepage final CTA. Per client revision:
    "Replace with two larger buttons: Apply for Support / Fund a Year." */
 .btn--xl{padding:clamp(22px,2.6vw,34px) clamp(28px,3.6vw,52px);font-size:clamp(18px,1.8vw,24px);letter-spacing:.12em;min-width:280px;justify-content:center}
