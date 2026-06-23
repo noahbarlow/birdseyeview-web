@@ -640,6 +640,17 @@ button,input,textarea,select{font:inherit;color:inherit}
 .pillars--2{grid-template-columns:repeat(2,1fr)}
 .pillars--2 .pillar{padding:clamp(24px,3vw,40px)}
 @media (max-width:760px){.pillars--2{grid-template-columns:1fr}.pillars--2 .pillar{border-right:0;border-bottom:1px solid var(--ink)}.section.dark .pillars--2 .pillar{border-bottom-color:var(--rule-bone)}}
+/* 5-column variant for the War Feather phase layout (Selection · Therapy · Biomarkers · Human Performance · Annual Gathering). Tighter padding + shorter min-height so the cells don't leave huge gaps below short descriptions. Stacks to 1 col on tablet/mobile to avoid orphan rows. */
+.pillars--5{grid-template-columns:repeat(5,1fr)}
+.pillars--5 .pillar{padding:24px 20px;min-height:auto;gap:10px}
+.pillars--5 .pillar h4{font-size:clamp(20px,1.8vw,24px)}
+.pillars--5 .pillar p{font-size:14px;line-height:1.5;margin-top:auto}
+@media (max-width:1080px){
+  .pillars--5{grid-template-columns:1fr}
+  .pillars--5 .pillar{border-right:0!important;border-bottom:1px solid var(--ink)}
+  .pillars--5 .pillar:last-child{border-bottom:0}
+  .section.dark .pillars--5 .pillar{border-bottom-color:var(--rule-bone)}
+}
 
 /* === STEPS / PROCESS === */
 .steps{display:grid;grid-template-columns:1fr;border:1px solid var(--ink)}
