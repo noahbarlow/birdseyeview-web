@@ -282,7 +282,7 @@ button,input,textarea,select{font:inherit;color:inherit}
 .hero--pulse::before{
   content:"";position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(circle at 30% 28%, rgba(255,42,0,.10), transparent 55%);
-  animation:pulseGlow 4s ease-in-out infinite;
+  /* Per client revision: stop header movement. Glow stays as a static accent. */
 }
 .hero--pulse .wrap{position:relative;z-index:1}
 .hero--pulse .hero-meta .vol{color:var(--orange)}
@@ -384,6 +384,11 @@ button,input,textarea,select{font:inherit;color:inherit}
 .btn--inverse{background:var(--bone);border-color:var(--bone);color:var(--ink)}
 .btn--inverse:hover{background:var(--orange);border-color:var(--orange);color:var(--bone)}
 .btn--sm{padding:13px 18px;font-size:12px;letter-spacing:.14em}
+/* Big buttons for the simplified homepage final CTA. Per client revision:
+   "Replace with two larger buttons: Apply for Support / Fund a Year." */
+.btn--xl{padding:clamp(22px,2.6vw,34px) clamp(28px,3.6vw,52px);font-size:clamp(18px,1.8vw,24px);letter-spacing:.12em;min-width:280px;justify-content:center}
+.final-doors{display:flex;gap:clamp(14px,2vw,24px);justify-content:center;flex-wrap:wrap;margin-top:0}
+@media (max-width:640px){.final-doors{flex-direction:column}.btn--xl{min-width:0;width:100%}}
 .btn .arrow{display:inline-block;transition:transform .25s ease}
 .btn:hover .arrow{transform:translateX(4px)}
 
@@ -463,11 +468,10 @@ button,input,textarea,select{font:inherit;color:inherit}
 .section-art--orange::after{background-image:radial-gradient(circle at center, var(--orange) 32%, transparent 33%);opacity:.35}
 .section.dark .section-art{border-color:var(--rule-bone)}
 
-.section-head{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(20px,3vw,40px);align-items:end;margin-bottom:clamp(36px,5vw,72px);border-bottom:1px solid var(--rule);padding-bottom:24px}
+.section-head{display:grid;grid-template-columns:1fr auto;gap:clamp(20px,3vw,40px);align-items:end;margin-bottom:clamp(36px,5vw,72px);border-bottom:1px solid var(--rule);padding-bottom:24px}
 .section.dark .section-head{border-color:var(--rule-bone)}
-.section-head .no{font-family:var(--ff-display);font-weight:900;font-size:clamp(64px,8vw,128px);line-height:.85;color:var(--orange)}
-.section-head .no sup{font-size:.4em;letter-spacing:.04em;color:var(--ink);font-family:var(--ff-edit);font-style:italic;font-weight:500;vertical-align:1.4em;margin-right:.05em}
-.section.dark .section-head .no sup{color:var(--bone)}
+/* .section-head .no rules retained as no-op safety net in case any page still emits one */
+.section-head .no{display:none}
 .section-head .ttl{font-family:var(--ff-display);font-weight:900;font-size:clamp(44px,6vw,88px);line-height:.88;letter-spacing:-.005em;text-transform:uppercase}
 .section-head .meta{font-family:var(--ff-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;text-align:right;color:var(--ink-soft)}
 .section.dark .section-head .meta{color:rgba(236,227,208,.65)}
@@ -600,11 +604,10 @@ button,input,textarea,select{font:inherit;color:inherit}
 .pillar{padding:32px 24px 28px;border-right:1px solid var(--ink);position:relative;background:var(--bone-2);min-height:280px;display:flex;flex-direction:column;gap:14px}
 .section.dark .pillar{background:transparent;border-right-color:var(--rule-bone);color:var(--bone)}
 .pillar:last-child{border-right:0}
-.pillar .num{font-family:var(--ff-display);font-weight:900;font-size:64px;line-height:.85;color:var(--orange)}
-.pillar .num sup{font-family:var(--ff-edit);font-style:italic;font-weight:500;font-size:.36em;color:var(--ink);vertical-align:1.6em;margin-right:.1em}
-.section.dark .pillar .num sup{color:var(--bone)}
-.pillar h4{font-family:var(--ff-display);font-weight:900;font-size:22px;letter-spacing:.01em;text-transform:uppercase;line-height:1;margin-top:8px}
-.pillar p{font-size:14px;line-height:1.5;color:var(--ink-soft);margin-top:auto}
+/* .pillar .num rules dropped — client revision removed pillar numbers sitewide */
+.pillar .num{display:none}
+.pillar h4{font-family:var(--ff-display);font-weight:900;font-size:clamp(28px,2.8vw,36px);letter-spacing:0;text-transform:uppercase;line-height:1.02;margin-top:8px}
+.pillar p{font-size:15px;line-height:1.55;color:var(--ink-soft);margin-top:auto}
 .section.dark .pillar p{color:rgba(236,227,208,.78)}
 .pillar .tag{font-family:var(--ff-mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
 .section.dark .pillar .tag{color:rgba(236,227,208,.6)}
