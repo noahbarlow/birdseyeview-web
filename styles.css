@@ -384,6 +384,12 @@ button,input,textarea,select{font:inherit;color:inherit}
 .btn--inverse{background:var(--bone);border-color:var(--bone);color:var(--ink)}
 .btn--inverse:hover{background:var(--orange);border-color:var(--orange);color:var(--bone)}
 .btn--sm{padding:13px 18px;font-size:12px;letter-spacing:.14em}
+
+/* Crisis callout banner — Apply for War Feather page top.
+   Brief, ink-on-bone-page, with 988 link as primary action. */
+.crisis-banner{background:var(--ink);color:var(--bone);padding:14px 0;border-bottom:1px solid var(--orange-deep)}
+.crisis-banner a{color:var(--orange);text-decoration:underline;text-underline-offset:3px}
+.crisis-banner a:hover,.crisis-banner a:focus-visible{color:var(--bone)}
 /* Big buttons for the simplified homepage final CTA. Per client revision:
    "Replace with two larger buttons: Apply for Support / Fund a Year." */
 .btn--xl{padding:clamp(22px,2.6vw,34px) clamp(28px,3.6vw,52px);font-size:clamp(18px,1.8vw,24px);letter-spacing:.12em;min-width:280px;justify-content:center}
