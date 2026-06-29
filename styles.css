@@ -299,8 +299,7 @@ button,input,textarea,select{font:inherit;color:inherit}
   text-transform:uppercase;color:var(--bone);margin-top:12px;
 }
 .hero--pulse .hero-tag em{
-  font-family:var(--ff-edit);font-weight:500;font-style:italic;
-  text-transform:none;color:var(--orange);letter-spacing:0;
+  font-style:normal;color:var(--orange);
 }
 .hero--pulse .hero-antipitch{
   margin-top:14px;font-family:var(--ff-display);font-weight:800;
