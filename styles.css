@@ -639,6 +639,30 @@ button,input,textarea,select{font:inherit;color:inherit}
 .pillars--2{grid-template-columns:repeat(2,1fr)}
 .pillars--2 .pillar{padding:clamp(24px,3vw,40px)}
 @media (max-width:760px){.pillars--2{grid-template-columns:1fr}.pillars--2 .pillar{border-right:0;border-bottom:1px solid var(--ink)}.section.dark .pillars--2 .pillar{border-bottom-color:var(--rule-bone)}}
+/* War Feather "How it works" phase flow — six numbered cards laid out in
+   one row on desktop, three across on tablet, single column on mobile.
+   Each card carries its phase number as the visual anchor, then title +
+   short description + partner attribution where it matters. Used on
+   programs.html and apply.html. Strips down Landon's reference diagram
+   to the BEVP ink/bone/orange palette. */
+.phases-flow{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(8px,1vw,14px);margin-top:clamp(28px,4vw,48px)}
+.phase{display:flex;flex-direction:column;gap:12px;padding:clamp(20px,2.2vw,26px) clamp(16px,1.6vw,20px);background:var(--bone-2);border:1px solid var(--rule);position:relative}
+.section.dark .phase{background:transparent;border-color:rgba(236,227,208,.18)}
+.phase__num{font-family:var(--ff-display);font-weight:900;font-size:clamp(56px,5vw,80px);line-height:.85;color:var(--orange);letter-spacing:-.02em}
+.phase__title{font-family:var(--ff-display);font-weight:900;font-size:clamp(18px,1.5vw,22px);line-height:1.05;text-transform:uppercase;letter-spacing:0;color:var(--ink);margin:0}
+.section.dark .phase__title{color:var(--bone)}
+.phase__desc{font-size:14px;line-height:1.4;color:var(--ink-soft);margin:0}
+.section.dark .phase__desc{color:rgba(236,227,208,.75)}
+.phase__steps{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;font-size:13px;line-height:1.35;color:var(--ink)}
+.section.dark .phase__steps{color:var(--bone)}
+.phase__steps li{padding-left:14px;position:relative}
+.phase__steps li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:1px;background:var(--orange-deep)}
+.section.dark .phase__steps li::before{background:var(--orange)}
+.phase__partner{font-family:var(--ff-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange-deep);margin:auto 0 0;line-height:1.4}
+.section.dark .phase__partner{color:var(--orange)}
+@media (max-width:1180px){.phases-flow{grid-template-columns:repeat(3,1fr);gap:12px}}
+@media (max-width:640px){.phases-flow{grid-template-columns:1fr;gap:12px}.phase__num{font-size:clamp(40px,8vw,56px)}}
+
 /* 5-column variant for the War Feather phase layout (Selection · Therapy · Biomarkers · Human Performance · Annual Gathering). Tighter padding + shorter min-height so the cells don't leave huge gaps below short descriptions. Stacks to 1 col on tablet/mobile to avoid orphan rows. */
 .pillars--5{grid-template-columns:repeat(5,1fr)}
 .pillars--5 .pillar{padding:24px 20px;min-height:auto;gap:10px}
