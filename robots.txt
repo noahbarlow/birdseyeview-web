@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /images.html
+Disallow: /logo-test.html
+
+Sitemap: https://birdseyeviewproject.org/sitemap.xml
