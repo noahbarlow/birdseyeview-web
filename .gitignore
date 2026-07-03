@@ -20,3 +20,8 @@ BEVP-design-direction.pdf
 # Source trailer masters (multi-hundred-MB raw .mp4) — only the compressed
 # 540p H.264 copies in img/video/ are committed.
 Previews/
+
+# AI tooling config used by Noah's dev environment; not part of the client build.
+.mcp.json
+.agents/
+skills-lock.json
