@@ -15,12 +15,13 @@
     if (LOADED) return;
     LOADED = true;
 
-    // 1. Load reCAPTCHA Enterprise. In enterprise mode + v3, grecaptcha will
-    //    fill g-recaptcha-response automatically with a bot-score token, and
-    //    Neon's neonSubscriptionSubmit() will allow the POST without a popup.
-    //    If Neon's key is v2 checkbox, the popup below renders the challenge.
+    // 1. Load reCAPTCHA Enterprise. Bare enterprise.js auto-scans the DOM for
+    //    <div class="g-recaptcha"> widgets and renders them (v2 checkbox).
+    //    Any ?render=<sitekey> query would disable that auto-render and put the
+    //    library into programmatic v3-only mode — which is not what Neon's
+    //    inline snippet expects.
     var s = document.createElement('script');
-    s.src = 'https://www.google.com/recaptcha/enterprise.js?render=' + SITEKEY;
+    s.src = 'https://www.google.com/recaptcha/enterprise.js';
     s.async = true;
     s.defer = true;
     document.head.appendChild(s);
