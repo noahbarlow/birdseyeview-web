@@ -60,6 +60,7 @@ src="https://www.facebook.com/tr?id=1153372614744693&ev=PageView&noscript=1"
 <meta name="twitter:description" content="Book a call with the Birds Eye View Project team. Major gifts, partnerships, press, every conversation routed to a named person with a clear response time." />
 <meta name="twitter:image" content="https://birdseyeviewproject.org/img/MRC03890.jpg" />
 <script src="analytics.js" defer></script>
+<script src="neon-fallback.js?v=2" defer></script>
 <!-- Calendly scheduling popup
      TODO: Currently bound to Noah Barlow's personal Calendly while a
      BEVP-owned account is being provisioned. Swap the URL on both buttons
@@ -291,8 +292,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2 class="ttl">Send a note.</h2>
       <div class="meta">// General inquiries<b>We reply within 24 hrs</b></div>
     </div>
-    <div class="neon-embed reveal">
+    <div class="neon-embed reveal" data-neon-hosted="https://birdseyeviewproject.app.neoncrm.com/forms/contact-form">
       <script src='https://birdseyeviewproject.app.neoncrm.com/forms/share/Rk9STS1FTUJFRFNIQVJJTkctQ09ERTEy'></script>
+      <div class="neon-fallback">
+        <span class="neon-fallback__lbl">// Form not loading?</span>
+        <p class="neon-fallback__body">The contact form loads on birdseyeviewproject.org. On other domains it may be blocked.</p>
+        <a class="btn btn--orange" href="https://birdseyeviewproject.app.neoncrm.com/forms/contact-form" target="_blank" rel="noopener">Open the contact form on Neon <span class="arrow">↗</span></a>
+      </div>
     </div>
   </div>
 </section>

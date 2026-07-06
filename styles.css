@@ -704,6 +704,14 @@ button,input,textarea,select{font:inherit;color:inherit}
 .neon-embed a{color:var(--orange-deep)}
 .section.dark .neon-embed{background:var(--bone);color:var(--ink)}
 @media (max-width:640px){.neon-embed{padding:22px}}
+.neon-fallback{margin-top:4px;padding:28px 8px 8px;text-align:center;border-top:1px dashed var(--rule)}
+.neon-fallback[hidden]{display:none}
+.neon-embed--failed iframe,
+.neon-embed--failed [id^="neon-form-embed-"]{display:none!important}
+.neon-embed--failed .neon-fallback{margin-top:0;padding-top:0;border-top:0}
+.neon-fallback__lbl{display:block;font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:12px}
+.neon-fallback__body{font-family:var(--ff-body);font-size:14px;line-height:1.5;color:var(--ink-soft);max-width:44ch;margin:0 auto 18px}
+.neon-fallback .btn{margin-inline:auto}
 .step .stamp{
   border:1.5px solid var(--orange);color:var(--orange);
   font-family:var(--ff-mono);font-weight:500;font-size:9px;letter-spacing:.22em;text-transform:uppercase;

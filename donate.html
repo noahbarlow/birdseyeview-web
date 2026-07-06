@@ -60,6 +60,7 @@ src="https://www.facebook.com/tr?id=1153372614744693&ev=PageView&noscript=1"
 <meta name="twitter:description" content="Fund six months of treatment, biomarkers, and community for a veteran or first responder. 90% of every dollar goes to programs. 501(c)(3) Tax ID 47-4019107." />
 <meta name="twitter:image" content="https://birdseyeviewproject.org/img/MRC03890.jpg" />
 <script src="analytics.js" defer></script>
+<script src="neon-fallback.js?v=2" defer></script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -334,9 +335,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
-    <div class="neon-embed reveal" id="give-today">
+    <div class="neon-embed reveal" id="give-today" data-neon-hosted="https://birdseyeviewproject.app.neoncrm.com/forms/donate">
       <span class="reveal-eyebrow" style="display:block;font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:14px">// Give today</span>
       <script src='https://birdseyeviewproject.app.neoncrm.com/forms/share/Rk9STS1FTUJFRFNIQVJJTkctQ09ERTQ='></script>
+      <div class="neon-fallback">
+        <span class="neon-fallback__lbl">// Form not loading?</span>
+        <p class="neon-fallback__body">The donation form loads on birdseyeviewproject.org. On other domains it may be blocked.</p>
+        <a class="btn btn--orange" href="https://birdseyeviewproject.app.neoncrm.com/forms/donate" target="_blank" rel="noopener">Open the donation form on Neon <span class="arrow">↗</span></a>
+      </div>
       <p style="margin-top:20px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)">501(c)(3) · Tax ID 47-4019107 · Secure processing via Neon</p>
     </div>
   </div>
