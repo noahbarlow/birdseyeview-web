@@ -894,7 +894,7 @@ button,input,textarea,select{font:inherit;color:inherit}
 .imghero__inner .hero-cite{color:rgba(236,227,208,.7)}
 .imghero h1{font-family:var(--ff-display);font-weight:900;font-size:clamp(56px,9.4vw,148px);line-height:.86;letter-spacing:-.005em;text-transform:uppercase;color:var(--bone);max-width:14ch}
 .imghero h1 em{font-style:normal;color:var(--orange)}
-.imghero p{margin-top:18px;font-family:var(--ff-edit);font-style:italic;font-size:clamp(18px,1.6vw,22px);max-width:60ch;color:rgba(236,227,208,.85);line-height:1.4}
+.imghero p{margin-top:18px;font-family:var(--ff-body);font-weight:400;font-size:clamp(16px,1.3vw,19px);max-width:60ch;color:rgba(236,227,208,.85);line-height:1.5;letter-spacing:.005em}
 
 /* === TRAILER CARDS (documentary.html · self-hosted <video> with paywall CTA) === */
 .trailer-grid{
