@@ -60,6 +60,7 @@ src="https://www.facebook.com/tr?id=1153372614744693&ev=PageView&noscript=1"
 <meta name="twitter:description" content="A decade of action-based programs for veterans and first responders. Mission, history, board, and tax info for Birds Eye View Project, a Texas 501(c)(3) nonprofit." />
 <meta name="twitter:image" content="https://birdseyeviewproject.org/img/MRC03890.jpg" />
 <script src="analytics.js" defer></script>
+<script src="newsletter.js?v=1" defer></script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -604,7 +605,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <input type="hidden" name="subscription" value="1">
       <input type="hidden" name="skipDuplicateRequestCheck" value="1">
       <input type="email" name="subscriber.email1" placeholder="you@example.com" required aria-label="Email address" />
-      <button type="submit">Subscribe</button>
+      <button type="submit" id="subscriptionSubmitButton" onclick="return neonSubscriptionSubmit()">Subscribe</button>
       <p class="news-msg" hidden role="status">// Thanks. Check your inbox to confirm the subscription.</p>
     </form>
     <iframe name="_neon_sink" style="display:none;width:0;height:0;border:0" title="newsletter submission target" tabindex="-1" aria-hidden="true"></iframe>
