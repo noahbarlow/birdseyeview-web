@@ -3,7 +3,10 @@
 // staging, localhost, etc.) the fallback stays visible so users can still reach
 // the standalone hosted form.
 (function () {
-  var PROD_HOSTS = ['birdseyeviewproject.org', 'www.birdseyeviewproject.org'];
+  // Hosts allowed to render the Neon iframe. Must match what's whitelisted
+  // in Neon's Sharing → Allowed Domains list for each form. Any host NOT
+  // in here will force the fallback CTA and hide the failed iframe.
+  var PROD_HOSTS = ['noahbarlow.work', 'www.noahbarlow.work'];
   var isProd = PROD_HOSTS.indexOf(location.hostname) !== -1;
 
   function check() {
