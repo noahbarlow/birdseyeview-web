@@ -25,3 +25,4 @@ Previews/
 .mcp.json
 .agents/
 skills-lock.json
+.claude/
