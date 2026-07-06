@@ -270,10 +270,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h6>Field Brief</h6>
       <p>Quarterly updates from the field. Team releases, event dates, documentary news. No spam.</p>
     </div>
-    <form class="foot-news__form" action="https://birdseyeviewproject.app.neoncrm.com/subscribe.jsp" method="get" target="_blank" rel="noopener">
+    <form class="foot-news__form"
+      name="neonEmailSubscriptionForm"
+      method="POST"
+      action="https://birdseyeviewproject.app.neoncrm.com/np/clients/birdseyeviewproject/submitSubscription.jsp"
+      target="_neon_sink"
+      onsubmit="var f=this;setTimeout(function(){var b=f.querySelector('button');var m=f.querySelector('.news-msg');if(b){b.textContent='Subscribed';b.disabled=true}if(m){m.hidden=false}var e=f.querySelector('input[type=email]');if(e){e.value=''}},300)">
+      <input type="hidden" name="_csrf_token" value="BZ8F-05M7-L9AA-GSSA-ZV0J-N7C0-FCKF-ZIVO">
+      <input type="hidden" name="subscription" value="1">
+      <input type="hidden" name="skipDuplicateRequestCheck" value="1">
       <input type="email" name="subscriber.email1" placeholder="you@example.com" required aria-label="Email address" />
       <button type="submit">Subscribe</button>
+      <p class="news-msg" hidden role="status">// Thanks. Check your inbox to confirm the subscription.</p>
     </form>
+    <iframe name="_neon_sink" style="display:none;width:0;height:0;border:0" title="newsletter submission target" tabindex="-1" aria-hidden="true"></iframe>
   </div>
 
   <div class="foot-inner">
