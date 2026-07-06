@@ -372,11 +372,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h6>Field Brief</h6>
       <p>Quarterly updates from the field. Team releases, event dates, documentary news. No spam.</p>
     </div>
-    <form class="foot-news__form" action="#newsletter" method="post" novalidate onsubmit="event.preventDefault();const f=this;const i=f.querySelector('input[type=email]');const b=f.querySelector('button');const m=f.querySelector('.news-msg');if(!i.checkValidity()){i.focus();return}i.value='';b.textContent='Subscribed';b.disabled=true;if(m){m.hidden=false}">
-      <!-- TODO: wire action to real provider (Buttondown / ConvertKit / Mailchimp). Double opt-in required. -->
-      <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address" />
+    <form class="foot-news__form" action="https://birdseyeviewproject.app.neoncrm.com/subscribe.jsp" method="get" target="_blank" rel="noopener">
+      <input type="email" name="subscriber.email1" placeholder="you@example.com" required aria-label="Email address" />
       <button type="submit">Subscribe</button>
-      <p class="news-msg" hidden role="status">// Almost there, check your email to confirm. Search inbox for &ldquo;Birds Eye View&rdquo; if you don&rsquo;t see it.</p>
     </form>
   </div>
 
