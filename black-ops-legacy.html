@@ -361,32 +361,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ============== REGISTER ============== -->
-<!-- TODO (client): once the Legacy event is built + priced in Neon, point ENLIST at its registration URL. For now it captures interest (waitlist). -->
+<!-- Registration is live: Neon event=11 (Black Ops Legacy, $7,500 individual / $25,000 team). -->
+<!-- NOTE (Landon/Neon): the underlying form is still titled "Valkyrie(Copied) Registration" — please rename to Black Ops Legacy so it reads clean mid-flow. -->
 <section class="section bone" id="register">
   <div class="wrap-tight">
     <div class="section-head reveal">
       <h2 class="ttl">Claim your<br><em>spot</em>.</h2>
       <div class="meta">// Registration<b>Limited to 80</b></div>
     </div>
-    <div class="reveal" style="border:1px solid var(--rule);padding:clamp(28px,4vw,44px);background:var(--bone-2)">
-      <span style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange-deep)">// Registration opening soon</span>
-      <h3 style="margin-top:12px;font-family:var(--ff-display);font-weight:900;font-size:clamp(26px,3vw,40px);text-transform:uppercase;line-height:1;color:var(--ink)">Get first access.</h3>
-      <p style="margin-top:14px;color:var(--ink-soft);max-width:52ch;line-height:1.55">Black Ops: Legacy is limited to 80 participants. Join the list and we&rsquo;ll send you registration and pricing the moment it opens, before it&rsquo;s announced publicly.</p>
-      <form style="display:flex;gap:12px;flex-wrap:wrap;max-width:520px;margin-top:22px"
-        name="neonEmailSubscriptionForm"
-        method="POST"
-        action="https://birdseyeviewproject.app.neoncrm.com/np/clients/birdseyeviewproject/submitSubscription.jsp"
-        target="_neon_sink"
-        onsubmit="var f=this;setTimeout(function(){var b=f.querySelector('button');var m=f.querySelector('.news-msg');if(b){b.textContent='On the list';b.disabled=true}if(m){m.hidden=false}var e=f.querySelector('input[type=email]');if(e){e.value=''}},300)">
-        <input type="hidden" name="_csrf_token" value="BZ8F-05M7-L9AA-GSSA-ZV0J-N7C0-FCKF-ZIVO">
-        <input type="hidden" name="subscription" value="1">
-        <input type="hidden" name="skipDuplicateRequestCheck" value="1">
-        <input type="email" name="subscriber.email1" placeholder="you@example.com" required aria-label="Email address" style="flex:1;min-width:220px;border:1px solid var(--ink);border-radius:0;padding:14px 16px;font-family:var(--ff-body);font-size:15px;color:var(--ink);background:#fff" />
-        <button type="submit" id="subscriptionSubmitButton" onclick="return neonSubscriptionSubmit()" class="btn btn--orange">Notify Me</button>
-        <p class="news-msg" hidden role="status" style="width:100%;font-family:var(--ff-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange-deep)">// You&rsquo;re on the list. Check your inbox to confirm.</p>
-      </form>
-      <iframe name="_neon_sink" style="display:none;width:0;height:0;border:0" title="submission target" tabindex="-1" aria-hidden="true"></iframe>
+    <div class="tiers reveal">
+      <div class="tier">
+        <span class="amt">$7,500 <span class="small">Individual</span></span>
+        <span class="desc">One seat &middot; full four-day experience</span>
+      </div>
+      <div class="tier">
+        <span class="amt">$25,000 <span class="small">Team</span></span>
+        <span class="desc">Full team &middot; best value for groups &amp; sponsors</span>
+      </div>
     </div>
+    <div class="hero-cta reveal" style="margin-top:28px">
+      <a class="btn btn--orange" href="https://birdseyeviewproject.app.neoncrm.com/np/clients/birdseyeviewproject/event.jsp?event=11&utm_source=website&utm_medium=landing&utm_campaign=legacy" target="_blank" rel="noopener">Register Now <span class="arrow">&rarr;</span></a>
+      <a class="btn btn--inverse" href="donate.html#give-today">Sponsor Instead</a>
+    </div>
+    <p class="reveal" style="margin-top:16px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)">// Limited to 80 participants &middot; 501(c)(3) &middot; Secure checkout via Neon</p>
   </div>
 </section>
 
