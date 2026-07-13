@@ -1731,3 +1731,80 @@ body.heartbeat-open{overflow:hidden}
 }
 
 ::selection{background:var(--orange);color:var(--bone)}
+
+/* ============================================================
+   BLACK OPS event landing pages (Legacy + Valkyrie)
+   ============================================================ */
+
+/* Three/five pillar rows (Challenge / Tribe / Purpose · feature row) */
+.bo-pillars{display:grid;gap:clamp(20px,3vw,40px);margin-top:8px}
+.bo-pillars--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bo-pillars--5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.bo-pillar__k{font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange-deep)}
+.section.dark .bo-pillar__k{color:var(--orange)}
+.bo-pillar__t{font-family:var(--ff-display);font-weight:800;font-size:clamp(22px,2.4vw,30px);text-transform:uppercase;letter-spacing:.01em;line-height:1;margin:12px 0 10px;color:var(--ink)}
+.section.dark .bo-pillar__t{color:var(--bone)}
+.bo-pillar__d{font-size:15px;line-height:1.55;color:var(--ink-soft)}
+.section.dark .bo-pillar__d{color:rgba(236,227,208,.72)}
+@media(max-width:820px){.bo-pillars--3,.bo-pillars--5{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.bo-pillars--3,.bo-pillars--5{grid-template-columns:1fr}}
+
+/* Experience photo cards */
+.bo-exp-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,1.6vw,22px);margin-top:8px}
+.bo-exp-card{border:1px solid var(--rule-bone);background:rgba(236,227,208,.03);display:flex;flex-direction:column;min-width:0}
+.bo-exp-card__img{position:relative;aspect-ratio:4/3;overflow:hidden}
+.bo-exp-card__img img{width:100%;height:100%;object-fit:cover;display:block}
+.bo-exp-card__new{position:absolute;top:10px;left:10px;font-family:var(--ff-mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--bone);background:var(--orange-deep);padding:4px 8px}
+.bo-exp-card__body{padding:16px 16px 20px}
+.bo-exp-card__t{font-family:var(--ff-display);font-weight:800;font-size:18px;text-transform:uppercase;letter-spacing:.01em;line-height:1.05;color:var(--bone)}
+.bo-exp-card__d{margin-top:8px;font-size:13px;line-height:1.5;color:rgba(236,227,208,.66)}
+@media(max-width:920px){.bo-exp-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.bo-exp-grid{grid-template-columns:1fr}}
+
+/* Additional highlights — tag chips */
+.bo-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.bo-tags span{font-family:var(--ff-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);border:1px solid var(--rule);padding:8px 12px}
+.section.dark .bo-tags span{color:rgba(236,227,208,.8);border-color:var(--rule-bone)}
+
+/* Meet your teammates — badge cloud */
+.bo-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.bo-badges span{font-family:var(--ff-display);font-weight:700;font-size:clamp(13px,1.4vw,16px);letter-spacing:.03em;text-transform:uppercase;color:var(--bone);border:1px solid var(--rule-bone);padding:9px 14px}
+.bo-badges span b{color:var(--orange);font-weight:700}
+
+/* Instructor bio cards */
+.bo-roster{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2vw,28px);margin-top:8px}
+.bo-person{border:1px solid var(--rule);padding:22px 24px;background:var(--bone-2)}
+.bo-person__n{font-family:var(--ff-display);font-weight:900;font-size:clamp(19px,2vw,24px);text-transform:uppercase;letter-spacing:.01em;line-height:1;color:var(--ink)}
+.bo-person__r{margin-top:4px;font-family:var(--ff-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange-deep)}
+.bo-person__d{margin-top:12px;font-size:14px;line-height:1.55;color:var(--ink-soft)}
+@media(max-width:720px){.bo-roster{grid-template-columns:1fr}}
+
+/* Schedule — 4 day columns */
+.bo-sched{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.5vw,20px);margin-top:8px}
+.bo-day{border:1px solid var(--rule-bone);padding:20px 18px;min-width:0}
+.bo-day__h{font-family:var(--ff-display);font-weight:900;font-size:20px;text-transform:uppercase;letter-spacing:.02em;color:var(--orange);padding-bottom:12px;border-bottom:1px solid var(--rule-bone);margin-bottom:14px}
+.bo-day ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.bo-day li{font-family:var(--ff-body);font-size:13px;line-height:1.4;color:rgba(236,227,208,.82)}
+.bo-day li b{display:block;font-family:var(--ff-mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(236,227,208,.45);margin-bottom:3px;font-weight:500}
+@media(max-width:820px){.bo-sched{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.bo-sched{grid-template-columns:1fr}}
+
+/* Three-CTA row (Enlist / Volunteer / Sponsor) */
+.bo-cta3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:8px}
+.bo-cta3__btn{display:flex;flex-direction:column;gap:2px;text-decoration:none;border:1px solid var(--orange);padding:20px 22px;transition:background .2s ease,color .2s ease}
+.bo-cta3__btn .k{font-family:var(--ff-display);font-weight:900;font-size:clamp(20px,2.4vw,28px);text-transform:uppercase;letter-spacing:.02em;color:var(--orange)}
+.bo-cta3__btn .s{font-family:var(--ff-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(236,227,208,.6)}
+.bo-cta3__btn:hover{background:var(--orange)}
+.bo-cta3__btn:hover .k{color:var(--bone)}
+.bo-cta3__btn:hover .s{color:var(--bone)}
+.bo-cta3__btn--solid{background:var(--orange);border-color:var(--orange)}
+.bo-cta3__btn--solid .k{color:var(--bone)}
+.bo-cta3__btn--solid .s{color:rgba(236,227,208,.8)}
+.bo-cta3__btn--solid:hover{background:var(--orange-deep);border-color:var(--orange-deep)}
+@media(max-width:640px){.bo-cta3{grid-template-columns:1fr}}
+
+/* QR block */
+.bo-qr{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:32px;border-top:1px solid var(--rule-bone);padding-top:28px}
+.bo-qr img{width:120px;height:120px;background:#fff;padding:8px;flex:none}
+.bo-qr__t{font-family:var(--ff-display);font-weight:800;font-size:clamp(18px,2vw,24px);text-transform:uppercase;letter-spacing:.02em;color:var(--bone);line-height:1.05}
+.bo-qr__s{margin-top:6px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(236,227,208,.6)}
