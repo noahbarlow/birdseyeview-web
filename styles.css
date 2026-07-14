@@ -1808,3 +1808,8 @@ body.heartbeat-open{overflow:hidden}
 .bo-qr img{width:120px;height:120px;background:#fff;padding:8px;flex:none}
 .bo-qr__t{font-family:var(--ff-display);font-weight:800;font-size:clamp(18px,2vw,24px);text-transform:uppercase;letter-spacing:.02em;color:var(--bone);line-height:1.05}
 .bo-qr__s{margin-top:6px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(236,227,208,.6)}
+
+/* === War Feather program lockup / emblem (added with brand logo) === */
+.imghero__inner .imghero__wf{max-width:none;margin:0}
+.imghero__wf img{width:min(560px,86%);height:auto;display:block}
+.wf-hero-emblem{width:clamp(64px,7vw,92px);height:auto;display:block;margin:0 0 22px}
