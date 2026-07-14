@@ -1813,3 +1813,4 @@ body.heartbeat-open{overflow:hidden}
 .imghero__inner .imghero__wf{max-width:none;margin:0}
 .imghero__wf img{width:min(560px,86%);height:auto;display:block}
 .wf-hero-emblem{width:clamp(64px,7vw,92px);height:auto;display:block;margin:0 0 22px}
+.wf-hero-lockup{width:min(380px,74%);height:auto;display:block;margin:0 0 28px}
