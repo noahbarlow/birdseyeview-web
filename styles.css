@@ -1814,3 +1814,19 @@ body.heartbeat-open{overflow:hidden}
 .imghero__wf img{width:min(560px,86%);height:auto;display:block}
 .wf-hero-emblem{width:clamp(64px,7vw,92px);height:auto;display:block;margin:0 0 22px}
 .wf-hero-lockup{width:min(380px,74%);height:auto;display:block;margin:0 0 28px}
+
+/* five-across pillars (How It Works five-phase program) */
+.pillars--5{grid-template-columns:repeat(5,1fr)}
+.pillars--5 .pillar{min-height:250px;padding:28px 20px 24px}
+@media (max-width:980px){.pillars--5{grid-template-columns:repeat(2,1fr)}}
+.hero-welcome{font-family:var(--ff-edit);font-style:italic;font-size:clamp(16px,1.45vw,20px);color:rgba(236,227,208,.85);max-width:54ch;line-height:1.45;margin:14px 0 2px}
+.hero-welcome a{color:var(--bone);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--orange)}
+/* contact lane cards: flow content from the top so all three cards match
+   (default .pillar p{margin-top:auto} bottom-aligns and gaps the shortest card) */
+.pillar--flow p{margin-top:0}
+/* Black Ops Legacy hero: lightened per client (photo read too dark) */
+.imghero--lift .imghero__img{filter:grayscale(1) contrast(1.25) brightness(1.18)}
+.imghero--lift .imghero__overlay{background:linear-gradient(180deg,rgba(14,13,11,0) 0%,rgba(14,13,11,0) 35%,rgba(14,13,11,.45) 75%,rgba(14,13,11,.82) 100%),linear-gradient(90deg,rgba(14,13,11,.4) 0%,rgba(14,13,11,0) 60%)}
+/* cadre roster portraits (About-page headshots) */
+.bo-person__ph{width:74px;aspect-ratio:3/4;overflow:hidden;border:1px solid var(--ink);margin-bottom:14px}
+.bo-person__ph img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.42) brightness(1.06)}
