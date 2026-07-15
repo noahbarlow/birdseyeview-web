@@ -60,7 +60,7 @@ src="https://www.facebook.com/tr?id=1153372614744693&ev=PageView&noscript=1"
 <meta name="twitter:description" content="Two feature documentaries embedded with the cohorts. After the Uniform (March 2026) and Documentary II (in production)." />
 <meta name="twitter:image" content="https://birdseyeviewproject.org/img/MRC03890.jpg" />
 <script src="analytics.js" defer></script>
-<script src="newsletter.js?v=2" defer></script>
+<script src="newsletter.js?v=3" defer></script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -206,7 +206,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="meta">// Email Gate<b>Pre · Release</b></div>
     </div>
 
-    <form class="form reveal" style="max-width:640px;margin-inline:auto" onsubmit="event.preventDefault();this.querySelector('.success').hidden=false;this.querySelector('.fields').hidden=true;">
+    <!-- INTERIM: posts to the Neon email subscription endpoint so addresses are captured now;
+         swap to a dedicated "Documentary Access" Neon audience/form when Landon creates it. -->
+    <form class="form reveal" style="max-width:640px;margin-inline:auto"
+      name="neonEmailSubscriptionForm"
+      method="POST"
+      action="https://birdseyeviewproject.app.neoncrm.com/np/clients/birdseyeviewproject/submitSubscription.jsp"
+      target="_neon_sink"
+      onsubmit="var f=this;setTimeout(function(){f.querySelector('.success').hidden=false;f.querySelector('.fields').hidden=true;},300)">
+      <input type="hidden" name="_csrf_token" value="BZ8F-05M7-L9AA-GSSA-ZV0J-N7C0-FCKF-ZIVO">
+      <input type="hidden" name="subscription" value="1">
+      <input type="hidden" name="skipDuplicateRequestCheck" value="1">
       <div class="form-group">
         <div class="form-group__head">
           <h3>Documentary Access</h3>
@@ -215,10 +225,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="fields">
           <div class="field">
             <label for="email">Email Address <span class="req">REQUIRED</span></label>
-            <input type="email" id="email" name="email" required placeholder="you@example.com" />
+            <input type="email" id="email" name="subscriber.email1" required placeholder="you@example.com" />
             <span class="field-help">We'll email screening links and updates on both films. No spam, unsubscribe any time.</span>
           </div>
-          <button type="submit" class="btn btn--orange">Get Instant Access <span class="arrow">→</span></button>
+          <button type="submit" class="btn btn--orange" id="documentaryAccessSubmit" onclick="return neonSubscriptionSubmit(this)">Get Instant Access <span class="arrow">→</span></button>
         </div>
         <div class="success" hidden style="border:1.5px solid var(--orange);padding:24px;background:rgba(200,33,12,.06)">
           <span class="lbl" style="color:var(--orange)">// Confirmed</span>
@@ -227,6 +237,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
     </form>
+    <iframe name="_neon_sink" style="display:none;width:0;height:0;border:0" title="form submission target" tabindex="-1" aria-hidden="true"></iframe>
   </div>
 </section>
 

@@ -62,13 +62,13 @@
   }
 
   // Neon's snippet calls these two globals from onclick and onclick-close.
-  window.neonSubscriptionSubmit = function () {
+  window.neonSubscriptionSubmit = function (btnEl) {
     var res = document.getElementById('g-recaptcha-response');
     if (res && res.value && res.value !== '') {
       return true;
     }
     var box = document.getElementById(CAPTCHA_ID);
-    var btn = document.getElementById('subscriptionSubmitButton');
+    var btn = (btnEl && btnEl.getBoundingClientRect) ? btnEl : document.getElementById('subscriptionSubmitButton');
     if (!box || !btn) return false;
     box.style.display = 'block';
     var b = btn.getBoundingClientRect();

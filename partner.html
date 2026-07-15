@@ -64,7 +64,7 @@ src="https://www.facebook.com/tr?id=1153372614744693&ev=PageView&noscript=1"
      TODO: Swap URL to a BEVP-owned Calendly account when provisioned. -->
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-<script src="newsletter.js?v=2" defer></script>
+<script src="newsletter.js?v=3" defer></script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -174,7 +174,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       Corporate sponsor, event sponsor, foundation, or community partner, one inquiry form, one inbox. Ryan reviews every submission personally.
     </p>
 
-    <form class="form reveal" id="partnerForm" onsubmit="event.preventDefault();document.getElementById('partner-submitted').hidden=false;document.getElementById('partner-fields').hidden=true;document.getElementById('partner-submitted').scrollIntoView({behavior:'smooth'});">
+    <!-- INTERIM: submits via mailto to partner@ until the Neon partnership-inquiry form exists (requested from Landon) -->
+    <form class="form reveal" id="partnerForm" onsubmit="event.preventDefault();var f=this;var v=function(n){var el=f.querySelector('[name='+n+']');return el?el.value:''};var body='Name: '+v('name')+'%0AOrganization: '+v('org')+'%0AEmail: '+v('email')+'%0APhone: '+v('phone')+'%0APartnership type: '+v('type')+'%0A%0A'+encodeURIComponent(v('message'));window.location.href='mailto:partner@birdseyeviewproject.org?subject='+encodeURIComponent('Partnership Inquiry — '+(v('org')||v('name')))+'&body='+body;document.getElementById('partner-submitted').hidden=false;document.getElementById('partner-fields').hidden=true;document.getElementById('partner-submitted').scrollIntoView({behavior:'smooth'});">
       <div id="partner-fields" style="display:grid;gap:36px">
 
         <div class="form-group">
