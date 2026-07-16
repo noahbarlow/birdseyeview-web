@@ -1826,6 +1826,9 @@ body.heartbeat-open{overflow:hidden}
 .pillar--flow p{margin-top:0}
 /* Black Ops Legacy hero: lightened per client (photo read too dark) */
 .imghero--lift .imghero__img{filter:grayscale(1) contrast(1.18) brightness(1.06);mix-blend-mode:normal}
+/* red overlay (client ask): brand-orange multiply tint over the lifted heroes,
+   matching the red duotone the home poster gets from multiplying over --orange */
+.imghero--lift::after{content:"";position:absolute;inset:0;background:var(--orange);mix-blend-mode:multiply;opacity:.55;z-index:1;pointer-events:none}
 .imghero--lift .imghero__overlay{background:linear-gradient(180deg,rgba(14,13,11,0) 0%,rgba(14,13,11,0) 35%,rgba(14,13,11,.45) 75%,rgba(14,13,11,.82) 100%),linear-gradient(90deg,rgba(14,13,11,.4) 0%,rgba(14,13,11,0) 60%)}
 /* cadre roster portraits (About-page headshots) */
 .bo-person__ph{width:74px;aspect-ratio:3/4;overflow:hidden;border:1px solid var(--ink);margin-bottom:14px}
