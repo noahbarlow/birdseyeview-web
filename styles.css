@@ -1840,3 +1840,15 @@ body.heartbeat-open{overflow:hidden}
 .bo-checklist li{font-family:var(--ff-body);font-size:14px;line-height:1.45;color:rgba(236,227,208,.82);padding-left:22px;position:relative}
 .bo-checklist li::before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:700}
 @media (max-width:720px){#register .reveal[style*="grid-template-columns"]{grid-template-columns:1fr!important}}
+/* publication cards (Stories That Inspire · READ) */
+.book-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,3vw,36px)}
+.book-card{display:flex;gap:clamp(18px,2.4vw,28px);border:1px solid var(--rule-bone);padding:clamp(20px,2.6vw,32px);min-width:0}
+.book-card__cover{flex:0 0 clamp(120px,12vw,168px)}
+.book-card__cover img{width:100%;height:auto;display:block;border:1px solid var(--rule-bone)}
+.book-card__body{min-width:0}
+.book-card__body .tag{font-family:var(--ff-mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:rgba(236,227,208,.6)}
+.book-card__body h4{font-family:var(--ff-display);font-weight:900;font-size:clamp(24px,2.4vw,32px);text-transform:uppercase;line-height:1;color:var(--bone);margin:10px 0 12px}
+.book-card__body p{font-size:14px;line-height:1.55;color:rgba(236,227,208,.78);margin-bottom:18px}
+.book-card__body p b{color:rgba(236,227,208,.95)}
+@media (max-width:880px){.book-grid{grid-template-columns:1fr}}
+@media (max-width:480px){.book-card{flex-direction:column}.book-card__cover{flex-basis:auto;max-width:180px}}
