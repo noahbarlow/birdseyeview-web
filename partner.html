@@ -60,6 +60,7 @@ src="https://www.facebook.com/tr?id=1153372614744693&ev=PageView&noscript=1"
 <meta name="twitter:description" content="Four ways organizations and foundations partner with Birds Eye View Project to fund and extend the War Feather program for veterans and first responders." />
 <meta name="twitter:image" content="https://birdseyeviewproject.org/img/MRC03890.jpg" />
 <script src="analytics.js" defer></script>
+<script src="neon-fallback.js?v=3" defer></script>
 <!-- Calendly scheduling popup
      TODO: Swap URL to a BEVP-owned Calendly account when provisioned. -->
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -183,73 +184,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       Corporate sponsor, event sponsor, foundation, or community partner, one inquiry form, one inbox. Ryan reviews every submission personally.
     </p>
 
-    <!-- INTERIM: submits via mailto to partner@ until the Neon partnership-inquiry form exists (requested from Landon) -->
-    <form class="form reveal" id="partnerForm" onsubmit="event.preventDefault();var f=this;var v=function(n){var el=f.querySelector('[name='+n+']');return el?el.value:''};var body='Name: '+v('name')+'%0AOrganization: '+v('org')+'%0AEmail: '+v('email')+'%0APhone: '+v('phone')+'%0APartnership type: '+v('type')+'%0A%0A'+encodeURIComponent(v('message'));window.location.href='mailto:partner@birdseyeviewproject.org?subject='+encodeURIComponent('Partnership Inquiry — '+(v('org')||v('name')))+'&body='+body;document.getElementById('partner-submitted').hidden=false;document.getElementById('partner-fields').hidden=true;document.getElementById('partner-submitted').scrollIntoView({behavior:'smooth'});">
-      <div id="partner-fields" style="display:grid;gap:36px">
-
-        <div class="form-group">
-          <div class="form-group__head">
-            <h3>Contact</h3>
-            <span class="lbl">// 01 Identifiers</span>
-          </div>
-          <div class="field-row">
-            <div class="field">
-              <label for="p-name">Your name <span class="req">REQUIRED</span></label>
-              <input type="text" id="p-name" name="name" required placeholder="First Last" />
-            </div>
-            <div class="field">
-              <label for="p-org">Organization <span class="req">REQUIRED</span></label>
-              <input type="text" id="p-org" name="org" required placeholder="Company / foundation / event team" />
-            </div>
-          </div>
-          <div class="field-row">
-            <div class="field">
-              <label for="p-email">Email <span class="req">REQUIRED</span></label>
-              <input type="email" id="p-email" name="email" required placeholder="you@example.com" />
-            </div>
-            <div class="field">
-              <label for="p-phone">Phone</label>
-              <input type="tel" id="p-phone" name="phone" placeholder="+1 (___) ___-____" />
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <div class="form-group__head">
-            <h3>Partnership</h3>
-            <span class="lbl">// 02 Lane</span>
-          </div>
-          <div class="field">
-            <label for="p-type">Partnership type <span class="req">REQUIRED</span></label>
-            <select id="p-type" name="type" required>
-              <option value="" disabled selected>Select one</option>
-              <option>Corporate sponsor</option>
-              <option>Event sponsor</option>
-              <option>Foundation / grantmaker</option>
-              <option>Community partner (VSO, union, faith, operator-led)</option>
-              <option>Other / not sure yet</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="p-msg">Tell us what you have in mind <span class="req">REQUIRED</span></label>
-            <textarea id="p-msg" name="message" rows="6" required placeholder="What you're proposing, what you'd like out of it, any timing constraints or upcoming dates we should plan around."></textarea>
-          </div>
-        </div>
-
-        <div class="form-group" style="border-bottom:0">
-          <button type="submit" class="btn btn--orange" style="width:fit-content">Send inquiry <span class="arrow">&rarr;</span></button>
-          <span class="field-help" style="margin-top:6px">Ryan reviews every submission. Typical response within 3 business days. For press: <a href="mailto:info@birdseyeviewproject.org" style="color:var(--orange);text-decoration:underline">info@birdseyeviewproject.org</a></span>
-        </div>
+    <!-- Neon Partnership/Sponsorship form. The hosted form is live; the inline
+         iframe renders once Landon adds birdseyeviewproject.org to this form's
+         Allowed Domains in Neon (Sharing settings) — until then neon-fallback.js
+         keeps the styled CTA visible and the iframe hidden. -->
+    <div class="neon-embed reveal">
+      <!-- UNCOMMENT this iframe once Landon adds birdseyeviewproject.org to the
+           form's Allowed Domains (its CSP frame-ancestors currently blocks us —
+           a fixed-height blocked iframe would fool neon-fallback's height check):
+      <iframe src="https://birdseyeviewproject.app.neoncrm.com/forms/partnershipsponsorship" title="Partnership &amp; Sponsorship Inquiry" style="width:100%;min-height:1100px;border:0" loading="lazy"></iframe>
+      -->
+      <div class="neon-fallback">
+        <span class="lbl" style="color:var(--orange-deep);font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase">// Partnership &amp; Sponsorship Inquiry</span>
+        <p style="margin-top:12px;max-width:56ch;color:var(--ink-soft)">Corporate sponsor, event sponsor, foundation, or community partner &mdash; one form, one inbox. Ryan reviews every submission personally. The secure form opens in a new tab.</p>
+        <a class="btn btn--orange" style="margin-top:18px" href="https://birdseyeviewproject.app.neoncrm.com/forms/partnershipsponsorship?utm_source=website&utm_medium=partner_page&utm_campaign=partnership" target="_blank" rel="noopener">Open the Partnership Form <span class="arrow">&rarr;</span></a>
+        <p style="margin-top:14px;font-family:var(--ff-mono);font-size:10px;letter-spacing:.12em;color:var(--ink-soft)">Or email <a href="mailto:partner@birdseyeviewproject.org" style="color:var(--orange-deep);text-decoration:underline">partner@birdseyeviewproject.org</a></p>
       </div>
-
-      <div id="partner-submitted" hidden>
-        <div style="text-align:center;padding:24px 0">
-          <span class="tag-pill">// Inquiry received</span>
-          <h3 style="font-family:var(--ff-display);font-weight:900;font-size:clamp(36px,5vw,64px);letter-spacing:.005em;text-transform:uppercase;color:var(--ink);margin-top:18px;line-height:.92">We&rsquo;ll be in touch.</h3>
-          <p style="font-family:var(--ff-edit);font-style:italic;font-size:18px;color:var(--ink-soft);margin-top:14px;max-width:50ch;margin-inline:auto;line-height:1.4">Ryan reads every partnership inquiry personally. Typical response within 3 business days.</p>
-        </div>
-      </div>
-    </form>
+    </div>
   </div>
 </section>
 <!-- FINAL CTA -->
