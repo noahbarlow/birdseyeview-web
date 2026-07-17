@@ -1855,3 +1855,5 @@ body.heartbeat-open{overflow:hidden}
 .book-card__body p b{color:rgba(236,227,208,.95)}
 @media (max-width:880px){.book-grid{grid-template-columns:1fr}}
 @media (max-width:480px){.book-card{flex-direction:column}.book-card__cover{flex-basis:auto;max-width:180px}}
+/* Valkyrie experience sub-heads */
+.h3-block{font-family:var(--ff-display);font-weight:900;font-size:clamp(28px,3vw,40px);text-transform:uppercase;line-height:1;color:var(--ink);letter-spacing:.01em}
