@@ -914,7 +914,7 @@ button,input,textarea,select{font:inherit;color:inherit}
 /* === TRAILER CARDS (documentary.html · self-hosted <video> with paywall CTA) === */
 .trailer-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr));
   gap:clamp(24px,3vw,40px);
   margin-top:clamp(28px,4vw,48px);
 }
@@ -1863,3 +1863,11 @@ body.heartbeat-open{overflow:hidden}
 .kpis--7x .kpi:nth-child(2n){border-right:1px solid var(--rule-bone)}
 .kpis--7x .kpi:last-child{border-right:0}
 @media (max-width:980px){.kpis--7x{grid-template-columns:repeat(3,1fr)}.kpis--7x .kpi:nth-child(3n){border-right:0}.kpis--7x .kpi:nth-child(-n+3){border-bottom:1px solid var(--rule-bone)}}
+/* mobile collapse for the six-up pillar grids (base .pillars 520px rule is
+   overridden by the later pillars--6 declaration, so restate it here) */
+@media (max-width:560px){.pillars--6{grid-template-columns:1fr}.pillars--6 .pillar{border-right:0!important;border-bottom:1px solid var(--ink)}.section.dark .pillars--6 .pillar{border-bottom-color:var(--rule-bone)}}
+@media (max-width:480px){.kpis--7x{grid-template-columns:repeat(2,1fr)}}
+/* three-across variant of bo-exp-grid with its own mobile collapse */
+.bo-exp-grid--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:920px){.bo-exp-grid--3{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.bo-exp-grid--3{grid-template-columns:1fr}}
