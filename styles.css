@@ -1895,3 +1895,5 @@ body.heartbeat-open{overflow:hidden}
 .proj-card__body p b{color:var(--ink)}
 .proj-card__body .btn{margin-top:auto;align-self:flex-start}
 @media (max-width:880px){.proj-grid{grid-template-columns:1fr}}
+/* mobile CTA bar: two actions while applications are closed */
+@media (max-width:760px){.mobile-cta-bar{grid-template-columns:1fr .55fr}}
