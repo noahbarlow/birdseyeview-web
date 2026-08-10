@@ -1897,3 +1897,23 @@ body.heartbeat-open{overflow:hidden}
 @media (max-width:880px){.proj-grid{grid-template-columns:1fr}}
 /* mobile CTA bar: two actions while applications are closed */
 @media (max-width:760px){.mobile-cta-bar{grid-template-columns:1fr .55fr}}
+/* share row — event pages + War Feather */
+.share-row{margin-top:clamp(28px,3vw,40px);padding-top:22px;border-top:1px solid var(--rule)}
+.section.dark .share-row,.final .share-row{border-top-color:var(--rule-bone)}
+.share-row__lbl{display:block;font-family:var(--ff-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
+.section.dark .share-row__lbl,.final .share-row__lbl{color:rgba(236,227,208,.6)}
+.share-row__btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.share-btn{font-family:var(--ff-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  padding:9px 14px;border:1px solid var(--rule);background:transparent;color:var(--ink);
+  cursor:pointer;text-decoration:none;line-height:1;transition:background .16s,color .16s,border-color .16s}
+.share-btn:hover{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+.section.dark .share-btn,.final .share-btn{border-color:var(--rule-bone);color:var(--bone)}
+.section.dark .share-btn:hover,.final .share-btn:hover{background:var(--orange);border-color:var(--orange);color:var(--bone)}
+.share-btn--native{border-color:var(--orange);color:var(--orange-deep)}
+.section.dark .share-btn--native,.final .share-btn--native{border-color:var(--orange);color:var(--orange)}
+.share-strip{background:var(--ink);padding:clamp(28px,4vw,44px) 0 clamp(20px,3vw,32px);border-top:1px solid var(--rule-bone)}
+.share-strip .share-row{margin-top:0;padding-top:0;border-top:0}
+.share-strip .share-row__lbl{color:rgba(236,227,208,.6)}
+.share-strip .share-btn{border-color:var(--rule-bone);color:var(--bone)}
+.share-strip .share-btn:hover{background:var(--orange);border-color:var(--orange);color:var(--bone)}
+.share-strip .share-btn--native{border-color:var(--orange);color:var(--orange)}
