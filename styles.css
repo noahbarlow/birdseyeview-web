@@ -1917,3 +1917,16 @@ body.heartbeat-open{overflow:hidden}
 .share-strip .share-btn{border-color:var(--rule-bone);color:var(--bone)}
 .share-strip .share-btn:hover{background:var(--orange);border-color:var(--orange);color:var(--bone)}
 .share-strip .share-btn--native{border-color:var(--orange);color:var(--orange)}
+
+/* ===== Film frame (watch page) ============================================ */
+.film-frame{position:relative;width:100%;max-width:1100px;margin-top:clamp(32px,4.5vw,56px);
+  aspect-ratio:16/9;background:#000;border:1px solid var(--rule-bone);overflow:hidden}
+.film-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.film-frame--pending{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(160deg,#15120F 0%,#0E0D0B 62%)}
+.film-frame__msg{max-width:46ch;padding:clamp(24px,4vw,44px);text-align:center}
+.film-frame__msg .tag{display:inline-block;margin-bottom:14px;color:var(--orange)}
+.film-frame__msg h3{font-family:var(--ff-display);font-weight:900;text-transform:uppercase;
+  font-size:var(--fs-ttl-sm);line-height:.94;color:var(--bone);letter-spacing:-.01em}
+.film-frame__msg p{margin-top:14px;color:rgba(236,227,208,.72);line-height:1.55;font-size:15px}
+@media (max-width:600px){.film-frame__msg p{font-size:14px}}
