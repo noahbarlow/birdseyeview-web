@@ -1930,3 +1930,13 @@ body.heartbeat-open{overflow:hidden}
   font-size:var(--fs-ttl-sm);line-height:.94;color:var(--bone);letter-spacing:-.01em}
 .film-frame__msg p{margin-top:14px;color:rgba(236,227,208,.72);line-height:1.55;font-size:15px}
 @media (max-width:600px){.film-frame__msg p{font-size:14px}}
+
+/* ===== Notice strip (schedule changes) ==================================== */
+.notice-strip{background:var(--orange);color:var(--bone);padding:15px 0}
+.notice-strip .wrap{display:flex;gap:8px 16px;align-items:baseline;flex-wrap:wrap}
+.notice-strip__lbl{flex:none;font-family:var(--ff-mono);font-weight:700;font-size:11px;
+  letter-spacing:.22em;text-transform:uppercase;color:rgba(236,227,208,.82)}
+.notice-strip__txt{margin:0;font-size:15px;line-height:1.5;max-width:80ch}
+.notice-strip__txt b{font-family:var(--ff-display);font-weight:900;font-size:1.18em;
+  text-transform:uppercase;letter-spacing:.02em}
+@media (max-width:640px){.notice-strip__txt{font-size:14px}}
