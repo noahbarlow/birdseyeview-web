@@ -3,11 +3,12 @@
    UX dossier (BEVP-UX-001 §08). Pushes go to window.dataLayer so a GTM
    container or Google Analytics 4 setup can consume them once wired.
 
-   No tracking until a real GTM/GA4 ID is configured. This file is the
-   event surface only; the tag manager / consent flow gets added later.
-
-   To enable GA4 directly (no GTM), replace the TODO block at the bottom
-   with the gtag.js loader and your G-XXXXXXX measurement ID. */
+   LIVE as of 2026-10-01: GTM container GTM-TW3ZHJ3Q and GA4 property
+   G-K0ZESF07GT are both loaded inline in the <head> of every page.
+   This file remains the custom-event surface only — it pushes to
+   window.dataLayer, which GTM consumes. Note that dataLayer pushes are
+   NOT automatically forwarded to GA4; to see these custom events in GA4,
+   create matching GA4 Event tags in the GTM container. */
 
 (function () {
   'use strict';
@@ -120,18 +121,9 @@
     });
   });
 
-  /* === TODO: enable real GA4 / GTM ===
-     Option A (GA4 direct):
-       (function(){var s=document.createElement('script');s.async=true;
-         s.src='https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
-         document.head.appendChild(s);})();
-       window.gtag=function(){dataLayer.push(arguments)};
-       gtag('js',new Date()); gtag('config','G-XXXXXXXXXX');
-
-     Option B (GTM):
-       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-         var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;
-         j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);
-       })(window,document,'script','dataLayer','GTM-XXXXXXX');
-   */
+  /* === GA4 / GTM are live ===
+     Both tags are inline in the <head> of every page — do not add loaders
+     here as well, or pageviews will be counted twice:
+       GTM : GTM-TW3ZHJ3Q
+       GA4 : G-K0ZESF07GT  (added 2026-10-01) */
 })();
